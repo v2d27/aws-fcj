@@ -1,8 +1,10 @@
-<h1 align="center">
-<div align="center">
-<img src="https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/static/images/sssss.png" title="Logo" style="max-width:100%;" width="200" />
-</div>
-AWS - First Cloud Journey<br /></h1>
+<h1 align="center" style="color: blue;">
+    <div align="center">
+        <img src="https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/static/images/sssss.png" title="Logo" style="max-width:100%;" width="200" />
+    </div>
+    AWS - First Cloud Journey<br />
+</h1>
+
 
 
 # WorkShop 1 | AWS Site-to-Site VPN Connection

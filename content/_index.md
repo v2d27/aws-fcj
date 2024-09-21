@@ -17,9 +17,9 @@ In this lab, we will make private connection from **Database server** to **Cloud
 
 
 #### Table of Contents
-1. [Introduce](content\1-Introduce)
-2. [CloudServer Configuration](content\2-CloudServer)
-3. [DataServer Configuration](content\3-DataServer)
-4. [Site-to-Site VPN](content\4-SitetoSiteVPN)
-5. [Clean up resources](content\5-cleanup)
+1. [Introduce](/1-Introduce)
+2. [CloudServer Configuration](/2-CloudServer)
+3. [DataServer Configuration](/3-DataServer)
+4. [Site-to-Site VPN](/4-SitetoSiteVPN)
+5. [Clean up resources](/5-cleanup)
 

@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Site-to-Site VPN :: AWS Site-to-Site VPN</title>
 
@@ -876,7 +876,7 @@
 <h1 id="aws-site-to-site-vpn-connection">AWS Site-to-Site VPN Connection</h1>
 <h3 id="overall">Overall</h3>
 <p>In this lab, we will make private connection from <strong>Database server</strong> to <strong>Cloud server</strong> through the internet enviroment, using Site-to-Site VPN on AWS service. And the server inside <strong>Cloud server</strong> can connect to Internet via NAT Gateway. Not only can you practice here, but also you can apply it in reality.</p>
-<p><img alt="intro" src="/images/1.introduce/intro-03.png"></p>
+<p><img alt="intro" src="{{ .Site.BaseURL }}images/1.introduce/intro-03.png"></p>
 <p><em>We will use LibreSwan to establish IPsec VPN connections for the Data Server as a Customer Gateway on AWS EC2 in this lab. You can use various methods to connect to the AWS VPN, such as simulating on VMware or using physical routing devices that support VPNs.</em></p>
 <h4 id="table-of-contents">Table of Contents</h4>
 <ol>

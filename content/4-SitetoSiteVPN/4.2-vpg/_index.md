@@ -17,25 +17,25 @@ In this step, we will create an Virtual private gateways (VPG) for **Cloud Serve
 
 
 
-![vpg](/images/4.sitetositevpn/vpg-01.png)
+![vpg]({{ .Site.BaseURL }}images/4.sitetositevpn/vpg-01.png)
 
 2. At the **Create virtual private gateway** page.
   + In the **Name tag** field, enter the VPG name **`Cloud-VPN-GW`**
   + Click **Create virtual gateway**.
 
-![vpg](/images/4.sitetositevpn/vpg-02.png)
+![vpg]({{ .Site.BaseURL }}images/4.sitetositevpn/vpg-02.png)
 
 
 3. Attach to **`Cloud Server`** VPC
   + In the [Virtual private gateways](https://console.aws.amazon.com/vpcconsole/home#VpnGateways:), check **Cloud-VPN-GW**
   + Click **Actions**, choose **Attach to VPC**.
 
-![vpg](/images/4.sitetositevpn/vpg-03.png)
+![vpg]({{ .Site.BaseURL }}images/4.sitetositevpn/vpg-03.png)
 
 Choose **Cloud Server** at dropdown list and click **Attach to VPC**.
 
-![vpg](/images/4.sitetositevpn/vpg-04.png)
+![vpg]({{ .Site.BaseURL }}images/4.sitetositevpn/vpg-04.png)
 
 We are successfull at creating VPG for **Cloud Server** VPC.
 
-![vpg](/images/4.sitetositevpn/vpg-05.png)
+![vpg]({{ .Site.BaseURL }}images/4.sitetositevpn/vpg-05.png)

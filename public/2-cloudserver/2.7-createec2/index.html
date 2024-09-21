@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Create EC2 Server :: AWS Site-to-Site VPN</title>
 
@@ -941,7 +941,7 @@
 
 
 	<p>Switch to EC2 dashboard. Enter <code>EC2</code> in searchbox, and select it.</p>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-01.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-01.png"></p>
 <ol>
 <li>In <strong>EC2 dashboard</strong></li>
 </ol>
@@ -949,7 +949,7 @@
 <li>Click <strong>Instances</strong>.</li>
 <li>Click <strong>Launch instances</strong>.</li>
 </ul>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-02.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-02.png"></p>
 <ol start="2">
 <li>In the <strong>Name and tags</strong> field.</li>
 </ol>
@@ -961,7 +961,7 @@
 </ol>
 <ul>
 <li>Choose <strong>Ubuntu</strong> image with architecture <strong>64-bit (x86)</strong>.
-<img alt="ec2" src="/images/2.cloudserver/ec-03.png"></li>
+<img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-03.png"></li>
 </ul>
 <ol start="4">
 <li>In the <strong>Instance Type</strong> field.</li>
@@ -970,7 +970,7 @@
 <li>Click on Instance type <strong>t2.micro</strong>.</li>
 <li>And click on <strong>Create new key pair</strong> button.</li>
 </ul>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-04.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-04.png"></p>
 <ol start="5">
 <li>In the <strong>Create key pair</strong> field, enter the key name to connect to server.</li>
 </ol>
@@ -979,7 +979,7 @@
 <li>And click on <strong>Create new key pair</strong> button.</li>
 <li>Remember to save the key in your local computer for future using.</li>
 </ul>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-05.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-05.png"></p>
 <ol start="5">
 <li>In the <strong>Network settings</strong> field, click on <strong>Edit</strong> button.</li>
 </ol>
@@ -991,9 +991,9 @@
 <li>In the <strong>Common security section</strong>, select security group <strong>Cloud-SG-Private</strong>.</li>
 <li>Click <strong>Launch instance</strong> to complete.</li>
 </ul>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-06.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-06.png"></p>
 <p>Please wait a few minutes, EC2 instance needs time to start.</p>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-07.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-07.png"></p>
 <h5 id="private-ip-ec2-cloud-address">Private IP EC2-Cloud address</h5>
 
 <div class="notices note" ><p>We need this private IP <code>10.10.2.162</code> for testing connection later.</p>

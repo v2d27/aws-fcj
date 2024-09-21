@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Clean up resources :: AWS Site-to-Site VPN</title>
 
@@ -943,8 +943,8 @@
 <li>Click <strong>Instance state</strong>.</li>
 <li>Click <strong>Terminate instance</strong>, then click <strong>Terminate</strong> to confirm.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-01.png">
-<img alt="c" src="/images/5.cleanup/c-02.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-01.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-02.png"></p>
 <h4 id="2-delete-nat-gateway">2. Delete NAT gateway</h4>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#NatGateways:">NAT gateway</a>.</li>
@@ -953,8 +953,8 @@
 <li>Click <strong>Actions</strong>, then click <strong>Delete NAT gateway</strong>.</li>
 <li>Enter <strong><code>delete</code></strong> and click <strong>Delete</strong> to delete the NAT gateway.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-03.png">
-<img alt="c" src="/images/5.cleanup/c-04.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-03.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-04.png"></p>
 <h4 id="3-delete-site-to-site-vpn-connections">3. Delete Site-to-Site VPN Connections</h4>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#VpnConnections:">Site-to-Site VPN Connections</a>.</li>
@@ -962,8 +962,8 @@
 <li>Click <strong>Actions</strong>, then click <strong>Delete VPN Connection</strong>.</li>
 <li>Enter <strong><code>delete</code></strong> and click <strong>Delete</strong> to delete the VPN Connection.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-05.png">
-<img alt="c" src="/images/5.cleanup/c-06.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-05.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-06.png"></p>
 <h4 id="4-delete-vpn-gateway">4. Delete VPN gateway</h4>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#VpnGateways:">VPG</a>.</li>
@@ -971,15 +971,15 @@
 <li>Click <strong>Actions</strong>, then click <strong>Detach from VPC</strong>.</li>
 <li>Click <strong>Detach virtual private gateway</strong></li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-10.png">
-<img alt="c" src="/images/5.cleanup/c-11.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-10.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-11.png"></p>
 <ul>
 <li>Select <strong>Cloud-VPN-GW</strong> again.</li>
 <li>Click <strong>Actions</strong>, then click <strong>Delete virtual private gateway</strong>.</li>
 <li>Enter <strong><code>delete</code></strong> and click <strong>Delete</strong> to delete the VPN gateway.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-12.png">
-<img alt="c" src="/images/5.cleanup/c-13.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-12.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-13.png"></p>
 <h4 id="5-delete-customer-gateways">5. Delete Customer Gateways</h4>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#CustomerGateways:">Customer Gateways</a>.</li>
@@ -987,8 +987,8 @@
 <li>Click <strong>Actions</strong>, then click <strong>Delete customer gateway</strong>.</li>
 <li>Enter <strong><code>delete</code></strong> and click <strong>Delete</strong> to delete the Customer gateway.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-16.png">
-<img alt="c" src="/images/5.cleanup/c-17.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-16.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-17.png"></p>
 <h4 id="6-delete-vpcs">6. Delete VPCs</h4>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#vpcs:">Your VPCs</a>.</li>
@@ -996,21 +996,21 @@
 <li>Click <strong>Actions</strong>, then click <strong>Delete VPC</strong>.</li>
 <li>Enter <strong><code>delete</code></strong> and click <strong>Delete</strong> to delete the VPC.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-07.png">
-<img alt="c" src="/images/5.cleanup/c-08.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-07.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-08.png"></p>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#vpcs:">Your VPCs</a> again.</li>
 <li>Repeat previous steps to delete <strong>Cloud Server</strong>.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-09.png">
-<img alt="c" src="/images/5.cleanup/c-14.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-09.png">
+<img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-14.png"></p>
 <h4 id="7-delete-elastic-ips">7. Delete Elastic IPs</h4>
 <ul>
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#Addresses:">Elastic IPs</a>.</li>
 <li>Select <strong>public IP address</strong>, which is created in the <a href="/2-cloudserver/2.5-createnatgw/">NAT gateway</a> step.</li>
 <li>Click <strong>Actions</strong>, then click <strong>Release Elastic IP address</strong>.</li>
 </ul>
-<p><img alt="c" src="/images/5.cleanup/c-15.png"></p>
+<p><img alt="c" src="{{ .Site.BaseURL }}images/5.cleanup/c-15.png"></p>
 <h1 id="everything-is-done">Everything is done!</h1>
 
 

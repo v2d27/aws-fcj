@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Create VPN connection :: AWS Site-to-Site VPN</title>
 
@@ -948,7 +948,7 @@
 <li>Choose <strong>Site-to-Site VPN connections</strong></li>
 <li>Click at <strong>Create VPN connection</strong> button</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-01.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-01.png"></p>
 <ol start="2">
 <li>In <strong>Details</strong> page.</li>
 </ol>
@@ -964,11 +964,11 @@
 <li>In <strong>Remote IPv4 network CIDR</strong> field: enter <strong><code>10.10.2.0/24</code></strong>  .</li>
 </ul>
 <p>Scroll down and click <strong>Create VPN connection</strong>.</p>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-02.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-02.png"></p>
 <ol start="3">
 <li>Wait about 5 minutes or more to change state of VPN connection from <strong>Pending</strong> to <strong>Available</strong>.</li>
 </ol>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-03.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-03.png"></p>
 <ol start="4">
 <li>Edit <strong>Cloud-SG-Private</strong> security groups to allow SSH connection from CIDR: <strong><code>192.168.1.0/24</code></strong> .</li>
 </ol>
@@ -977,7 +977,7 @@
 <li>Select <strong>Cloud-SG-Private</strong> and choose <strong>Action</strong>.</li>
 <li>Click on <strong>Edit inbound rules</strong>.</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-04.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-04.png"></p>
 <ol start="5">
 <li>Add SSH connection.</li>
 </ol>
@@ -987,7 +987,7 @@
 <li>Choose <strong>Custom</strong> source and enter <strong><code>192.168.1.0/24</code></strong>.</li>
 <li>Click <strong>Save rules</strong> to apply.</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-05.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-05.png"></p>
 <ol start="6">
 <li>Apply new <strong>Route Propagation</strong> for private subnet.</li>
 </ol>
@@ -996,15 +996,15 @@
 <li>Select <strong>Cloud-RT-Private</strong> and choose <strong>Action</strong>.</li>
 <li>Click on <strong>Edit route propagation</strong>.</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-06.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-06.png"></p>
 <ol start="7">
 <li>Choose <strong>Enable</strong> in the <strong>Propagation</strong> column and click <strong>Save</strong>.</li>
 </ol>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-07.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-07.png"></p>
 <ol start="8">
 <li>My routing table after applying new <strong>Route Propagation</strong>.</li>
 </ol>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpn-08.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-08.png"></p>
 <p>The next step is to configure LibreSwan to make VPN connection to AWS.</p>
 
 

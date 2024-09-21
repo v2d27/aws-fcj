@@ -19,8 +19,8 @@ We will take the following steps to delete all the resources we created in this 
    + Click **Instance state**.
    + Click **Terminate instance**, then click **Terminate** to confirm.
 
-![c](/images/5.cleanup/c-01.png)
-![c](/images/5.cleanup/c-02.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-01.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-02.png)
 
 
 
@@ -34,8 +34,8 @@ We will take the following steps to delete all the resources we created in this 
    + Click **Actions**, then click **Delete NAT gateway**.
    + Enter **`delete`** and click **Delete** to delete the NAT gateway.
 
-![c](/images/5.cleanup/c-03.png)
-![c](/images/5.cleanup/c-04.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-03.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-04.png)
 
 
 
@@ -49,8 +49,8 @@ We will take the following steps to delete all the resources we created in this 
    + Click **Actions**, then click **Delete VPN Connection**.
    + Enter **`delete`** and click **Delete** to delete the VPN Connection.
 
-![c](/images/5.cleanup/c-05.png)
-![c](/images/5.cleanup/c-06.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-05.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-06.png)
 
 
 
@@ -64,15 +64,15 @@ We will take the following steps to delete all the resources we created in this 
    + Click **Actions**, then click **Detach from VPC**.
    + Click **Detach virtual private gateway**
 
-![c](/images/5.cleanup/c-10.png)
-![c](/images/5.cleanup/c-11.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-10.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-11.png)
 
    + Select **Cloud-VPN-GW** again.
    + Click **Actions**, then click **Delete virtual private gateway**.
    + Enter **`delete`** and click **Delete** to delete the VPN gateway.
 
-![c](/images/5.cleanup/c-12.png)
-![c](/images/5.cleanup/c-13.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-12.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-13.png)
 
 
 
@@ -85,8 +85,8 @@ We will take the following steps to delete all the resources we created in this 
    + Click **Actions**, then click **Delete customer gateway**.
    + Enter **`delete`** and click **Delete** to delete the Customer gateway.
 
-![c](/images/5.cleanup/c-16.png)
-![c](/images/5.cleanup/c-17.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-16.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-17.png)
 
 
 
@@ -100,14 +100,14 @@ We will take the following steps to delete all the resources we created in this 
    + Click **Actions**, then click **Delete VPC**.
    + Enter **`delete`** and click **Delete** to delete the VPC.
 
-![c](/images/5.cleanup/c-07.png)
-![c](/images/5.cleanup/c-08.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-07.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-08.png)
 
    + Go to [Your VPCs](https://console.aws.amazon.com/vpcconsole/home#vpcs:) again.
    + Repeat previous steps to delete **Cloud Server**.
 
-![c](/images/5.cleanup/c-09.png)
-![c](/images/5.cleanup/c-14.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-09.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-14.png)
 
 
 
@@ -120,7 +120,7 @@ We will take the following steps to delete all the resources we created in this 
    + Select **public IP address**, which is created in the [NAT gateway](/2-cloudserver/2.5-createnatgw/) step.
    + Click **Actions**, then click **Release Elastic IP address**.
 
-![c](/images/5.cleanup/c-15.png)
+![c]({{ .Site.BaseURL }}images/5.cleanup/c-15.png)
 
 
 # Everything is done!

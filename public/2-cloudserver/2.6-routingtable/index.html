@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Create Routing Table :: AWS Site-to-Site VPN</title>
 
@@ -951,7 +951,7 @@
 <li>Choose <strong>Route tables</strong> menu.</li>
 <li>Click the <strong>Create route table</strong> button.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-01.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-01.png"></p>
 <ol start="2">
 <li>At the <strong>Create route table</strong> page.
 <ul>
@@ -961,14 +961,14 @@
 </ul>
 </li>
 </ol>
-<p><img alt="rt" src="/images/2.cloudserver/rt-02.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-02.png"></p>
 <ol start="3">
 <li>After creating the route table successfully.</li>
 </ol>
 <ul>
 <li>Click <strong>Edit routes</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-03.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-03.png"></p>
 <ol start="4">
 <li>At the <strong>Edit routes</strong> page.</li>
 </ol>
@@ -978,15 +978,15 @@
 <li>In the <strong>Target</strong> section, select <strong>Internet Gateway</strong> and then select <strong>Cloud-IGW</strong>.</li>
 <li>Click <strong>Save changes</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-04.png"></p>
-<p><img alt="rt" src="/images/2.cloudserver/rt-05.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-04.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-05.png"></p>
 <ol start="5">
 <li>Click the <strong>Subnet associations</strong> tab.</li>
 </ol>
 <ul>
 <li>Click <strong>Edit subnet associations</strong> to proceed with the associate custom route table we just created in <strong>Cloud-Subnet-Public</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-07.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-07.png"></p>
 <ol start="6">
 <li>At the <strong>Edit subnet associations</strong> page.</li>
 </ol>
@@ -994,18 +994,18 @@
 <li>Click on <strong>Cloud-Subnet-Public</strong>.</li>
 <li>Click <strong>Save associations</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-06.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-06.png"></p>
 <ol start="7">
 <li>Check that the route table information has been associated with <strong>Cloud-Subnet-Public</strong> and the internet route information has been pointed to the Internet Gateway as shown below.</li>
 </ol>
-<p><img alt="rt" src="/images/2.cloudserver/rt-08.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-08.png"></p>
 <h4 id="ii-create-route-table-private">II. Create route table private</h4>
 <p>In <strong>VPC dashboard</strong></p>
 <ul>
 <li>Choose <strong>Route tables</strong> menu.</li>
 <li>Click the <strong>Create route table</strong> button.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-01.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-01.png"></p>
 <ol start="2">
 <li>At the <strong>Create route table</strong> page.
 <ul>
@@ -1015,14 +1015,14 @@
 </ul>
 </li>
 </ol>
-<p><img alt="rt" src="/images/2.cloudserver/rt-10.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-10.png"></p>
 <ol start="3">
 <li>After creating the route table successfully.</li>
 </ol>
 <ul>
 <li>Click <strong>Edit routes</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-11.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-11.png"></p>
 <ol start="4">
 <li>At the <strong>Edit routes</strong> page.</li>
 </ol>
@@ -1032,14 +1032,14 @@
 <li>In the <strong>Target</strong> section, select <strong>NAT Gateway</strong> and then select <strong>Cloud-NATGW</strong>.</li>
 <li>Click <strong>Save changes</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-12.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-12.png"></p>
 <ol start="5">
 <li>Click the <strong>Subnet associations</strong> tab.</li>
 </ol>
 <ul>
 <li>Click <strong>Edit subnet associations</strong> to proceed with the associate custom route table we just created in <strong>Cloud-Subnet-Private</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-13.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-13.png"></p>
 <ol start="6">
 <li>At the <strong>Edit subnet associations</strong> page.</li>
 </ol>
@@ -1047,11 +1047,11 @@
 <li>Click on <strong>Cloud-Subnet-Private</strong>.</li>
 <li>Click <strong>Save associations</strong>.</li>
 </ul>
-<p><img alt="rt" src="/images/2.cloudserver/rt-14.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-14.png"></p>
 <ol start="7">
 <li>Check that the route table information has been associated with <strong>Cloud-Subnet-Private</strong> and the internet route information has been pointed to the Internet Gateway as shown below.</li>
 </ol>
-<p><img alt="rt" src="/images/2.cloudserver/rt-15.png"></p>
+<p><img alt="rt" src="{{ .Site.BaseURL }}images/2.cloudserver/rt-15.png"></p>
 
 
 

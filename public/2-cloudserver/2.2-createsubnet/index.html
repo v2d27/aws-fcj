@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Create Subnet :: AWS Site-to-Site VPN</title>
 
@@ -949,7 +949,7 @@
 </ul>
 </li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-01.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-01.png"></p>
 <ol start="2">
 <li>At the <strong>Create subnet</strong> page.
 <ul>
@@ -960,12 +960,12 @@
 </ul>
 </li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-02.png">
-<img alt="sn" src="/images/2.cloudserver/sn-03.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-02.png">
+<img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-03.png"></p>
 <ol start="3">
 <li>Scroll to the bottom of the page, click <strong>Create subnet</strong>.</li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-04.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-04.png"></p>
 <ol start="4">
 <li>Select <strong>Cloud-Subnet-Public</strong> checkbox and go to <strong>Edit subnet settings</strong>
 <ul>
@@ -974,7 +974,7 @@
 </ul>
 </li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-05.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-05.png"></p>
 <ol start="5">
 <li>Enable auto-assign public IPv4 address
 <ul>
@@ -983,7 +983,7 @@
 </ul>
 </li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-06.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-06.png"></p>
 <h4 id="ii-create-private-subnet-for-ec2-instance-server">II. Create Private Subnet for EC2 instance server</h4>
 <p>Similiar to create public subnet, we click at <strong>Create subnet</strong> again to create private subnet:</p>
 <ol>
@@ -996,11 +996,11 @@
 </ul>
 </li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-10.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-10.png"></p>
 <ol start="2">
 <li>Scroll to the bottom of the page, click <strong>Create subnet</strong>. For private subnet, we do not need to <strong>Enable auto-assign public IPv4 address</strong>.</li>
 </ol>
-<p><img alt="sn" src="/images/2.cloudserver/sn-11.png"></p>
+<p><img alt="sn" src="{{ .Site.BaseURL }}images/2.cloudserver/sn-11.png"></p>
 <p>Finally, we can see the state of two subnets <strong>Available</strong> now: <strong>10.10.1.0/24</strong> - public subnet and <strong>10.10.2.0/24</strong> - private subnet.</p>
 
 

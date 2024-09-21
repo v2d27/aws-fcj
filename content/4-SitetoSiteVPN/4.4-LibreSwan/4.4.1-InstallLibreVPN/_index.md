@@ -20,4 +20,4 @@ Checking the result of installation:
 ss -v && ipsec --help
 ```
 
-![lb](/images/4.sitetositevpn/l-01.png)
+![lb]({{ .Site.BaseURL }}images/4.sitetositevpn/l-01.png)

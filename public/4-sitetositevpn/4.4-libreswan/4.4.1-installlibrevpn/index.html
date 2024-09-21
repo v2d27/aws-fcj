@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Install LibreSwan :: AWS Site-to-Site VPN</title>
 
@@ -943,7 +943,7 @@
 <pre tabindex="0"><code>sudo apt update -y &amp;&amp; sudo apt install libreswan net-tools -y
 </code></pre><p>Checking the result of installation:</p>
 <pre tabindex="0"><code>ss -v &amp;&amp; ipsec --help
-</code></pre><p><img alt="lb" src="/images/4.sitetositevpn/l-01.png"></p>
+</code></pre><p><img alt="lb" src="{{ .Site.BaseURL }}images/4.sitetositevpn/l-01.png"></p>
 
 
 

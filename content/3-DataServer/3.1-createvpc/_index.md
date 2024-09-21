@@ -19,10 +19,10 @@ pre : " <b> 3.1 </b> "
    + In the **IPv4 CIDR** field, enter: **`192.168.0.0/16`**.
    + Click **Create VPC**.
 
-![vpc](/images/3.dataserver/vpc-01.png)
+![vpc]({{ .Site.BaseURL }}images/3.dataserver/vpc-01.png)
 
 
 3. If you create successfully, the state of VPC will switch to **Available**
 
-![vpc](/images/3.dataserver/vpc-02.png)
+![vpc]({{ .Site.BaseURL }}images/3.dataserver/vpc-02.png)
 

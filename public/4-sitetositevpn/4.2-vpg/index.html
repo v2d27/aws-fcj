@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Virtual private gateways :: AWS Site-to-Site VPN</title>
 
@@ -949,7 +949,7 @@
 <li>Choose <strong>Virtual private gateways</strong></li>
 <li>Click at <strong>Create virtual private gateway</strong> button</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpg-01.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpg-01.png"></p>
 <ol start="2">
 <li>At the <strong>Create virtual private gateway</strong> page.</li>
 </ol>
@@ -957,7 +957,7 @@
 <li>In the <strong>Name tag</strong> field, enter the VPG name <strong><code>Cloud-VPN-GW</code></strong></li>
 <li>Click <strong>Create virtual gateway</strong>.</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpg-02.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpg-02.png"></p>
 <ol start="3">
 <li>Attach to <strong><code>Cloud Server</code></strong> VPC</li>
 </ol>
@@ -965,11 +965,11 @@
 <li>In the <a href="https://console.aws.amazon.com/vpcconsole/home#VpnGateways:">Virtual private gateways</a>, check <strong>Cloud-VPN-GW</strong></li>
 <li>Click <strong>Actions</strong>, choose <strong>Attach to VPC</strong>.</li>
 </ul>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpg-03.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpg-03.png"></p>
 <p>Choose <strong>Cloud Server</strong> at dropdown list and click <strong>Attach to VPC</strong>.</p>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpg-04.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpg-04.png"></p>
 <p>We are successfull at creating VPG for <strong>Cloud Server</strong> VPC.</p>
-<p><img alt="vpg" src="/images/4.sitetositevpn/vpg-05.png"></p>
+<p><img alt="vpg" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpg-05.png"></p>
 
 
 

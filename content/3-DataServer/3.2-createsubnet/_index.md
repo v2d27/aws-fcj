@@ -11,7 +11,7 @@ pre : " <b> 3.2 </b> "
     + Click **Subnets**.
     + Click **Create subnet**.
 
-![sn](/images/2.cloudserver/sn-01.png)
+![sn]({{ .Site.BaseURL }}images/2.cloudserver/sn-01.png)
 
 2. At the **Create subnet** page.
     + In the **VPC ID** section, click **Data Server**.
@@ -19,8 +19,8 @@ pre : " <b> 3.2 </b> "
     + In the **Availability Zone** section, select the first Availability zone.
     + In the field **IPv4 CIRD block** enter **`192.168.1.0/24`**.
 
-![sn](/images/3.dataserver/sn-01.png)
-![sn](/images/3.dataserver/sn-02.png)
+![sn]({{ .Site.BaseURL }}images/3.dataserver/sn-01.png)
+![sn]({{ .Site.BaseURL }}images/3.dataserver/sn-02.png)
 
 3. Scroll to the bottom of the page, click **Create subnet**. 
 
@@ -28,10 +28,10 @@ pre : " <b> 3.2 </b> "
     + Click **Actions**.
     + Click **Edit subnet settings**.
 
-![sn](/images/3.dataserver/sn-03.png)
+![sn]({{ .Site.BaseURL }}images/3.dataserver/sn-03.png)
 
 5. Enable auto-assign public IPv4 address
     + Click **Enable auto-assign public IPv4 address**.
     + Click **Save**.
 
-![sn](/images/3.dataserver/sn-04.png)
+![sn]({{ .Site.BaseURL }}images/3.dataserver/sn-04.png)

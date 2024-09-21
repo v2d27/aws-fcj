@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Setup VPN Connection :: AWS Site-to-Site VPN</title>
 
@@ -949,9 +949,9 @@
 	<h4 id="1-getting-vpn-configuration">1 Getting VPN configuration</h4>
 <p>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#VpnConnections:">Site-to-Site VPN connections</a>.</p>
 <p>Choose <strong>Cloud-and-Data-VPN-Connection</strong> and click <strong>Download configuration</strong> button.</p>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-10.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-10.png"></p>
 <p>Select <strong>Openswan</strong> and <strong>Download</strong> your file in your local computer.</p>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-11.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-11.png"></p>
 <p>Our content of VPN configuration like that:</p>
 <pre tabindex="0"><code>Amazon Web Services
 Virtual Private Cloud
@@ -1093,7 +1093,7 @@ sysctl -p # applying new change
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy and Paste Tunnel1: 98.81.55.104 44.207.138.55: PSK &#34;PMOWMNcpovHy1nYApcENvsvkzTyL0Ux1&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy and Paste Tunnel2: 98.81.55.104 52.22.180.202: PSK &#34;Gku9_qMyjMnwX9yaEeBVJjMrdndG.Gy0&#34;</span>
 </span></span></code></pre></div><p>The result of adding secrets for tunnels:
-<img alt="vpn" src="/images/4.sitetositevpn/vpn-12.png"></p>
+<img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-12.png"></p>
 <p>Finally, we will apply and run ipsec to make the VPN connection:</p>
 <pre tabindex="0"><code>sudo netplan apply
 sudo systemctl enable ipsec # allow start-up with system
@@ -1106,32 +1106,32 @@ sudo systemctl status ipsec # checking status
 <pre tabindex="0"><code>sudo ipsec status
 </code></pre><p>You can see the line: <strong>Total IPsec connections: loaded 2, active 1</strong>. It mean that 02 configurations of the tunnel is loaded and 01 tunnel is running.</p>
 <p><em><strong>In AWS VPN, typically one tunnel is active while the other remains passive as a failover. The passive tunnel becomes active only if the primary tunnel goes down. AWS&rsquo;s default setup is usually an active-passive model for failover purposes.</strong></em></p>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-13.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-13.png"></p>
 <ol start="2">
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#VpnConnections:">Site-to-site VPN connections</a> and check the state of VPN connection is <strong>Up</strong> now.</li>
 </ol>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-09.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-09.png"></p>
 <ol start="3">
 <li>Ping to private CIDR of AWS VPC: <a href="/2-cloudserver/2.7-createec2/#private-ip-ec2-cloud-address">Your EC2-Cloud Private IP</a></li>
 </ol>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-14.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-14.png"></p>
 <ol start="4">
 <li>SSH to <strong>EC2-Cloud</strong>:</li>
 </ol>
 <p>First, we have to copy <strong>aws_key.pem</strong> to inside <strong>Data Customer Gateway</strong> (ubuntu server). Choose <strong>SSH browser</strong> in left panel.</p>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-15.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-15.png"></p>
 <p>Choose path <strong>/home/ubuntu</strong> or any directory. Select <strong>aws_key.pem</strong> file to import.</p>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-16.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-16.png"></p>
 <p>Checking <strong>aws_key.pem</strong> permission</p>
 <pre tabindex="0"><code>ls -lh
-</code></pre><p><img alt="vpn" src="/images/4.sitetositevpn/vpn-17.png"></p>
+</code></pre><p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-17.png"></p>
 <p>Change permission <strong>aws_key.pem</strong> to read-only and SSH to EC2-Cloud server:</p>
 <pre tabindex="0"><code>chmod 400 aws_key.pem
 ssh -i aws_key.pem ubuntu@10.10.2.162
-</code></pre><p><img alt="vpn" src="/images/4.sitetositevpn/vpn-18.png"></p>
+</code></pre><p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-18.png"></p>
 <p>As you can see, we&rsquo;ve successfully established an SSH connection through a VPN tunnel, ensuring that our private server is securely controlled. No one but you can access your AWS server. For even greater security, you can specify exactly which IP addresses or smaller subnets are allowed to connect, rather than permitting an entire subnet.</p>
 <p>Testing connection through <strong>NAT gateway</strong>, and getting current ip through internet: <a href="https://console.aws.amazon.com/vpcconsole/home#NatGateways:">Get your NAT gateway IP</a></p>
-<p><img alt="vpn" src="/images/4.sitetositevpn/vpn-19.png"></p>
+<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-19.png"></p>
 <p>Some commnands you may need to debug in ipsec:</p>
 <pre tabindex="0"><code># manual load Tunnel1 configuration
 ipsec auto --add Tunnel1 

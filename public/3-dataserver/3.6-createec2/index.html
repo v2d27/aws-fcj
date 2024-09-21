@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Create EC2 Customer Gateway :: AWS Site-to-Site VPN</title>
 
@@ -941,7 +941,7 @@
 
 
 	<p>Switch to <strong>EC2 dashboard</strong>. Enter <code>EC2</code> in searchbox, and select it.</p>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-01.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-01.png"></p>
 <ol>
 <li>In <strong>EC2 dashboard</strong></li>
 </ol>
@@ -949,7 +949,7 @@
 <li>Click <strong>Instances</strong>.</li>
 <li>Click <strong>Launch instances</strong>.</li>
 </ul>
-<p><img alt="ec2" src="/images/2.cloudserver/ec-02.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/2.cloudserver/ec-02.png"></p>
 <ol start="2">
 <li>In the <strong>Name and tags</strong> field.</li>
 </ol>
@@ -962,7 +962,7 @@
 <ul>
 <li>Choose <strong>Ubuntu</strong> image with architecture <strong>64-bit (x86)</strong>.</li>
 </ul>
-<p><img alt="ec2" src="/images/3.dataserver/ec-01.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/3.dataserver/ec-01.png"></p>
 <ol start="4">
 <li>In the <strong>Instance Type</strong> field.</li>
 </ol>
@@ -970,7 +970,7 @@
 <li>Click on Instance type <strong>t2.micro</strong>.</li>
 <li>Select key pair <strong>aws_lab</strong>, this key is created in before step <a href="/2-cloudserver/2.7-createec2/">Create EC2-Cloud</a>.</li>
 </ul>
-<p><img alt="ec2" src="/images/3.dataserver/ec-02.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/3.dataserver/ec-02.png"></p>
 <ol start="5">
 <li>In the <strong>Network settings</strong> field, click on <strong>Edit</strong> button.</li>
 </ol>
@@ -982,9 +982,9 @@
 <li>In the <strong>Common security section</strong>, select security group <strong>Data-SG-Public</strong>.</li>
 <li>Click <strong>Launch instance</strong> to complete.</li>
 </ul>
-<p><img alt="ec2" src="/images/3.dataserver/ec-03.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/3.dataserver/ec-03.png"></p>
 <p>Please wait a few minutes, EC2 instance needs time to start.</p>
-<p><img alt="ec2" src="/images/3.dataserver/ec-04.png"></p>
+<p><img alt="ec2" src="{{ .Site.BaseURL }}images/3.dataserver/ec-04.png"></p>
 <h5 id="public-customer-gateway-ip">Public Customer Gateway IP</h5>
 
 <div class="notices note" ><p>We need this public IP <code>98.81.55.104</code> to create <strong>Customer Gateway</strong> in the <strong>Site-to-Site VPN</strong> step.</p>
@@ -1001,7 +1001,7 @@
 <ol>
 <li>Open <strong>MobaXterm</strong> program, and click on <strong>Session</strong> menu.</li>
 </ol>
-<p><img alt="mb" src="/images/3.dataserver/mb-01.png"></p>
+<p><img alt="mb" src="{{ .Site.BaseURL }}images/3.dataserver/mb-01.png"></p>
 <ol start="2">
 <li>Choose <strong>SSH</strong> and provide some information of our server to connect:
 <ul>
@@ -1012,11 +1012,11 @@
 </ul>
 </li>
 </ol>
-<p><img alt="mb" src="/images/3.dataserver/mb-02.png"></p>
+<p><img alt="mb" src="{{ .Site.BaseURL }}images/3.dataserver/mb-02.png"></p>
 <ol start="3">
 <li>We are done at connecting to <strong>EC2-Customer-Gateway</strong>. Please keep this connection for future using.</li>
 </ol>
-<p><img alt="mb" src="/images/3.dataserver/mb-03.png"></p>
+<p><img alt="mb" src="{{ .Site.BaseURL }}images/3.dataserver/mb-03.png"></p>
 
 
 

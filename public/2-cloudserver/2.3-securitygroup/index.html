@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Create Security Group :: AWS Site-to-Site VPN</title>
 
@@ -967,7 +967,7 @@
 </ul>
 </li>
 </ol>
-<p><img alt="SG" src="/images/2.cloudserver/sg-01.png"></p>
+<p><img alt="SG" src="{{ .Site.BaseURL }}images/2.cloudserver/sg-01.png"></p>
 <ol start="2">
 <li>
 <p>In the <strong>Security group name</strong> section, enter <strong><code>Cloud-SG-Public</code></strong>.</p>
@@ -986,9 +986,9 @@
 <p>And we keep <strong>Outbound rules</strong> as the default.</p>
 </li>
 </ol>
-<p><img alt="SG" src="/images/2.cloudserver/sg-02.png"></p>
+<p><img alt="SG" src="{{ .Site.BaseURL }}images/2.cloudserver/sg-02.png"></p>
 <p>Scroll down at the bottom of page and click at <strong>Create security group</strong>. The result will show as below:</p>
-<p><img alt="SG" src="/images/2.cloudserver/sg-03.png"></p>
+<p><img alt="SG" src="{{ .Site.BaseURL }}images/2.cloudserver/sg-03.png"></p>
 <h4 id="ii-create-security-group-for-private-subnet">II. Create security group for private subnet</h4>
 <p>After successfully creating a security group for the public subnet, we continue to create security group for instance located in private subnet.</p>
 <p>Inbound rules:</p>
@@ -1025,7 +1025,7 @@
 </ul>
 </li>
 </ol>
-<p><img alt="SG" src="/images/2.cloudserver/sg-04.png"></p>
+<p><img alt="SG" src="{{ .Site.BaseURL }}images/2.cloudserver/sg-04.png"></p>
 <ol start="3">
 <li>
 <p>Config <strong>Inbound rules</strong></p>
@@ -1042,9 +1042,9 @@
 <p>And we keep <strong>Outbound rules</strong> as the default.</p>
 </li>
 </ol>
-<p><img alt="SG" src="/images/2.cloudserver/sg-04.png"></p>
+<p><img alt="SG" src="{{ .Site.BaseURL }}images/2.cloudserver/sg-04.png"></p>
 <p>Scroll down at the bottom of page and click at <strong>Create security group</strong>. The result will be shown as below:</p>
-<p><img alt="SG" src="/images/2.cloudserver/sg-05.png"></p>
+<p><img alt="SG" src="{{ .Site.BaseURL }}images/2.cloudserver/sg-05.png"></p>
 <p>So we have finished creating the necessary security groups for the EC2 instances.</p>
 
 

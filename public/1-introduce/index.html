@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>Introduction :: AWS Site-to-Site VPN</title>
 
@@ -944,7 +944,7 @@ Your IP address contains information about your location and browsing activity. 
 <p><strong>3. Security</strong><br>
 A VPN service uses cryptography to protect your internet connection from unauthorized access. It can also act as a shut-down mechanism, terminating pre-selected programs in case of suspicious internet activity. This decreases the likelihood of data being compromised. These features allow companies to give remote access to authorized users over their business networks.</p>
 <h4 id="how-many-types-of-vpn">How many types of VPN?</h4>
-<p><img alt="intro" src="/images/1.introduce/intro-01.png">
+<p><img alt="intro" src="{{ .Site.BaseURL }}images/1.introduce/intro-01.png">
 The four types of VPN are:</p>
 <p><strong>1. Personal VPN</strong>: enable individuals to establish secure and private connections to the open Internet.</p>
 <p><strong>2. Remote access VPN</strong>: provide remote access for the individual computers to a private network.</p>
@@ -954,7 +954,7 @@ The four types of VPN are:</p>
 <p>They are incredibly useful in large-scale business environments to ensure secure communication and sharing of information and resources between departments all over the world. These VPNs provide confidentiality by creating an encrypted tunnel and encrypting data to protect them from unauthorized access.</p>
 <h4 id="site-to-site-vpn-on-aws">Site-to-site VPN on AWS</h4>
 <p>In this lab, we will explore Site-to-Site VPN, a service provided by AWS. To estabish Site-to-Site VPN connection, it works base on two dependencies: <strong>Customer gateways</strong> and <strong>Virtual private gateways</strong>.
-<img alt="intro" src="/images/1.introduce/intro-02.png"></p>
+<img alt="intro" src="{{ .Site.BaseURL }}images/1.introduce/intro-02.png"></p>
 <ul>
 <li><strong>Customer gateways (CGW)</strong>: The CGW serves as the customer’s endpoint for the VPN connection, representing the on-premises side that connects to AWS.
 Typically, the CGW is a physical device (such as a router or firewall) or a software application situated within the on-premises network infrastructure.</li>
@@ -967,7 +967,7 @@ Typically, the CGW is a physical device (such as a router or firewall) or a soft
 <p>For more infomation and to understand how AWS caculates, please visit <a href="https://aws.amazon.com/vpn/pricing/">AWS Site-to-Site Pricing</a> page.</p>
 <h4 id="hands-on-lab">Hands-on lab</h4>
 <p>We will establish AWS services follow by each region of the overall diagram below:
-<img alt="intro" src="/images/1.introduce/intro-03.png"></p>
+<img alt="intro" src="{{ .Site.BaseURL }}images/1.introduce/intro-03.png"></p>
 <h4 id="table-of-contents">Table of Contents</h4>
 <ol>
 <li><a href="content%5C1-Introduce">Introduce</a></li>

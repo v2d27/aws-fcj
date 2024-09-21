@@ -7,7 +7,7 @@
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
 
     <title>CloudServer Configuration :: AWS Site-to-Site VPN</title>
 
@@ -938,7 +938,7 @@
 <p>In this step, we will need to create a VPC with one public and one private subnets. Then create an EC2 Instance Ubuntu located in the private subnet, a NAT gateway located in the public subnet
 and creating Route Table for VPC.</p>
 <p>The architecture overview after we complete this step will be as follows:</p>
-<p><img alt="cloud" src="/images/2.cloudserver/cloud-01.png"></p>
+<p><img alt="cloud" src="{{ .Site.BaseURL }}images/2.cloudserver/cloud-01.png"></p>
 <h4 id="table-of-contents">Table of Contents</h4>
 <ol>
 <li><a href="/2-cloudserver/2.1-createvpc/">Create VPC</a></li>

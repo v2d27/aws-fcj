@@ -31,7 +31,7 @@ git clone https://github.com/matcornic/hugo-theme-learn.git
 
 Check that your Hugo version is minimum `0.25` with `hugo version`.
 
-![Overview](https://github.com/matcornic/hugo-theme-learn/raw/master/images/tn.png)
+![Overview](https://github.com/matcornic/hugo-theme-learn/raw/master{{ .Site.BaseURL }}images/tn.png)
 
 ## Usage
 

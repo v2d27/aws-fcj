@@ -12,7 +12,7 @@ and creating Route Table for VPC.
 
 The architecture overview after we complete this step will be as follows:
 
-![cloud](/images/2.cloudserver/cloud-01.png)
+![cloud]({{ .Site.BaseURL }}images/2.cloudserver/cloud-01.png)
 
 #### Table of Contents
 1. [Create VPC](/2-CloudServer/2.1-createvpc)

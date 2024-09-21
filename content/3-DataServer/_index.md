@@ -8,7 +8,7 @@ pre : " <b> 3. </b> "
 
 We create Data Server as a **Customer Gateway** on AWS EC2 in this lab. You can use various methods to connect to the AWS VPN, such as simulating on VMware, EVE-NG,... or using physical routing devices that support VPNs.
 
-![intro]({{ .Site.BaseURL }}images/3.dataserver/dataserver.png)
+![intro](/aws-fcj/images/3.dataserver/dataserver.png)
 
 #### Table of Contents
 1. [Create VPC](/3-DataServer/3.1-createvpc)

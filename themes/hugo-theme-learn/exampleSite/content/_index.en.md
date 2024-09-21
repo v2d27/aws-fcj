@@ -24,7 +24,7 @@ This theme is a partial porting of the [Learn theme](http://learn.getgrav.org/) 
 * [Customizable look and feel and themes variants]({{%relref "basics/style-customization/_index.md"%}})
 * [Buttons]({{%relref "shortcodes/button.en.md" %}}), [Tip/Note/Info/Warning boxes]({{%relref "shortcodes/notice.en.md" %}}), [Expand]({{%relref "shortcodes/expand.en.md" %}})
 
-![Screenshot](https://github.com/matcornic/hugo-theme-learn/raw/master{{ .Site.BaseURL }}images/screenshot.png?width=40pc&classes=shadow)
+![Screenshot](https://github.com/matcornic/hugo-theme-learn/raw/master/aws-fcj/images/screenshot.png?width=40pc&classes=shadow)
 
 ## Contribute to this documentation
 Feel free to update this content, just click the **Edit this page** link displayed on top right of each page, and pullrequest it

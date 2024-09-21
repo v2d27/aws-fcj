@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Create EC2 Server on AWS Site-to-Site VPN</title>
-    <link>/2-cloudserver/2.7-createec2/</link>
+    <link>http://localhost:1313/aws-fcj/2-cloudserver/2.7-createec2/</link>
     <description>Recent content in Create EC2 Server on AWS Site-to-Site VPN</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/2-cloudserver/2.7-createec2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/aws-fcj/2-cloudserver/2.7-createec2/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

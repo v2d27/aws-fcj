@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" class="js csstransforms3d">
-  <head>
+  <head><script src="/aws-fcj/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=aws-fcj/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.134.2">
     <meta name="description" content="AWS Site-to-Site VPN">
 <meta name="author" content="ducduc08@gmail.com">
 
-    <link rel="icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/png">
+    <link rel="icon" href="/aws-fcj/images/favicon.png" type="image/png">
 
     <title>Setup VPN Connection :: AWS Site-to-Site VPN</title>
 
     
-    <link href="/css/nucleus.css?1726920223" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1726920223" rel="stylesheet">
-    <link href="/css/hybrid.css?1726920223" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1726920223" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1726920223" rel="stylesheet">
-    <link href="/css/auto-complete.css?1726920223" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1726920223" rel="stylesheet">
-    <link href="/css/theme.css?1726920223" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1726920223" rel="stylesheet">
+    <link href="/aws-fcj/css/nucleus.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/fontawesome-all.min.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/hybrid.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/featherlight.min.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/perfect-scrollbar.min.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/auto-complete.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/atom-one-dark-reasonable.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/theme.css?1726935663" rel="stylesheet">
+    <link href="/aws-fcj/css/hugo-theme.css?1726935663" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1726920223" rel="stylesheet">
+    <link href="/aws-fcj/css/theme-workshop.css?1726935663" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1726920223"></script>
+    <script src="/aws-fcj/js/jquery-3.3.1.min.js?1726935663"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/">
+  <body class="" data-url="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1726920223"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1726920223"></script>
+<script type="text/javascript" src="/aws-fcj/js/lunr.min.js?1726935663"></script>
+<script type="text/javascript" src="/aws-fcj/js/auto-complete.js?1726935663"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/";
+        var baseurl = "http:\/\/localhost:1313\/aws-fcj\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1726920223"></script>
+<script type="text/javascript" src="/aws-fcj/js/search.js?1726935663"></script>
 
     
   </div>
@@ -82,12 +82,12 @@
  
   
     
-    <li data-nav-id="/1-introduce/" title="Introduction" class="dd-item 
+    <li data-nav-id="/aws-fcj/1-introduce/" title="Introduction" class="dd-item 
         
         
         
         ">
-      <a href="/1-introduce/">
+      <a href="/aws-fcj/1-introduce/">
            <b> 1. </b> Introduction
           
             <i class="fas fa-check read-icon"></i>
@@ -108,12 +108,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/" title="CloudServer Configuration" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/" title="CloudServer Configuration" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/">
+      <a href="/aws-fcj/2-cloudserver/">
            <b> 2. </b> CloudServer Configuration
           
             <i class="fas fa-check read-icon"></i>
@@ -139,12 +139,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.1-createvpc/" title="Create VPC" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.1-createvpc/" title="Create VPC" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.1-createvpc/">
+      <a href="/aws-fcj/2-cloudserver/2.1-createvpc/">
            <b> 2.1 </b> Create VPC
           
             <i class="fas fa-check read-icon"></i>
@@ -167,12 +167,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.2-createsubnet/" title="Create Subnet" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.2-createsubnet/" title="Create Subnet" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.2-createsubnet/">
+      <a href="/aws-fcj/2-cloudserver/2.2-createsubnet/">
            <b> 2.2 </b> Create Subnet
           
             <i class="fas fa-check read-icon"></i>
@@ -195,12 +195,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.3-securitygroup/" title="Create Security Group" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.3-securitygroup/" title="Create Security Group" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.3-securitygroup/">
+      <a href="/aws-fcj/2-cloudserver/2.3-securitygroup/">
            <b> 2.3 </b> Create Security Group
           
             <i class="fas fa-check read-icon"></i>
@@ -223,12 +223,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.4-createigw/" title="Create Internet Gateway" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.4-createigw/" title="Create Internet Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.4-createigw/">
+      <a href="/aws-fcj/2-cloudserver/2.4-createigw/">
            <b> 2.4 </b> Create Internet Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -251,12 +251,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.5-createnatgw/" title="Create NAT Gateway" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.5-createnatgw/" title="Create NAT Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.5-createnatgw/">
+      <a href="/aws-fcj/2-cloudserver/2.5-createnatgw/">
            <b> 2.5 </b> Create NAT Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -279,12 +279,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.6-routingtable/" title="Create Routing Table" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.6-routingtable/" title="Create Routing Table" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.6-routingtable/">
+      <a href="/aws-fcj/2-cloudserver/2.6-routingtable/">
            <b> 2.6 </b> Create Routing Table
           
             <i class="fas fa-check read-icon"></i>
@@ -307,12 +307,12 @@
  
   
     
-    <li data-nav-id="/2-cloudserver/2.7-createec2/" title="Create EC2 Server" class="dd-item 
+    <li data-nav-id="/aws-fcj/2-cloudserver/2.7-createec2/" title="Create EC2 Server" class="dd-item 
         
         
         
         ">
-      <a href="/2-cloudserver/2.7-createec2/">
+      <a href="/aws-fcj/2-cloudserver/2.7-createec2/">
            <b> 2.7 </b> Create EC2 Server
           
             <i class="fas fa-check read-icon"></i>
@@ -342,12 +342,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/" title="DataServer Configuration" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/" title="DataServer Configuration" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/">
+      <a href="/aws-fcj/3-dataserver/">
            <b> 3. </b> DataServer Configuration
           
             <i class="fas fa-check read-icon"></i>
@@ -373,12 +373,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/3.1-createvpc/" title="Create VPC" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/3.1-createvpc/" title="Create VPC" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/3.1-createvpc/">
+      <a href="/aws-fcj/3-dataserver/3.1-createvpc/">
            <b> 3.1 </b> Create VPC
           
             <i class="fas fa-check read-icon"></i>
@@ -401,12 +401,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/3.2-createsubnet/" title="Create Subnet" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/3.2-createsubnet/" title="Create Subnet" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/3.2-createsubnet/">
+      <a href="/aws-fcj/3-dataserver/3.2-createsubnet/">
            <b> 3.2 </b> Create Subnet
           
             <i class="fas fa-check read-icon"></i>
@@ -429,12 +429,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/3.3-securitygroup/" title="Create Security Group" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/3.3-securitygroup/" title="Create Security Group" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/3.3-securitygroup/">
+      <a href="/aws-fcj/3-dataserver/3.3-securitygroup/">
            <b> 3.3 </b> Create Security Group
           
             <i class="fas fa-check read-icon"></i>
@@ -457,12 +457,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/3.4-createigw/" title="Create Internet Gateway" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/3.4-createigw/" title="Create Internet Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/3.4-createigw/">
+      <a href="/aws-fcj/3-dataserver/3.4-createigw/">
            <b> 3.4 </b> Create Internet Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -485,12 +485,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/3.5-routingtable/" title="Create Routing Table" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/3.5-routingtable/" title="Create Routing Table" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/3.5-routingtable/">
+      <a href="/aws-fcj/3-dataserver/3.5-routingtable/">
            <b> 3.5 </b> Create Routing Table
           
             <i class="fas fa-check read-icon"></i>
@@ -513,12 +513,12 @@
  
   
     
-    <li data-nav-id="/3-dataserver/3.6-createec2/" title="Create EC2 Customer Gateway" class="dd-item 
+    <li data-nav-id="/aws-fcj/3-dataserver/3.6-createec2/" title="Create EC2 Customer Gateway" class="dd-item 
         
         
         
         ">
-      <a href="/3-dataserver/3.6-createec2/">
+      <a href="/aws-fcj/3-dataserver/3.6-createec2/">
            <b> 3.6 </b> Create EC2 Customer Gateway
           
             <i class="fas fa-check read-icon"></i>
@@ -548,12 +548,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/" title="Site-to-Site VPN" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/" title="Site-to-Site VPN" class="dd-item 
         parent
         
         
         ">
-      <a href="/4-sitetositevpn/">
+      <a href="/aws-fcj/4-sitetositevpn/">
            <b> 4. </b> Site-to-Site VPN
           
             <i class="fas fa-check read-icon"></i>
@@ -579,12 +579,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/4.1-cgw/" title="Customer gateways" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/4.1-cgw/" title="Customer gateways" class="dd-item 
         
         
         
         ">
-      <a href="/4-sitetositevpn/4.1-cgw/">
+      <a href="/aws-fcj/4-sitetositevpn/4.1-cgw/">
            <b> 4.1 </b> Customer gateways
           
             <i class="fas fa-check read-icon"></i>
@@ -607,12 +607,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/4.2-vpg/" title="Virtual private gateways" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/4.2-vpg/" title="Virtual private gateways" class="dd-item 
         
         
         
         ">
-      <a href="/4-sitetositevpn/4.2-vpg/">
+      <a href="/aws-fcj/4-sitetositevpn/4.2-vpg/">
            <b> 4.2 </b> Virtual private gateways
           
             <i class="fas fa-check read-icon"></i>
@@ -635,12 +635,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/4.3-createvpnconnection/" title="Create VPN connection" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/4.3-createvpnconnection/" title="Create VPN connection" class="dd-item 
         
         
         
         ">
-      <a href="/4-sitetositevpn/4.3-createvpnconnection/">
+      <a href="/aws-fcj/4-sitetositevpn/4.3-createvpnconnection/">
            <b> 4.3 </b> Create VPN connection
           
             <i class="fas fa-check read-icon"></i>
@@ -663,12 +663,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/4.4-libreswan/" title="LibreSwan" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/4.4-libreswan/" title="LibreSwan" class="dd-item 
         parent
         
         
         ">
-      <a href="/4-sitetositevpn/4.4-libreswan/">
+      <a href="/aws-fcj/4-sitetositevpn/4.4-libreswan/">
            <b> 4.4 </b> LibreSwan
           
             <i class="fas fa-check read-icon"></i>
@@ -694,12 +694,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/" title="Install LibreSwan" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/" title="Install LibreSwan" class="dd-item 
         
         
         
         ">
-      <a href="/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/">
+      <a href="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/">
            <b> 4.4.1 </b> Install LibreSwan
           
             <i class="fas fa-check read-icon"></i>
@@ -722,12 +722,12 @@
  
   
     
-    <li data-nav-id="/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/" title="Setup VPN Connection" class="dd-item 
+    <li data-nav-id="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/" title="Setup VPN Connection" class="dd-item 
         
         active
         
         ">
-      <a href="/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/">
+      <a href="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/">
            <b> 4.4.2 </b> Setup VPN Connection
           
             <i class="fas fa-check read-icon"></i>
@@ -766,12 +766,12 @@
  
   
     
-    <li data-nav-id="/5-cleanup/" title="Clean up resources" class="dd-item 
+    <li data-nav-id="/aws-fcj/5-cleanup/" title="Clean up resources" class="dd-item 
         
         
         
         ">
-      <a href="/5-cleanup/">
+      <a href="/aws-fcj/5-cleanup/">
            <b> 5. </b> Clean up resources
           
             <i class="fas fa-check read-icon"></i>
@@ -798,7 +798,7 @@
               </li>
           
               <li> 
-                  <a class="padding" href="https://github.com/v2d27/aws-fcj/tree/main/ws1/"><i class='fab fa-github'></i> Site-to-Site VPN workshop</a>
+                  <a class="padding" href="https://github.com/v2d27/aws-fcj/"><i class='fab fa-github'></i> Site-to-Site VPN workshop</a>
               </li>
           
         </ul>
@@ -864,9 +864,9 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://v2d27.github.io/aws-fcj/ws14-SitetoSiteVPN/4.4-LibreSwan/4.4.2-SetupVPNConnection/_index.md" target="blank">
+                    <a class="github-link" title='' href="https://v2d27.github.io/aws-fcj/4-SitetoSiteVPN/4.4-LibreSwan/4.4.2-SetupVPNConnection/_index.md" target="blank">
                       <i class="fas fa-code-branch"></i>
-                      <span id="top-github-link-text">Edit this page</span>
+                      <span id="top-github-link-text"></span>
                     </a>
                   </div>
                   
@@ -899,7 +899,7 @@
             
           
           
-            <a href='/'>Site-to-Site VPN</a> > <a href='/4-sitetositevpn/'>Site-to-Site VPN</a> > <a href='/4-sitetositevpn/4.4-libreswan/'>LibreSwan</a> > Setup VPN Connection
+            <a href='/aws-fcj/'>Site-to-Site VPN</a> > <a href='/aws-fcj/4-sitetositevpn/'>Site-to-Site VPN</a> > <a href='/aws-fcj/4-sitetositevpn/4.4-libreswan/'>LibreSwan</a> > Setup VPN Connection
           
         
           
@@ -949,9 +949,9 @@
 	<h4 id="1-getting-vpn-configuration">1 Getting VPN configuration</h4>
 <p>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#VpnConnections:">Site-to-Site VPN connections</a>.</p>
 <p>Choose <strong>Cloud-and-Data-VPN-Connection</strong> and click <strong>Download configuration</strong> button.</p>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-10.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-10.png"></p>
 <p>Select <strong>Openswan</strong> and <strong>Download</strong> your file in your local computer.</p>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-11.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-11.png"></p>
 <p>Our content of VPN configuration like that:</p>
 <pre tabindex="0"><code>Amazon Web Services
 Virtual Private Cloud
@@ -1009,8 +1009,8 @@ conn Tunnel2
 <li><code>auth=esp</code> # removing this line to avoid conflict from AWS</li>
 <li><code>phase2alg=aes128-sha1;modp1024</code> # change to <code>modp2048</code> =&gt; we use IKEv2</li>
 <li><code>ike=aes128-sha1;modp1024</code> # change to <code>modp2048</code> =&gt; we use IKEv2</li>
-<li><code>leftsubnet=&lt;LOCAL NETWORK&gt;</code> # CIDR on-premise <a href="/3-dataserver/3.6-createec2/#private-customer-gateway-ip">Your EC2-Customer-Gateway Private IP</a></li>
-<li><code>rightsubnet=&lt;REMOTE NETWORK&gt;</code> # CIDR aws server <a href="/2-cloudserver/2.7-createec2/#private-ip-ec2-cloud-address">Your EC2-Cloud Private IP</a></li>
+<li><code>leftsubnet=&lt;LOCAL NETWORK&gt;</code> # CIDR on-premise <a href="/aws-fcj/3-dataserver/3.6-createec2/#private-customer-gateway-ip">Your EC2-Customer-Gateway Private IP</a></li>
+<li><code>rightsubnet=&lt;REMOTE NETWORK&gt;</code> # CIDR aws server <a href="/aws-fcj/2-cloudserver/2.7-createec2/#private-ip-ec2-cloud-address">Your EC2-Cloud Private IP</a></li>
 </ol>
 <ul>
 <li><strong>#leftsubnet</strong> = is the local network behind your openswan server, and you will need to replace the <strong><code>&lt;LOCAL NETWORK&gt;</code></strong> below with this value (don&rsquo;t include the brackets). If you have multiple subnets, you can use <strong><code>0.0.0.0/0</code></strong> instead.</li>
@@ -1056,7 +1056,7 @@ conn Tunnel2
         dpdaction=restart_by_peer
 </code></pre><h4 id="2-apply-vpn-configuration">2. Apply VPN configuration</h4>
 <ol>
-<li>Go back to MobaXterm at <a href="/3-dataserver/3.6-createec2/#connect-to-ec2-customer-gateway">Connect to EC2 Customer Gateway</a> step and switching user <strong><code>root</code></strong> user by this command:</li>
+<li>Go back to MobaXterm at <a href="/aws-fcj/3-dataserver/3.6-createec2/#connect-to-ec2-customer-gateway">Connect to EC2 Customer Gateway</a> step and switching user <strong><code>root</code></strong> user by this command:</li>
 </ol>
 <pre tabindex="0"><code>sudo -i
 </code></pre><ol start="2">
@@ -1081,19 +1081,19 @@ sysctl -p # applying new change
 </code></pre><p>If you can not see <code>include /etc/ipsec.d/*.conf</code>, please run following command to add:</p>
 <pre tabindex="0"><code>echo &#34;include /etc/ipsec.d/*.conf&#34; &gt;&gt; /etc/ipsec.conf
 </code></pre><ol start="4">
-<li>Create a new file at <code>/etc/ipsec.d/aws.conf</code> and append the <a href="/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/#the-complete-configuration-is-shown-below">complete configuration</a> to the end in the file:</li>
+<li>Create a new file at <code>/etc/ipsec.d/aws.conf</code> and append the <a href="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/#the-complete-configuration-is-shown-below">complete configuration</a> to the end in the file:</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano /etc/ipsec.d/aws.conf <span style="color:#75715e"># create a new file</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># remember to copy Tunnel VPN configuration to this file =&gt; Press Ctrl+O and Enter to save</span>
 </span></span></code></pre></div><ol start="5">
-<li>Open your <a href="/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/#1-getting-vpn-configuration">VPN configuration file</a> and create a new file at <code>/etc/ipsec.d/aws.secrets</code> if it doesn&rsquo;t already exist, and append this line to the file (be mindful of the spacing!):</li>
+<li>Open your <a href="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/#1-getting-vpn-configuration">VPN configuration file</a> and create a new file at <code>/etc/ipsec.d/aws.secrets</code> if it doesn&rsquo;t already exist, and append this line to the file (be mindful of the spacing!):</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano /etc/ipsec.d/aws.secrets
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy and Paste Tunnel1: 98.81.55.104 44.207.138.55: PSK &#34;PMOWMNcpovHy1nYApcENvsvkzTyL0Ux1&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Copy and Paste Tunnel2: 98.81.55.104 52.22.180.202: PSK &#34;Gku9_qMyjMnwX9yaEeBVJjMrdndG.Gy0&#34;</span>
 </span></span></code></pre></div><p>The result of adding secrets for tunnels:
-<img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-12.png"></p>
+<img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-12.png"></p>
 <p>Finally, we will apply and run ipsec to make the VPN connection:</p>
 <pre tabindex="0"><code>sudo netplan apply
 sudo systemctl enable ipsec # allow start-up with system
@@ -1106,32 +1106,32 @@ sudo systemctl status ipsec # checking status
 <pre tabindex="0"><code>sudo ipsec status
 </code></pre><p>You can see the line: <strong>Total IPsec connections: loaded 2, active 1</strong>. It mean that 02 configurations of the tunnel is loaded and 01 tunnel is running.</p>
 <p><em><strong>In AWS VPN, typically one tunnel is active while the other remains passive as a failover. The passive tunnel becomes active only if the primary tunnel goes down. AWS&rsquo;s default setup is usually an active-passive model for failover purposes.</strong></em></p>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-13.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-13.png"></p>
 <ol start="2">
 <li>Go to <a href="https://console.aws.amazon.com/vpcconsole/home#VpnConnections:">Site-to-site VPN connections</a> and check the state of VPN connection is <strong>Up</strong> now.</li>
 </ol>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-09.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-09.png"></p>
 <ol start="3">
-<li>Ping to private CIDR of AWS VPC: <a href="/2-cloudserver/2.7-createec2/#private-ip-ec2-cloud-address">Your EC2-Cloud Private IP</a></li>
+<li>Ping to private CIDR of AWS VPC: <a href="/aws-fcj/2-cloudserver/2.7-createec2/#private-ip-ec2-cloud-address">Your EC2-Cloud Private IP</a></li>
 </ol>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-14.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-14.png"></p>
 <ol start="4">
 <li>SSH to <strong>EC2-Cloud</strong>:</li>
 </ol>
 <p>First, we have to copy <strong>aws_key.pem</strong> to inside <strong>Data Customer Gateway</strong> (ubuntu server). Choose <strong>SSH browser</strong> in left panel.</p>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-15.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-15.png"></p>
 <p>Choose path <strong>/home/ubuntu</strong> or any directory. Select <strong>aws_key.pem</strong> file to import.</p>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-16.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-16.png"></p>
 <p>Checking <strong>aws_key.pem</strong> permission</p>
 <pre tabindex="0"><code>ls -lh
-</code></pre><p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-17.png"></p>
+</code></pre><p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-17.png"></p>
 <p>Change permission <strong>aws_key.pem</strong> to read-only and SSH to EC2-Cloud server:</p>
 <pre tabindex="0"><code>chmod 400 aws_key.pem
 ssh -i aws_key.pem ubuntu@10.10.2.162
-</code></pre><p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-18.png"></p>
+</code></pre><p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-18.png"></p>
 <p>As you can see, we&rsquo;ve successfully established an SSH connection through a VPN tunnel, ensuring that our private server is securely controlled. No one but you can access your AWS server. For even greater security, you can specify exactly which IP addresses or smaller subnets are allowed to connect, rather than permitting an entire subnet.</p>
 <p>Testing connection through <strong>NAT gateway</strong>, and getting current ip through internet: <a href="https://console.aws.amazon.com/vpcconsole/home#NatGateways:">Get your NAT gateway IP</a></p>
-<p><img alt="vpn" src="{{ .Site.BaseURL }}images/4.sitetositevpn/vpn-19.png"></p>
+<p><img alt="vpn" src="/aws-fcj/images/4.sitetositevpn/vpn-19.png"></p>
 <p>Some commnands you may need to debug in ipsec:</p>
 <pre tabindex="0"><code># manual load Tunnel1 configuration
 ipsec auto --add Tunnel1 
@@ -1142,7 +1142,7 @@ ipsec auto --up Tunnel1
 # checking ipsec status
 ipsec status
 </code></pre><h4 id="congratulations-on-successfully-completing-the-lab-great-job-finishing-everything"><em>Congratulations on successfully completing the lab! Great job finishing everything.</em></h4>
-<h4 id="remember-to-clean-up5-cleanup-any-resources-to-avoid-unexpected-future-charges"><em>Remember to <strong><a href="/5-cleanup/">clean up</a></strong> any resources to avoid unexpected future charges.</em></h4>
+<h4 id="remember-to-clean-up5-cleanup-any-resources-to-avoid-unexpected-future-charges"><em>Remember to <strong><a href="/aws-fcj/5-cleanup/">clean up</a></strong> any resources to avoid unexpected future charges.</em></h4>
 
 
 
@@ -1594,10 +1594,10 @@ ipsec status
 	 
 	 
 		
-			<a class="nav nav-prev" href="/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/" title="Install LibreSwan"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/aws-fcj/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/" title="Install LibreSwan"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/5-cleanup/" title="Clean up resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/aws-fcj/5-cleanup/" title="Clean up resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1607,19 +1607,19 @@ ipsec status
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1726920223"></script>
-    <script src="/js/perfect-scrollbar.min.js?1726920223"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1726920223"></script>
-    <script src="/js/jquery.sticky.js?1726920223"></script>
-    <script src="/js/featherlight.min.js?1726920223"></script>
-    <script src="/js/highlight.pack.js?1726920223"></script>
+    <script src="/aws-fcj/js/clipboard.min.js?1726935663"></script>
+    <script src="/aws-fcj/js/perfect-scrollbar.min.js?1726935663"></script>
+    <script src="/aws-fcj/js/perfect-scrollbar.jquery.min.js?1726935663"></script>
+    <script src="/aws-fcj/js/jquery.sticky.js?1726935663"></script>
+    <script src="/aws-fcj/js/featherlight.min.js?1726935663"></script>
+    <script src="/aws-fcj/js/highlight.pack.js?1726935663"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1726920223"></script>
-    <script src="/js/learn.js?1726920223"></script>
-    <script src="/js/hugo-learn.js?1726920223"></script>
+    <script src="/aws-fcj/js/modernizr.custom-3.6.0.js?1726935663"></script>
+    <script src="/aws-fcj/js/learn.js?1726935663"></script>
+    <script src="/aws-fcj/js/hugo-learn.js?1726935663"></script>
 
-    <link href="/mermaid/mermaid.css?1726920223" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1726920223"></script>
+    <link href="/aws-fcj/mermaid/mermaid.css?1726935663" rel="stylesheet" />
+    <script src="/aws-fcj/mermaid/mermaid.js?1726935663"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -19,7 +19,7 @@ Inbound rules:
    + Click **Security Group**.
    + Click **Create security group**.
 
-![SG]({{ .Site.BaseURL }}images/2.cloudserver/sg-01.png)
+![SG](/aws-fcj/images/2.cloudserver/sg-01.png)
 
 2. In the **Security group name** section, enter **`Cloud-SG-Public`**.
    + In the **Description** section, enter **`Allow ping for public subnet`**.
@@ -33,11 +33,11 @@ Inbound rules:
 
    And we keep **Outbound rules** as the default.
 
-![SG]({{ .Site.BaseURL }}images/2.cloudserver/sg-02.png)
+![SG](/aws-fcj/images/2.cloudserver/sg-02.png)
 
    Scroll down at the bottom of page and click at **Create security group**. The result will show as below:
 
-![SG]({{ .Site.BaseURL }}images/2.cloudserver/sg-03.png)
+![SG](/aws-fcj/images/2.cloudserver/sg-03.png)
 
 
 
@@ -57,7 +57,7 @@ Inbound rules:
    + In the **Description** section, enter **`Allow ping, SSH for server in private subnet`**.
    + In the **VPC** section, select the **Cloud Server** VPC.
 
-![SG]({{ .Site.BaseURL }}images/2.cloudserver/sg-04.png)
+![SG](/aws-fcj/images/2.cloudserver/sg-04.png)
 
 
 3. Config **Inbound rules**
@@ -72,11 +72,11 @@ Inbound rules:
 
    And we keep **Outbound rules** as the default.
 
-![SG]({{ .Site.BaseURL }}images/2.cloudserver/sg-04.png)
+![SG](/aws-fcj/images/2.cloudserver/sg-04.png)
 
    Scroll down at the bottom of page and click at **Create security group**. The result will be shown as below:
 
-![SG]({{ .Site.BaseURL }}images/2.cloudserver/sg-05.png)
+![SG](/aws-fcj/images/2.cloudserver/sg-05.png)
 
 
 So we have finished creating the necessary security groups for the EC2 instances.

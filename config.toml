@@ -18,6 +18,7 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
+  hideEditLink = true
 
   
 [Languages]

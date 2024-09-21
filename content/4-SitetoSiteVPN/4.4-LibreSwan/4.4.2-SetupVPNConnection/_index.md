@@ -16,11 +16,11 @@ Go to [Site-to-Site VPN connections](https://console.aws.amazon.com/vpcconsole/h
 
 Choose **Cloud-and-Data-VPN-Connection** and click **Download configuration** button. 
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-10.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-10.png)
 
 Select **Openswan** and **Download** your file in your local computer.
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-11.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-11.png)
 
 Our content of VPN configuration like that: 
 ```
@@ -189,7 +189,7 @@ nano /etc/ipsec.d/aws.secrets
 # Copy and Paste Tunnel2: 98.81.55.104 52.22.180.202: PSK "Gku9_qMyjMnwX9yaEeBVJjMrdndG.Gy0"
 ```
 The result of adding secrets for tunnels:
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-12.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-12.png)
 
 
 Finally, we will apply and run ipsec to make the VPN connection:
@@ -215,25 +215,25 @@ You can see the line: **Total IPsec connections: loaded 2, active 1**. It mean t
 
 
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-13.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-13.png)
 
 2. Go to [Site-to-site VPN connections](https://console.aws.amazon.com/vpcconsole/home#VpnConnections:) and check the state of VPN connection is **Up** now.
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-09.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-09.png)
 
 3. Ping to private CIDR of AWS VPC: [Your EC2-Cloud Private IP](/2-CloudServer/2.7-createec2#private-ip-ec2-cloud-address)
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-14.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-14.png)
 
 4. SSH to **EC2-Cloud**:
 
 First, we have to copy **aws_key.pem** to inside **Data Customer Gateway** (ubuntu server). Choose **SSH browser** in left panel.
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-15.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-15.png)
 
 Choose path **/home/ubuntu** or any directory. Select **aws_key.pem** file to import.
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-16.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-16.png)
 
 Checking **aws_key.pem** permission
 
@@ -241,7 +241,7 @@ Checking **aws_key.pem** permission
 ls -lh
 ```
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-17.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-17.png)
 
 Change permission **aws_key.pem** to read-only and SSH to EC2-Cloud server:
 ```
@@ -249,14 +249,14 @@ chmod 400 aws_key.pem
 ssh -i aws_key.pem ubuntu@10.10.2.162
 ```
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-18.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-18.png)
 
 As you can see, we've successfully established an SSH connection through a VPN tunnel, ensuring that our private server is securely controlled. No one but you can access your AWS server. For even greater security, you can specify exactly which IP addresses or smaller subnets are allowed to connect, rather than permitting an entire subnet.
 
 
 Testing connection through **NAT gateway**, and getting current ip through internet: [Get your NAT gateway IP](https://console.aws.amazon.com/vpcconsole/home#NatGateways:)
 
-![vpn]({{ .Site.BaseURL }}images/4.sitetositevpn/vpn-19.png)
+![vpn](/aws-fcj/images/4.sitetositevpn/vpn-19.png)
 
 
 Some commnands you may need to debug in ipsec:

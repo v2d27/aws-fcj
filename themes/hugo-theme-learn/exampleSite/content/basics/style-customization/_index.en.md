@@ -33,12 +33,12 @@ The size of the logo will adapt automatically
 
 ## Change the favicon
 
-If your favicon is a png, just drop off your image in your local `static{{ .Site.BaseURL }}images/` folder and name it `favicon.png`
+If your favicon is a png, just drop off your image in your local `static/aws-fcj/images/` folder and name it `favicon.png`
 
 If you need to change this default behavior, create a new file in `layouts/partials/` named `favicon.html`. Then write something like this:
 
 ```html
-<link rel="shortcut icon" href="{{ .Site.BaseURL }}images/favicon.png" type="image/x-icon" />
+<link rel="shortcut icon" href="/aws-fcj/images/favicon.png" type="image/x-icon" />
 ```
 
 ## Change default colors {#theme-variant}
@@ -53,7 +53,7 @@ If you need to change this default behavior, create a new file in `layouts/parti
   themeVariant = "red"
 ```
 
-![Red variant](/en/basics/style-customization{{ .Site.BaseURL }}images/red-variant.png?width=60pc)
+![Red variant](/en/basics/style-customization/aws-fcj/images/red-variant.png?width=60pc)
 
 ### Blue variant
 
@@ -63,7 +63,7 @@ If you need to change this default behavior, create a new file in `layouts/parti
   themeVariant = "blue"
 ```
 
-![Blue variant](/en/basics/style-customization{{ .Site.BaseURL }}images/blue-variant.png?width=60pc)
+![Blue variant](/en/basics/style-customization/aws-fcj/images/blue-variant.png?width=60pc)
 
 ### Green variant
 
@@ -73,7 +73,7 @@ If you need to change this default behavior, create a new file in `layouts/parti
   themeVariant = "green"
 ```
 
-![Green variant](/en/basics/style-customization{{ .Site.BaseURL }}images/green-variant.png?width=60pc)
+![Green variant](/en/basics/style-customization/aws-fcj/images/green-variant.png?width=60pc)
 
 ### 'Yours‘ variant
 

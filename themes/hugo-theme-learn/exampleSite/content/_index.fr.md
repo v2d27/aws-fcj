@@ -24,7 +24,7 @@ Ce thème est un portage partiel du [thème Learn](http://learn.getgrav.org/) de
 * [Style configurable and variantes de couleurs]({{%relref "basics/style-customization/_index.md"%}})
 * [Boutons]({{%relref "shortcodes/button.fr.md" %}}), [Messages Astuce/Note/Info/Attention]({{%relref "shortcodes/notice.fr.md" %}}), [Expand]({{%relref "shortcodes/expand.fr.md" %}})
 
-![Screenshot](https://github.com/matcornic/hugo-theme-learn/raw/master{{ .Site.BaseURL }}images/screenshot.png?width=40pc&classes=shadow)
+![Screenshot](https://github.com/matcornic/hugo-theme-learn/raw/master/aws-fcj/images/screenshot.png?width=40pc&classes=shadow)
 
 ## Contribuer à cette documentation
 

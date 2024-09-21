@@ -1,6 +1,6 @@
-<div style="text-align: center;">
-    ![intro](/static/images/sssss.png)
-</div>
+
+| ![intro](/static/images/sssss.png)  |
+|:-------------------------------------:|
 
 
 # WorkShop 1 | AWS Site-to-Site VPN Connection

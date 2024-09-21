@@ -1,0 +1,190 @@
+[
+{
+	"uri": "/2-cloudserver/2.1-createvpc/",
+	"title": "Create VPC",
+	"tags": [],
+	"description": "",
+	"content": "Create VPC \u0026ldquo;Cloud Server\u0026rdquo; Go to VPC dashboard Click Your VPCs. Click Create VPC. At the Create VPC page. We will create VPC only: In the Name tag field, enter Cloud Server. In the IPv4 CIDR field, enter: 10.10.0.0/16. Click Create VPC. If you create successfully, the state of VPC will switch to Available "
+},
+{
+	"uri": "/3-dataserver/3.1-createvpc/",
+	"title": "Create VPC",
+	"tags": [],
+	"description": "",
+	"content": "Create VPC \u0026ldquo;Cloud Server\u0026rdquo; Go to VPC dashboard\nClick Your VPCs. Click Create VPC. You can find it in the previous step Create VPC in Cloud Server\nAt the Create VPC page. We will create VPC only:\nIn the Name tag field, enter Data Server. In the IPv4 CIDR field, enter: 192.168.0.0/16. Click Create VPC. If you create successfully, the state of VPC will switch to Available "
+},
+{
+	"uri": "/4-sitetositevpn/4.1-cgw/",
+	"title": "Customer gateways",
+	"tags": [],
+	"description": "",
+	"content": "Customer gateways Go to VPC dashboard Choose Customer gateways Click at Create customer gateway button At Create customer gateway panel: In Name tag field: Enter Data-CGW name. In IP Address field: Enter Your EC2 Customer Gateway. Scroll down and click on Create customer gateway The result of creation, the state should change to Available. "
+},
+{
+	"uri": "/4-sitetositevpn/4.4-libreswan/4.4.1-installlibrevpn/",
+	"title": "Install LibreSwan",
+	"tags": [],
+	"description": "",
+	"content": "A pre-built Libreswan package is available on the following OS distributions: RHEL, Fedora, CentOS, Ubuntu, Debian, Arch, Apline, OpenWrt and FreeBSD. On NetBSD the package sources are in wip/libreswan.\nWe install LibreSwan and Net-tools through Ubuntu package on EC2 Customer Gateway by the command below:\nsudo apt update -y \u0026amp;\u0026amp; sudo apt install libreswan net-tools -y Checking the result of installation:\nss -v \u0026amp;\u0026amp; ipsec --help "
+},
+{
+	"uri": "/1-introduce/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "A VPN (Virtual Private Network) creates a private network connection between devices through the internet. VPNs are used to safely and anonymously transmit data over public networks. They work by masking user IP addresses and encrypting data so it\u0026rsquo;s unreadable by anyone not authorized to receive it.\nWhat is a VPN used for? VPN services are mainly used to safely send data over the internet. The three main functions of VPNs are:\n1. Privacy\nWithout a virtual private network, your personal data like passwords, credit card information, and browsing history can be recorded and sold by third parties. VPNs use encryption to keep this confidential information private, especially when connecting over public wi-fi networks.\n2. Anonymity\nYour IP address contains information about your location and browsing activity. All websites on the Internet track this data using cookies and similar technology. They can identify you whenever you visit them. A VPN connection hides your IP address so that you remain anonymous on the Internet.\n3. Security\nA VPN service uses cryptography to protect your internet connection from unauthorized access. It can also act as a shut-down mechanism, terminating pre-selected programs in case of suspicious internet activity. This decreases the likelihood of data being compromised. These features allow companies to give remote access to authorized users over their business networks.\nHow many types of VPN? The four types of VPN are:\n1. Personal VPN: enable individuals to establish secure and private connections to the open Internet.\n2. Remote access VPN: provide remote access for the individual computers to a private network.\n3. Mobile VPN: allow you to connect to a local network from mobile devices, ensure the encrypted protection of data, and are useful in conditions of the absence consistent or stable internet connection.\n4. Site-to-site VPN: connect to networks and enable organizations to combine several networks from different locations into a single network (intranet).\nThese are own networks, for example, two offices of the same company, geographically remoted, or also networks of partner companies (extranet). The main goal is to provide access to resources for multiple users in various fixed locations.\nThey are incredibly useful in large-scale business environments to ensure secure communication and sharing of information and resources between departments all over the world. These VPNs provide confidentiality by creating an encrypted tunnel and encrypting data to protect them from unauthorized access.\nSite-to-site VPN on AWS In this lab, we will explore Site-to-Site VPN, a service provided by AWS. To estabish Site-to-Site VPN connection, it works base on two dependencies: Customer gateways and Virtual private gateways. Customer gateways (CGW): The CGW serves as the customer’s endpoint for the VPN connection, representing the on-premises side that connects to AWS. Typically, the CGW is a physical device (such as a router or firewall) or a software application situated within the on-premises network infrastructure. Virtual private gateway (VGW): The VGW is part of a VPC that provides edge routing for AWS managed VPN connections and AWS Direct Connect connections. You associate an AWS Direct Connect gateway with the virtual private gateway for the VPC. Site-to-Site VPN Connection Pricing on AWS AWS caculates Site-to-Site VPN connection following by: the number and the duration time of connection. This is applied for all customers, include free-tier:\n$0.05 per Site-to-Site VPN connection per hour\nData transfer-in through the connection is free, but data transfer-out is only free up to 100GB each month for you. Our purpose is only hands-on lab work, so you don\u0026rsquo;t need to worry much about additional costs.\nFor more infomation and to understand how AWS caculates, please visit AWS Site-to-Site Pricing page.\nHands-on lab We will establish AWS services follow by each region of the overall diagram below: Table of Contents Introduce CloudServer Configuration DataServer Configuration Site-to-Site VPN Clean up resources "
+},
+{
+	"uri": "/",
+	"title": "Site-to-Site VPN",
+	"tags": [],
+	"description": "",
+	"content": "AWS Site-to-Site VPN Connection Overall In this lab, we will make private connection from Database server to Cloud server through the internet enviroment, using Site-to-Site VPN on AWS service. And the server inside Cloud server can connect to Internet via NAT Gateway. Not only can you practice here, but also you can apply it in reality.\nWe will use LibreSwan to establish IPsec VPN connections for the Data Server as a Customer Gateway on AWS EC2 in this lab. You can use various methods to connect to the AWS VPN, such as simulating on VMware or using physical routing devices that support VPNs.\nTable of Contents Introduce CloudServer Configuration DataServer Configuration Site-to-Site VPN Clean up resources "
+},
+{
+	"uri": "/2-cloudserver/",
+	"title": "CloudServer Configuration",
+	"tags": [],
+	"description": "",
+	"content": "Setup server can connect to internet through NAT gateway In this step, we will need to create a VPC with one public and one private subnets. Then create an EC2 Instance Ubuntu located in the private subnet, a NAT gateway located in the public subnet and creating Route Table for VPC.\nThe architecture overview after we complete this step will be as follows:\nTable of Contents Create VPC Create Subnet Create Security Group Create Internet Gateway Create NAT Gateway Create Routing Table Create EC2 Server "
+},
+{
+	"uri": "/2-cloudserver/2.2-createsubnet/",
+	"title": "Create Subnet",
+	"tags": [],
+	"description": "",
+	"content": "I. Create Public Subnet for NAT Gateway Create Public Subnet Click Subnets. Click Create subnet. At the Create subnet page. In the VPC ID section, click Cloud Server. In the Subnet name field, enter Cloud-Subnet-Public. In the Availability Zone section, select the first Availability zone. In the field IPv4 CIRD block enter 10.10.1.0/24. Scroll to the bottom of the page, click Create subnet. Select Cloud-Subnet-Public checkbox and go to Edit subnet settings Click Actions. Click Edit subnet settings. Enable auto-assign public IPv4 address Click Enable auto-assign public IPv4 address. Click Save. II. Create Private Subnet for EC2 instance server Similiar to create public subnet, we click at Create subnet again to create private subnet:\nAt the Create subnet page. In the VPC ID section, click Cloud Server. In the Subnet name field, enter Cloud-Subnet-Private. In the Availability Zone section, select the first Availability zone. In the field IPv4 CIRD block enter 10.10.2.0/24. Scroll to the bottom of the page, click Create subnet. For private subnet, we do not need to Enable auto-assign public IPv4 address. Finally, we can see the state of two subnets Available now: 10.10.1.0/24 - public subnet and 10.10.2.0/24 - private subnet.\n"
+},
+{
+	"uri": "/3-dataserver/3.2-createsubnet/",
+	"title": "Create Subnet",
+	"tags": [],
+	"description": "",
+	"content": "Create Public Subnet Create Public Subnet Click Subnets. Click Create subnet. At the Create subnet page. In the VPC ID section, click Data Server. In the Subnet name field, enter Data-Subnet-Public. In the Availability Zone section, select the first Availability zone. In the field IPv4 CIRD block enter 192.168.1.0/24. Scroll to the bottom of the page, click Create subnet.\nSelect Cloud-Subnet-Public checkbox and go to Edit subnet settings\nClick Actions. Click Edit subnet settings. Enable auto-assign public IPv4 address Click Enable auto-assign public IPv4 address. Click Save. "
+},
+{
+	"uri": "/4-sitetositevpn/4.4-libreswan/4.4.2-setupvpnconnection/",
+	"title": "Setup VPN Connection",
+	"tags": [],
+	"description": "",
+	"content": "1 Getting VPN configuration Go to Site-to-Site VPN connections.\nChoose Cloud-and-Data-VPN-Connection and click Download configuration button.\nSelect Openswan and Download your file in your local computer.\nOur content of VPN configuration like that:\nAmazon Web Services\rVirtual Private Cloud\r......\r----------------------------------------------------------\rIPSEC Tunnel #1\r----------------------------------------------------------\rconn Tunnel1\rauthby=secret\rauto=start\rleft=%defaultroute\rleftid=98.81.55.104\rright=44.207.138.55\rtype=tunnel\rikelifetime=8h\rkeylife=1h\rphase2alg=aes128-sha1;modp1024\rike=aes128-sha1;modp1024\rauth=esp\rkeyingtries=%forever\rkeyexchange=ike\rleftsubnet=\u0026lt;LOCAL NETWORK\u0026gt;\rrightsubnet=\u0026lt;REMOTE NETWORK\u0026gt;\rdpddelay=10\rdpdtimeout=30\rdpdaction=restart_by_peer\r----------------------------------------------------------\rIPSEC Tunnel #2\r----------------------------------------------------------\rconn Tunnel2\rauthby=secret\rauto=start\rleft=%defaultroute\rleftid=98.81.55.104\rright=52.22.180.202\rtype=tunnel\rikelifetime=8h\rkeylife=1h\rphase2alg=aes128-sha1;modp1024\rike=aes128-sha1;modp1024\rauth=esp\rkeyingtries=%forever\rkeyexchange=ike\rleftsubnet=\u0026lt;LOCAL NETWORK\u0026gt;\rrightsubnet=\u0026lt;REMOTE NETWORK\u0026gt;\rdpddelay=10\rdpdtimeout=30\rdpdaction=restart_by_peer We have to edit some VPN configuration:\nauth=esp # removing this line to avoid conflict from AWS phase2alg=aes128-sha1;modp1024 # change to modp2048 =\u0026gt; we use IKEv2 ike=aes128-sha1;modp1024 # change to modp2048 =\u0026gt; we use IKEv2 leftsubnet=\u0026lt;LOCAL NETWORK\u0026gt; # CIDR on-premise Your EC2-Customer-Gateway Private IP rightsubnet=\u0026lt;REMOTE NETWORK\u0026gt; # CIDR aws server Your EC2-Cloud Private IP #leftsubnet = is the local network behind your openswan server, and you will need to replace the \u0026lt;LOCAL NETWORK\u0026gt; below with this value (don\u0026rsquo;t include the brackets). If you have multiple subnets, you can use 0.0.0.0/0 instead. #rightsubnet = is the remote network on the other side of your VPN tunnel that you wish to have connectivity with, and you will need to replace \u0026lt;REMOTE NETWORK\u0026gt; with this value (don\u0026rsquo;t include brackets). The complete configuration is shown below conn Tunnel1\rauthby=secret\rauto=start\rleft=%defaultroute\rleftid=98.81.55.104\rright=44.207.138.55\rtype=tunnel\rikelifetime=8h\rkeylife=1h\rphase2alg=aes128-sha1;modp2048\rike=aes128-sha1;modp2048\rkeyingtries=%forever\rkeyexchange=ike\rleftsubnet=192.168.1.0/24\rrightsubnet=10.10.2.0/24\rdpddelay=10\rdpdtimeout=30\rdpdaction=restart_by_peer\rconn Tunnel2\rauthby=secret\rauto=start\rleft=%defaultroute\rleftid=98.81.55.104\rright=52.22.180.202\rtype=tunnel\rikelifetime=8h\rkeylife=1h\rphase2alg=aes128-sha1;modp2048\rike=aes128-sha1;modp2048\rkeyingtries=%forever\rkeyexchange=ike\rleftsubnet=192.168.1.0/24\rrightsubnet=10.10.2.0/24\rdpddelay=10\rdpdtimeout=30\rdpdaction=restart_by_peer 2. Apply VPN configuration Go back to MobaXterm at Connect to EC2 Customer Gateway step and switching user root user by this command: sudo -i Check the following values to match in /etc/sysctl.conf file net.ipv4.ip_forward = 1 net.ipv4.conf.default.rp_filter = 0 net.ipv4.conf.default.accept_source_route = 0 grep -v \u0026#34;^#\u0026#34; /etc/sysctl.conf If you can not see these values, please run this command to add:\necho \u0026#39;net.ipv4.ip_forward = 1\rnet.ipv4.conf.default.rp_filter = 0\rnet.ipv4.conf.default.accept_source_route = 0\u0026#39; \u0026gt;\u0026gt; /etc/sysctl.conf\rsysctl -p # applying new change Ensure that the # in front of the line #include /etc/ipsec.d/*.conf has been removed grep -E \u0026#39;^include\u0026#39; /etc/ipsec.conf If you can not see include /etc/ipsec.d/*.conf, please run following command to add:\necho \u0026#34;include /etc/ipsec.d/*.conf\u0026#34; \u0026gt;\u0026gt; /etc/ipsec.conf Create a new file at /etc/ipsec.d/aws.conf and append the complete configuration to the end in the file: nano /etc/ipsec.d/aws.conf # create a new file # remember to copy Tunnel VPN configuration to this file =\u0026gt; Press Ctrl+O and Enter to save Open your VPN configuration file and create a new file at /etc/ipsec.d/aws.secrets if it doesn\u0026rsquo;t already exist, and append this line to the file (be mindful of the spacing!): nano /etc/ipsec.d/aws.secrets # Copy and Paste Tunnel1: 98.81.55.104 44.207.138.55: PSK \u0026#34;PMOWMNcpovHy1nYApcENvsvkzTyL0Ux1\u0026#34; # Copy and Paste Tunnel2: 98.81.55.104 52.22.180.202: PSK \u0026#34;Gku9_qMyjMnwX9yaEeBVJjMrdndG.Gy0\u0026#34; The result of adding secrets for tunnels: Finally, we will apply and run ipsec to make the VPN connection:\nsudo netplan apply\rsudo systemctl enable ipsec # allow start-up with system\rsudo systemctl start ipsec\rsudo systemctl status ipsec # checking status 3. Checking status of VPN connection If you want to check status, you can check by following command: sudo ipsec status You can see the line: Total IPsec connections: loaded 2, active 1. It mean that 02 configurations of the tunnel is loaded and 01 tunnel is running.\nIn AWS VPN, typically one tunnel is active while the other remains passive as a failover. The passive tunnel becomes active only if the primary tunnel goes down. AWS\u0026rsquo;s default setup is usually an active-passive model for failover purposes.\nGo to Site-to-site VPN connections and check the state of VPN connection is Up now. Ping to private CIDR of AWS VPC: Your EC2-Cloud Private IP SSH to EC2-Cloud: First, we have to copy aws_key.pem to inside Data Customer Gateway (ubuntu server). Choose SSH browser in left panel.\nChoose path /home/ubuntu or any directory. Select aws_key.pem file to import.\nChecking aws_key.pem permission\nls -lh Change permission aws_key.pem to read-only and SSH to EC2-Cloud server:\nchmod 400 aws_key.pem\rssh -i aws_key.pem ubuntu@10.10.2.162 As you can see, we\u0026rsquo;ve successfully established an SSH connection through a VPN tunnel, ensuring that our private server is securely controlled. No one but you can access your AWS server. For even greater security, you can specify exactly which IP addresses or smaller subnets are allowed to connect, rather than permitting an entire subnet.\nTesting connection through NAT gateway, and getting current ip through internet: Get your NAT gateway IP\nSome commnands you may need to debug in ipsec:\n# manual load Tunnel1 configuration\ripsec auto --add Tunnel1 # manual turn on Tunnel1 configuration\ripsec auto --up Tunnel1 # checking ipsec status\ripsec status Congratulations on successfully completing the lab! Great job finishing everything. Remember to clean up any resources to avoid unexpected future charges. "
+},
+{
+	"uri": "/4-sitetositevpn/4.2-vpg/",
+	"title": "Virtual private gateways",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will create an Virtual private gateways (VPG) for Cloud Server VPC, which allows our instances connecting to Data Server in VPN.\nCreate VPG Go to VPC dashboard Choose Virtual private gateways Click at Create virtual private gateway button At the Create virtual private gateway page. In the Name tag field, enter the VPG name Cloud-VPN-GW Click Create virtual gateway. Attach to Cloud Server VPC In the Virtual private gateways, check Cloud-VPN-GW Click Actions, choose Attach to VPC. Choose Cloud Server at dropdown list and click Attach to VPC.\nWe are successfull at creating VPG for Cloud Server VPC.\n"
+},
+{
+	"uri": "/2-cloudserver/2.3-securitygroup/",
+	"title": "Create Security Group",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will create the security groups used for our instances. These security groups specify to the VPC which connections are allowed or permitted. A security group acts as a virtual firewall that controls traffic for one or more instances. By default, AWS allows all outbound traffic but restricts inbound traffic. We only config the directions inbound in this lab.\nCreate security group for public subnet Inbound rules:\nID Connection Types Sources 1. Ping (ICMP - IPv4) 0.0.0.0/0 (anywhere) Go to VPC Dashboard Click Security Group. Click Create security group. In the Security group name section, enter Cloud-SG-Public.\nIn the Description section, enter Allow ping for public subnet. In the VPC section, select the Cloud Server VPC. Config Inbound rules\nChoose Add rule:\nIn the Type section, choose Custom ICMP - IPv4 to allow ping from IPv4. In the Source type section, select Anywhere - IPv4 to allow ping from internet. And we keep Outbound rules as the default.\nScroll down at the bottom of page and click at Create security group. The result will show as below:\nII. Create security group for private subnet After successfully creating a security group for the public subnet, we continue to create security group for instance located in private subnet.\nInbound rules:\nID Connection Types Sources 1. SSH 192.168.1.0/24 (LAN of Data Server) 2. Ping (ICMP - IPv4) 0.0.0.0/0 (everywhere) Go to VPC dashboard, choose Security groups and click Create security group again.\nIn the Security group name section, enter Cloud-SG-Private.\nIn the Description section, enter Allow ping, SSH for server in private subnet. In the VPC section, select the Cloud Server VPC. Config Inbound rules\nChoose Add rule:\nIn the Type section, choose SSH. In the Source type section, select Custom and type 192.168.1.0/24 Continue choose Add rule:\nIn the Type section, choose Custom ICMP - IPv4 to allow ping from IPv4. In the Source type section, select Anywhere - IPv4 to allow ping from internet. And we keep Outbound rules as the default.\nScroll down at the bottom of page and click at Create security group. The result will be shown as below:\nSo we have finished creating the necessary security groups for the EC2 instances.\n"
+},
+{
+	"uri": "/3-dataserver/3.3-securitygroup/",
+	"title": "Create Security Group",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will create the security groups used for our instances. These security groups specify to the VPC which connections are allowed or permitted. A security group acts as a virtual firewall that controls traffic for one or more instances. By default, AWS allows all outbound traffic but restricts inbound traffic. We only config the directions inbound in this lab.\nI. Create security group for public subnet Inbound rules:\nID Connection Types Sources Ports 1. Ping (ICMP - IPv4) 0.0.0.0/0 (anywhere) 2. SSH 0.0.0.0/0 (anywhere) 3. UDP (IPsec) 0.0.0.0/0 (anywhere) 500 4. UDP (IPsec) 0.0.0.0/0 (anywhere) 4500 Go to VPC Dashboard Click Security Group. Click Create security group. In the Security group name section, enter Data-SG-Public. In the Description section, enter Allow IPSec, SSH, ping from internet. In the VPC section, select the Data Server VPC. Config Inbound rules\nAllow ping connection, choose Add rule:\nIn the Type section, choose Custom ICMP - IPv4 to allow ping from IPv4. In the Source type section, select Anywhere - IPv4. Allow SSH connection, choose Add rule:\nIn the Type section, choose SSH. In the Source type section, select Anywhere - IPv4 to allow SSH from internet. Allow UDP (IPSec) connection, choose Add rule:\nIn the Type section, choose Custom UDP to allow ping from IPv4. In the Port range section, enter the port 500 to allow ping from IPv4. In the Source type section, select Anywhere - IPv4 to allow VPN connection from internet. Do the same with UDP port 500, we create UDP port 4500.\nAnd we keep Outbound rules as the default.\nScroll down at the bottom of page and click at Create security group, so we have finished creating the necessary security groups for the EC2 instances.\nYou can find more information about How does IPsec work? and IPsec protocol port in VPN connection.\n"
+},
+{
+	"uri": "/4-sitetositevpn/4.3-createvpnconnection/",
+	"title": "Create VPN connection",
+	"tags": [],
+	"description": "",
+	"content": "VPN Connection Go to Site-to-Site VPN connections Choose Site-to-Site VPN connections Click at Create VPN connection button In Details page. Enter name of the connection: Cloud-and-Data-VPN-Connection. In Target gateway type field: choose Virtual private gateway. In Virtual private gateway field: choose Cloud-VPN-GW. Choose Existing in Customer gateway . In Customer gateway ID field: choose Data-CGW . In Routing options field: choose Static. In Static IP prefixes field: enter 192.168.1.0/24. You can enter one or more IP prefixes in CIDR notation of Data Server (on-premises) separated by commas to advertise to Cloud Server VPC. In Local IPv4 network CIDR field: enter 192.168.1.0/24 . In Remote IPv4 network CIDR field: enter 10.10.2.0/24 . Scroll down and click Create VPN connection.\nWait about 5 minutes or more to change state of VPN connection from Pending to Available. Edit Cloud-SG-Private security groups to allow SSH connection from CIDR: 192.168.1.0/24 . Go to Security Groups Select Cloud-SG-Private and choose Action. Click on Edit inbound rules. Add SSH connection. Click on Add rule. Choose SSH in Type column. Choose Custom source and enter 192.168.1.0/24. Click Save rules to apply. Apply new Route Propagation for private subnet. Go to Route tables Select Cloud-RT-Private and choose Action. Click on Edit route propagation. Choose Enable in the Propagation column and click Save. My routing table after applying new Route Propagation. The next step is to configure LibreSwan to make VPN connection to AWS.\n"
+},
+{
+	"uri": "/3-dataserver/",
+	"title": "DataServer Configuration",
+	"tags": [],
+	"description": "",
+	"content": "We create Data Server as a Customer Gateway on AWS EC2 in this lab. You can use various methods to connect to the AWS VPN, such as simulating on VMware, EVE-NG,\u0026hellip; or using physical routing devices that support VPNs.\nTable of Contents Create VPC Create Subnet Create Security Group Create Internet Gateway Create Routing Table Create EC2 Customer Gateway "
+},
+{
+	"uri": "/2-cloudserver/2.4-createigw/",
+	"title": "Create Internet Gateway",
+	"tags": [],
+	"description": "",
+	"content": " In VPC dashboard Choose Internet Gateways menu. Click at Create internet gateway button. At the Create internet gateway page. In the Name tag field, enter Cloud-IGW. Click at Create internet gateway button. After successful creation, tick on Cloud-IGW checkbox Click Actions. Choose Attach to VPC. At the Attach to VPC page. In the Available VPCs section, select Cloud-Server. Click Attach internet gateway button. Check the successful attaching process as shown below.\n"
+},
+{
+	"uri": "/3-dataserver/3.4-createigw/",
+	"title": "Create Internet Gateway",
+	"tags": [],
+	"description": "",
+	"content": " In VPC dashboard Choose Internet Gateways menu. Click at Create internet gateway button. At the Create internet gateway page. In the Name tag field, enter Data-IGW. Click at Create internet gateway button. After successful creation, tick on Data-IGW checkbox Click Actions. Choose Attach to VPC. At the Attach to VPC page. In the Available VPCs section, select Data Server. Click Attach internet gateway button. "
+},
+{
+	"uri": "/4-sitetositevpn/4.4-libreswan/",
+	"title": "LibreSwan",
+	"tags": [],
+	"description": "",
+	"content": "Libreswan is an Internet Key Exchange (IKE) implementation for Linux, FreeBSD, NetBSD and OpenBSD. It supports IKEv1 and IKEv2 and has support for most of the extensions (RFC + IETF drafts) related to IPsec, including IKEv2, X.509 Digital Certificates, NAT Traversal, and many others.\nLibreswan was forked from Openswan 2.6.38, which was forked from FreeS/WAN 2.04.\nThe Libreswan Project\nhttps://libreswan.org/ A Git repository is available at:\nhttps://github.com/libreswan/libreswan/ We need this program to simulate a VPN gateway in the Data Server. OpenSwan does not support Debian linux for Ubuntu, and also does not available at Fedora linux for Amazon Linux. The last version has been released since 2021, github project.\n"
+},
+{
+	"uri": "/4-sitetositevpn/",
+	"title": "Site-to-Site VPN",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will create Customer gateways and Virtual private gateways for Site-to-Site VPN connection. Please read again to know cleary in Introduce page.\nWe will now create a Site-to-Site VPN. The diagram below illustrates what we will accomplish in this step.\nTable of Contents Customer gateways Virtual private gateways Create VPN connection LibreSwan 4.1 Install LibreSwan 4.2 Setup VPN Connection "
+},
+{
+	"uri": "/5-cleanup/",
+	"title": "Clean up resources",
+	"tags": [],
+	"description": "",
+	"content": "We will take the following steps to delete all the resources we created in this lab.\n1. Delete EC2 instances Go to EC2 instances. Click Instances. Select both EC2-Cloud and EC2-Customers-Gateway instances. Click Instance state. Click Terminate instance, then click Terminate to confirm. 2. Delete NAT gateway Go to NAT gateway. Click NAT gateways. Select Cloud-NATGW. Click Actions, then click Delete NAT gateway. Enter delete and click Delete to delete the NAT gateway. 3. Delete Site-to-Site VPN Connections Go to Site-to-Site VPN Connections. Select Cloud-and-Data-VPN-Connection. Click Actions, then click Delete VPN Connection. Enter delete and click Delete to delete the VPN Connection. 4. Delete VPN gateway Go to VPG. Select Cloud-VPN-GW. Click Actions, then click Detach from VPC. Click Detach virtual private gateway Select Cloud-VPN-GW again. Click Actions, then click Delete virtual private gateway. Enter delete and click Delete to delete the VPN gateway. 5. Delete Customer Gateways Go to Customer Gateways. Select Data-CGW. Click Actions, then click Delete customer gateway. Enter delete and click Delete to delete the Customer gateway. 6. Delete VPCs Go to Your VPCs. Select Data Server. Click Actions, then click Delete VPC. Enter delete and click Delete to delete the VPC. Go to Your VPCs again. Repeat previous steps to delete Cloud Server. 7. Delete Elastic IPs Go to Elastic IPs. Select public IP address, which is created in the NAT gateway step. Click Actions, then click Release Elastic IP address. Everything is done! "
+},
+{
+	"uri": "/2-cloudserver/2.5-createnatgw/",
+	"title": "Create NAT Gateway",
+	"tags": [],
+	"description": "",
+	"content": "In this step, we will create NAT gateway located in Public subnet.\nIn VPC dashboard Choose NAT Gateways menu. Click the Create NAT gateway button. In NAT gateway settings Set Name field to Cloud-NATGW In Subnet field, choose Cloud-Subnet-Public Click \u0026ldquo;one time\u0026rdquo; on Allocate Elastic IP button to generate static IP for NAT gateway. Choose IP address in dropdown list beside Allocate Elastic IP button. Finnally, choose Create NAT gateway to complete configuration. The result will be shown as below:\n"
+},
+{
+	"uri": "/3-dataserver/3.5-routingtable/",
+	"title": "Create Routing Table",
+	"tags": [],
+	"description": "",
+	"content": "We will create a table Data-RT-Public, routing Data-Subnet-Public subnet to Data-IGW internet gateway.\nCreate route table public In VPC dashboard\nChoose Route tables menu. Click the Create route table button. At the Create route table page. In the Name field, enter Data-RT-Public. In the VPC section, select Data Server. Click Create route table. After creating the route table successfully. Click Edit routes. At the Edit routes page. Click Add route. In the Destination field, enter 0.0.0.0/0 In the Target section, select Internet Gateway and then select Data-IGW. Click Save changes. Click the Subnet associations tab. Click Edit subnet associations to proceed with the associate custom route table we just created in Data-Subnet-Public. At the Edit subnet associations page. Click on Data-Subnet-Public. Click Save associations. "
+},
+{
+	"uri": "/3-dataserver/3.6-createec2/",
+	"title": "Create EC2 Customer Gateway",
+	"tags": [],
+	"description": "",
+	"content": "Switch to EC2 dashboard. Enter EC2 in searchbox, and select it.\nIn EC2 dashboard Click Instances. Click Launch instances. In the Name and tags field. Enter EC2-Customer-Gateway to Name. In the Application and OS Images (Amazon Machine Image) field. Choose Ubuntu image with architecture 64-bit (x86). In the Instance Type field. Click on Instance type t2.micro. Select key pair aws_lab, this key is created in before step Create EC2-Cloud. In the Network settings field, click on Edit button. In the VPC section, select Data Server. In the Subnet section, select Data-Subnet-Public. In the Auto-assign Public IP section, choose Enable. In the Firewall (security groups), select Select an existing security group. In the Common security section, select security group Data-SG-Public. Click Launch instance to complete. Please wait a few minutes, EC2 instance needs time to start.\nPublic Customer Gateway IP We need this public IP 98.81.55.104 to create Customer Gateway in the Site-to-Site VPN step.\nPrivate Customer Gateway IP We need this public IP 192.168.1.28 to create VPN connection.\nConnect to EC2 Customer Gateway We must use a program that supports SSH connections with key pairs. In this lab, we recommend you choose MobaXterm for easily setting up SSH connections on Windows OS. It is available for download on the MobaXterm download page. After completely download, you have to install it. You could see these steps here How to Install MobaXterm on Windows?.\nIf you prefer not to use third-party software, you can follow the steps to connect via SSH using a PEM certificate on Windows. We are also using Linux to establish SSH connections in next step this lab.\nOpen MobaXterm program, and click on Session menu. Choose SSH and provide some information of our server to connect: Remote host: [your EC2-Customer-Gateway public IP address] Specify username: ubuntu Select Advanced SSH setting and check Use private key Choose the path of aws_lab.pem key pair file. This file is created in here. We are done at connecting to EC2-Customer-Gateway. Please keep this connection for future using. "
+},
+{
+	"uri": "/2-cloudserver/2.6-routingtable/",
+	"title": "Create Routing Table",
+	"tags": [],
+	"description": "",
+	"content": "We will create two tables Cloud-RT-Public and Cloud-RT-Private:\nCloud-RT-Public: Routing Cloud-Subnet-Public to Cloud-IGW internet gateway. Cloud-RT-Private: Routing Cloud-Subnet-Private to Cloud-NATGW NAT gateway. I. Create route table public In VPC dashboard\nChoose Route tables menu. Click the Create route table button. At the Create route table page. In the Name field, enter Cloud-RT-Public. In the VPC section, select Cloud Server. Click Create route table. After creating the route table successfully. Click Edit routes. At the Edit routes page. Click Add route. In the Destination field, enter 0.0.0.0/0 In the Target section, select Internet Gateway and then select Cloud-IGW. Click Save changes. Click the Subnet associations tab. Click Edit subnet associations to proceed with the associate custom route table we just created in Cloud-Subnet-Public. At the Edit subnet associations page. Click on Cloud-Subnet-Public. Click Save associations. Check that the route table information has been associated with Cloud-Subnet-Public and the internet route information has been pointed to the Internet Gateway as shown below. II. Create route table private In VPC dashboard\nChoose Route tables menu. Click the Create route table button. At the Create route table page. In the Name field, enter Cloud-RT-Private. In the VPC section, select Cloud Server. Click Create route table. After creating the route table successfully. Click Edit routes. At the Edit routes page. Click Add route. In the Destination field, enter 0.0.0.0/0 In the Target section, select NAT Gateway and then select Cloud-NATGW. Click Save changes. Click the Subnet associations tab. Click Edit subnet associations to proceed with the associate custom route table we just created in Cloud-Subnet-Private. At the Edit subnet associations page. Click on Cloud-Subnet-Private. Click Save associations. Check that the route table information has been associated with Cloud-Subnet-Private and the internet route information has been pointed to the Internet Gateway as shown below. "
+},
+{
+	"uri": "/2-cloudserver/2.7-createec2/",
+	"title": "Create EC2 Server",
+	"tags": [],
+	"description": "",
+	"content": "Switch to EC2 dashboard. Enter EC2 in searchbox, and select it.\nIn EC2 dashboard Click Instances. Click Launch instances. In the Name and tags field. Enter EC2-Cloud to Name. In the Application and OS Images (Amazon Machine Image) field. Choose Ubuntu image with architecture 64-bit (x86). In the Instance Type field. Click on Instance type t2.micro. And click on Create new key pair button. In the Create key pair field, enter the key name to connect to server. Enter aws_lab to Key pair name And click on Create new key pair button. Remember to save the key in your local computer for future using. In the Network settings field, click on Edit button. In the VPC section, select Cloud Server. In the Subnet section, select Cloud-Subnet-Private. In the Auto-assign Public IP section, uncheck it. In the Firewall (security groups), select Select an existing security group. In the Common security section, select security group Cloud-SG-Private. Click Launch instance to complete. Please wait a few minutes, EC2 instance needs time to start.\nPrivate IP EC2-Cloud address We need this private IP 10.10.2.162 for testing connection later.\n"
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

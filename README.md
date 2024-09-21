@@ -1,2 +1,1 @@
-# aws-fcj
-AWS First Cloud Journey
+# WorkShop 1

@@ -2,7 +2,7 @@
 theme = "hugo-theme-learn"
 
 # Base URL for the site
-baseURL = "https://v2d27.github.io/aws-fcj/ws1"  # Replace with your actual GitHub Pages URL or domain
+baseURL = "https://v2d27.github.io/aws-fcj/"  # Replace with your actual GitHub Pages URL or domain
 
 # For search functionality
 [outputs]
@@ -12,7 +12,7 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  editURL = "https://v2d27.github.io/aws-fcj/ws1"
+  editURL = "https://v2d27.github.io/aws-fcj/"
   description = "AWS Site-to-Site VPN"
   author = "ducduc08@gmail.com"
   showVisitedLinks = true

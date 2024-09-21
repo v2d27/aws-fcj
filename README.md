@@ -1,3 +1,17 @@
+<h1 align="center">AWS - First Cloud Journey<br />
+<div align="center">
+<img src="https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/static/images/sssss.png" title="Logo" style="max-width:100%;" width="128" />
+</div>
+
+<div align="center">
+
+[![Build]][build_url]
+[![Version]][tag_url]
+[![Size]][tag_url]
+
+</div></h1>
+
+
 
 | ![intro](/static/images/sssss.png)  |
 |:-------------------------------------:|

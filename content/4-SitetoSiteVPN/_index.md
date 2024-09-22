@@ -23,7 +23,7 @@ We will now create a **Site-to-Site VPN**. The diagram below illustrates what we
 1. [Customer gateways](/4-SitetoSiteVPN/4.1-cgw) 
 2. [Virtual private gateways](/4-SitetoSiteVPN/4.2-vpg)
 3. [Create VPN connection](/4-SitetoSiteVPN/4.3-createVPNconnection)
-4. [LibreSwan](/4-Siteto/4.4-LibreSwan)
+4. [LibreSwan](/4-SitetoSiteVPN/4.4-LibreSwan)
    + 4.1 [Install LibreSwan](/4-SitetoSiteVPN/4.4-LibreSwan/4.4.1-InstallLibreVPN)
    + 4.2 [Setup VPN Connection](/4-SitetoSiteVPN/4.4-LibreSwan/4.4.2-SetupVPNConnection)
 

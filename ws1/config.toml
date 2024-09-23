@@ -25,6 +25,8 @@ home = [ "HTML", "RSS", "JSON"]
   disableBreadcrumb = false
   disableNextPrev = false
   hideEditLink = true
+  ogImage = "https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/ws1/static/images/sssss.png"
+  
 
   
 [Languages]

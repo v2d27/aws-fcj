@@ -75,8 +75,6 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --source ws2 \
-            --destination ./ws2/public \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws2/"
       - name: Upload ws2 hugosite
         uses: actions/upload-pages-artifact@v3

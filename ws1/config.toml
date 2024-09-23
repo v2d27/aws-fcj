@@ -1,6 +1,6 @@
 # ##########################Base URL for the site ##################################
 # for deployment
-baseURL = "https://v2d27.github.io/aws-fcj-ws"  
+baseURL = "https://v2d27.github.io/aws-fcj/"  
 
 # for testing in local
 # baseURL = "https://v2d27.github.io/aws-fcj/ws1"  
@@ -40,7 +40,7 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Site-to-Site VPN workshop"
+name = "<i class='fab fa-github'></i> AWS workshop"
 identifier = "AWS Workshop"
 url = "https://github.com/v2d27/aws-fcj/"
 weight = 21

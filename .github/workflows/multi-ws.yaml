@@ -26,7 +26,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./ws1/public
-          publish_branch: main  # or a custom branch if desired
+          publish_branch: gh-pages  # or a custom branch if desired
           destination_dir: ws1  # Deploy to ws1 subdirectory
 
   deploy_ws2:
@@ -49,5 +49,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./ws2/public
-          publish_branch: main  # or a custom branch if desired
+          publish_branch: gh-pages  # or a custom branch if desired
           destination_dir: ws2  # Deploy to ws2 subdirectory

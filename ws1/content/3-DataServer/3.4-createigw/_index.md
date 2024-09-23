@@ -11,22 +11,22 @@ pre : " <b> 3.4 </b> "
     + Choose **Internet Gateways** menu.
     + Click at **Create internet gateway** button.
   
-![igw](/aws-fcj/images/2.cloudserver/igw-01.png)
+![igw](/aws-fcj-ws/ws1/images/2.cloudserver/igw-01.png)
 
 2. At the **Create internet gateway** page.
     + In the **Name tag** field, enter **`Data-IGW`**.
     + Click at **Create internet gateway** button.
   
-![igw](/aws-fcj/images/3.dataserver/igw-01.png)
+![igw](/aws-fcj-ws/ws1/images/3.dataserver/igw-01.png)
 
 3. After successful creation, tick on **Data-IGW** checkbox
     + Click **Actions**.
     + Choose **Attach to VPC**.
  
-![igw](/aws-fcj/images/3.dataserver/igw-03.png)
+![igw](/aws-fcj-ws/ws1/images/3.dataserver/igw-03.png)
 
 4. At the **Attach to VPC** page.
     + In the **Available VPCs** section, select **Data Server**.
     + Click **Attach internet gateway** button.
 
-![igw](/aws-fcj/images/3.dataserver/igw-02.png)
+![igw](/aws-fcj-ws/ws1/images/3.dataserver/igw-02.png)

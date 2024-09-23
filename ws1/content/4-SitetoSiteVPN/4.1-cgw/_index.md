@@ -12,7 +12,7 @@ pre : " <b> 4.1 </b> "
   + Choose **Customer gateways**
   + Click at **Create customer gateway** button
 
-![cgw](/aws-fcj/images/4.sitetositevpn/cgw-01.png)
+![cgw](/aws-fcj-ws/ws1/images/4.sitetositevpn/cgw-01.png)
 
 2. At **Create customer gateway** panel:
   + In **Name tag** field: Enter **`Data-CGW`** name.
@@ -21,8 +21,8 @@ pre : " <b> 4.1 </b> "
 
 
  
-![cgw](/aws-fcj/images/4.sitetositevpn/cgw-02.png)
+![cgw](/aws-fcj-ws/ws1/images/4.sitetositevpn/cgw-02.png)
 
 3. The result of creation, the state should change to **Available**.
  
-![cgw](/aws-fcj/images/4.sitetositevpn/cgw-03.png)
+![cgw](/aws-fcj-ws/ws1/images/4.sitetositevpn/cgw-03.png)

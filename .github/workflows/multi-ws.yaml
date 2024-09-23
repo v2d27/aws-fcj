@@ -58,11 +58,11 @@ jobs:
             --gc \
             --minify \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws1/"
-      - name: Upload ws1 hugosite
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./ws1/public
-          name: artifact-ws1
+      # - name: Upload ws1 hugosite
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: ./ws1/public
+      #     name: artifact-ws1
 
       - name: Build ws2
         env:
@@ -75,56 +75,33 @@ jobs:
             --gc \
             --minify \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws2/"
-      - name: Upload ws2 hugosite
+
+      - name: Merge two artifacts
+        run: |
+          mkdir -p ./public/ws1
+          mkdir -p ./public/ws2
+          cp -rf ./ws1/public/* ./public/ws1
+          cp -rf ./ws2/public/* ./public/ws2
+
+      - name: Upload artifact Hugo site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ws2/public
-          name: artifact-ws2
+          path: ./public
 
 
-
-  # # Deployment job
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #     url: "https://v2d27.github.io/aws-fcj-ws/ws1/"
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v4
 
   # Deployment job
-  deploy_ws1:
+  deploy:
     environment:
       name: github-pages
-      url: "https://v2d27.github.io/aws-fcj-ws/ws1"
+      url: "https://v2d27.github.io/aws-fcj-ws/"
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy Site 1 to GitHub Pages
-        id: deployment1
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_path: ./ws1/public
-          artifact_name: artifact-ws1
-
-  deploy_ws2:
-    environment:
-      name: github-pages
-      url: "https://v2d27.github.io/aws-fcj-ws/ws2"
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy Site 2 to GitHub Pages
-        id: deployment2
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_path: ./ws2/public
-          artifact_name: artifact-ws2
 
 
 
 
-          

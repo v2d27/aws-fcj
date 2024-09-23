@@ -1,0 +1,53 @@
+name: Deploy Multiple Hugo Sites
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_ws1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Hugo for ws1
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build Hugo ws1
+        run: hugo --minify --source ./ws1
+
+      - name: Deploy ws1 to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ws1/public
+          publish_branch: main  # or a custom branch if desired
+          destination_dir: ws1  # Deploy to ws1 subdirectory
+
+  deploy_ws2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Hugo for ws2
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build Hugo ws2
+        run: hugo --minify --source ./ws2
+
+      - name: Deploy ws2 to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ws2/public
+          publish_branch: main  # or a custom branch if desired
+          destination_dir: ws2  # Deploy to ws2 subdirectory

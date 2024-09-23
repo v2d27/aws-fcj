@@ -14,4 +14,4 @@ In this lab, we will make private connection from **Database server** to **Cloud
 
 ![intro](/static/images/1.introduce/intro-03.png)
 
-#### Hosted at [v2d27.github.io/aws-fcj](https://v2d27.github.io/aws-fcj/) 
+#### Hosted at [v2d27.github.io/aws-fcj](https://v2d27.github.io/aws-fcj-ws/ws1) 

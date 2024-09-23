@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CloudServer Configuration on AWS Site-to-Site VPN</title>
+    <link>http://localhost:1313/aws-fcj-ws/ws1/2-cloudserver/</link>
+    <description>Recent content in CloudServer Configuration on AWS Site-to-Site VPN</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/aws-fcj-ws/ws1/2-cloudserver/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

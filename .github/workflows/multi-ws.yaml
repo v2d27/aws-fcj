@@ -28,10 +28,10 @@ jobs:
           publish_dir: ./ws1/public
           publish_branch: gh-pages  # or a custom branch if desired
           destination_dir: ws1  # Deploy to ws1 subdirectory
-          force_orphan: true  # This forces a clean push to the branch
 
   deploy_ws2:
     runs-on: ubuntu-latest
+    needs: deploy_ws1  # This job depends on deploy_ws1
 
     steps:
       - name: Checkout repository

@@ -21,13 +21,13 @@ Inbound rules:
    + Click **Security Group**.
    + Click **Create security group**.
 
-![SG](/aws-fcj-ws/ws1/images/2.cloudserver/sg-01.png)
+![SG](/aws-fcj/ws1/images/2.cloudserver/sg-01.png)
 
 2. In the **Security group name** section, enter **`Data-SG-Public`**.
    + In the **Description** section, enter **`Allow IPSec, SSH, ping from internet`**.
    + In the **VPC** section, select the **Data Server** VPC.
 
-![SG](/aws-fcj-ws/ws1/images/3.dataserver/sg-01.png)
+![SG](/aws-fcj/ws1/images/3.dataserver/sg-01.png)
 
 3. Config **Inbound rules**
 
@@ -48,7 +48,7 @@ Inbound rules:
 
    And we keep **Outbound rules** as the default.
 
-![SG](/aws-fcj-ws/ws1/images/3.dataserver/sg-03.png)
+![SG](/aws-fcj/ws1/images/3.dataserver/sg-03.png)
 
    Scroll down at the bottom of page and click at **Create security group**, so we have finished creating the necessary security groups for the EC2 instances.
 

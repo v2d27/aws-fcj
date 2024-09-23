@@ -20,4 +20,4 @@ Checking the result of installation:
 ss -v && ipsec --help
 ```
 
-![lb](/aws-fcj-ws/ws1/images/4.sitetositevpn/l-01.png)
+![lb](/aws-fcj/ws1/images/4.sitetositevpn/l-01.png)

@@ -12,16 +12,16 @@ pre : " <b> 2.1 </b> "
    + Click **Your VPCs**.
    + Click **Create VPC**.
 
-![VPC](/aws-fcj-ws/ws1/images/2.cloudserver/vpc-01.png)
+![VPC](/aws-fcj/ws1/images/2.cloudserver/vpc-01.png)
 
 2. At the **Create VPC** page. We will create VPC only:
    + In the **Name tag** field, enter **`Cloud Server`**.
    + In the **IPv4 CIDR** field, enter: **`10.10.0.0/16`**.
    + Click **Create VPC**.
 
-![VPC](/aws-fcj-ws/ws1/images/2.cloudserver/vpc-02.png)
+![VPC](/aws-fcj/ws1/images/2.cloudserver/vpc-02.png)
 
 3. If you create successfully, the state of VPC will switch to **Available**
 
-![VPC](/aws-fcj-ws/ws1/images/2.cloudserver/vpc-03.png)
+![VPC](/aws-fcj/ws1/images/2.cloudserver/vpc-03.png)
 

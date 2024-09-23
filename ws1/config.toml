@@ -40,8 +40,8 @@ url = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight = 20
 
 [[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-github'></i> AWS workshop"
-identifier = "AWS Workshop"
+name = "<i class='fab fa-github'></i> My Workshop"
+identifier = "My Workshop"
 url = "https://github.com/v2d27/aws-fcj/"
 weight = 21
 

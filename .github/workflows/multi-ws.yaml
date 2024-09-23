@@ -33,7 +33,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./public/ws1  # Specify the subfolder where the site is built
           publish_branch: gh-pages  # Set to the branch where you want to deploy

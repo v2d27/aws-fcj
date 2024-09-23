@@ -108,9 +108,11 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_path: ./ws1/public
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy Site 2 to GitHub Pages
         id: deployment2
         uses: actions/deploy-pages@v4
         with:
           artifact_path: ./ws2/public
+          token: ${{ secrets.GITHUB_TOKEN }}

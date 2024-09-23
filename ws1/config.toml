@@ -25,6 +25,7 @@ home = [ "HTML", "RSS", "JSON"]
   disableBreadcrumb = false
   disableNextPrev = false
   hideEditLink = true
+  social_image = "/aws-fcj/ws1/static/images/sssss.png"
   
 
   

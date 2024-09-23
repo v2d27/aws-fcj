@@ -3,7 +3,7 @@
 baseURL = "https://v2d27.github.io/aws-fcj-ws"  
 
 # for testing in local
-#baseURL = "https://v2d27.github.io/aws-fcj-ws/homepage"  
+#baseURL = "https://v2d27.github.io/aws-fcj/homepage"  
 ####################################################################################
 
 
@@ -18,7 +18,7 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  editURL = "https://v2d27.github.io/aws-fcj-ws/ws1/"
+  editURL = "https://v2d27.github.io/aws-fcj/ws1/"
   description = "AWS Site-to-Site VPN"
   author = "ducduc08@gmail.com"
   showVisitedLinks = true
@@ -42,7 +42,7 @@ weight = 20
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Site-to-Site VPN workshop"
 identifier = "AWS Workshop"
-url = "https://github.com/v2d27/aws-fcj-ws/"
+url = "https://github.com/v2d27/aws-fcj/"
 weight = 21
 
 

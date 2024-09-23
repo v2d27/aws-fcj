@@ -8,13 +8,13 @@ pre : " <b> 3.6 </b> "
 
 Switch to **EC2 dashboard**. Enter `EC2` in searchbox, and select it.
 
-![ec2](/aws-fcj-ws/ws1/images/2.cloudserver/ec-01.png)
+![ec2](/aws-fcj/ws1/images/2.cloudserver/ec-01.png)
 
 1. In **EC2 dashboard**
   + Click **Instances**.
   + Click **Launch instances**.
 
-![ec2](/aws-fcj-ws/ws1/images/2.cloudserver/ec-02.png)
+![ec2](/aws-fcj/ws1/images/2.cloudserver/ec-02.png)
 
 
 2. In the **Name and tags** field.
@@ -23,13 +23,13 @@ Switch to **EC2 dashboard**. Enter `EC2` in searchbox, and select it.
 3. In the **Application and OS Images (Amazon Machine Image)** field.
   + Choose **Ubuntu** image with architecture **64-bit (x86)**.
 
-![ec2](/aws-fcj-ws/ws1/images/3.dataserver/ec-01.png)
+![ec2](/aws-fcj/ws1/images/3.dataserver/ec-01.png)
 
 4. In the **Instance Type** field.
  + Click on Instance type **t2.micro**.
  + Select key pair **aws_lab**, this key is created in before step [Create EC2-Cloud](/2-CloudServer/2.7-createec2).
  
-![ec2](/aws-fcj-ws/ws1/images/3.dataserver/ec-02.png)
+![ec2](/aws-fcj/ws1/images/3.dataserver/ec-02.png)
 
 5. In the **Network settings** field, click on **Edit** button.
   + In the **VPC** section, select **Data Server**.
@@ -39,11 +39,11 @@ Switch to **EC2 dashboard**. Enter `EC2` in searchbox, and select it.
   + In the **Common security section**, select security group **Data-SG-Public**.
   + Click **Launch instance** to complete.
 
-![ec2](/aws-fcj-ws/ws1/images/3.dataserver/ec-03.png)
+![ec2](/aws-fcj/ws1/images/3.dataserver/ec-03.png)
 
 Please wait a few minutes, EC2 instance needs time to start.
 
-![ec2](/aws-fcj-ws/ws1/images/3.dataserver/ec-04.png)
+![ec2](/aws-fcj/ws1/images/3.dataserver/ec-04.png)
 
 ##### Public Customer Gateway IP
 {{%notice note%}}
@@ -68,7 +68,7 @@ If you prefer not to use third-party software, you can follow the steps to conne
 
 1. Open **MobaXterm** program, and click on **Session** menu.
 
-![mb](/aws-fcj-ws/ws1/images/3.dataserver/mb-01.png)
+![mb](/aws-fcj/ws1/images/3.dataserver/mb-01.png)
 
 2. Choose **SSH** and provide some information of our server to connect:
     + Remote host: **[your EC2-Customer-Gateway public IP address]**
@@ -76,8 +76,8 @@ If you prefer not to use third-party software, you can follow the steps to conne
     + Select **Advanced SSH setting** and check **Use private key**
     + Choose the path of **aws_lab.pem** key pair file. This file is created in [here](/2-CloudServer/2.7-createec2).
 
-![mb](/aws-fcj-ws/ws1/images/3.dataserver/mb-02.png)
+![mb](/aws-fcj/ws1/images/3.dataserver/mb-02.png)
 
 3. We are done at connecting to **EC2-Customer-Gateway**. Please keep this connection for future using.
 
-![mb](/aws-fcj-ws/ws1/images/3.dataserver/mb-03.png)
+![mb](/aws-fcj/ws1/images/3.dataserver/mb-03.png)

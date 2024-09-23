@@ -3,7 +3,7 @@
 baseURL = "https://v2d27.github.io/aws-fcj-ws"  
 
 # for testing in local
-# baseURL = "https://v2d27.github.io/aws-fcj-ws/ws2"  
+# baseURL = "https://v2d27.github.io/aws-fcj/ws2"  
 ####################################################################################
 
 

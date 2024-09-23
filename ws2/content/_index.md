@@ -4,6 +4,9 @@ date :  "`r Sys.Date()`"
 weight : 1 
 chapter : false
 ---
+## Testing many  workshop on github page purpose
+
+
 # Work with Amazon System Manager - Session Manager
 
 ### Overall

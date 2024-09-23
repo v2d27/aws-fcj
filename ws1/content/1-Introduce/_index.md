@@ -20,7 +20,7 @@ Your IP address contains information about your location and browsing activity. 
 A VPN service uses cryptography to protect your internet connection from unauthorized access. It can also act as a shut-down mechanism, terminating pre-selected programs in case of suspicious internet activity. This decreases the likelihood of data being compromised. These features allow companies to give remote access to authorized users over their business networks.
 
 #### How many types of VPN?
-![intro](/aws-fcj-ws/ws1/images/1.introduce/intro-01.png)
+![intro](/aws-fcj/ws1/images/1.introduce/intro-01.png)
 The four types of VPN are:
 
 **1. Personal VPN**: enable individuals to establish secure and private connections to the open Internet.
@@ -38,7 +38,7 @@ They are incredibly useful in large-scale business environments to ensure secure
 #### Site-to-site VPN on AWS
 
 In this lab, we will explore Site-to-Site VPN, a service provided by AWS. To estabish Site-to-Site VPN connection, it works base on two dependencies: **Customer gateways** and **Virtual private gateways**.
-![intro](/aws-fcj-ws/ws1/images/1.introduce/intro-02.png)
+![intro](/aws-fcj/ws1/images/1.introduce/intro-02.png)
 + **Customer gateways (CGW)**: The CGW serves as the customer’s endpoint for the VPN connection, representing the on-premises side that connects to AWS. 
 Typically, the CGW is a physical device (such as a router or firewall) or a software application situated within the on-premises network infrastructure.
 + **Virtual private gateway (VGW)**: The VGW is part of a VPC that provides edge routing for AWS managed VPN connections and AWS Direct Connect connections. You associate an AWS Direct Connect gateway with the virtual private gateway for the VPC.
@@ -56,7 +56,7 @@ For more infomation and to understand how AWS caculates, please visit [AWS Site-
 #### Hands-on lab
 
 We will establish AWS services follow by each region of the overall diagram below:
-![intro](/aws-fcj-ws/ws1/images/1.introduce/intro-03.png)
+![intro](/aws-fcj/ws1/images/1.introduce/intro-03.png)
 
 
 #### Table of Contents

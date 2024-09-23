@@ -54,7 +54,6 @@ jobs:
           TZ: America/Los_Angeles
         run: |
           cd ws1
-
           hugo \
             --gc \
             --minify \
@@ -63,6 +62,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./ws1/public
+          name: artifact-ws1
 
       - name: Build ws2
         env:
@@ -71,7 +71,6 @@ jobs:
           TZ: America/Los_Angeles
         run: |
           cd ws2
-
           hugo \
             --gc \
             --minify \
@@ -80,6 +79,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./ws2/public
+          name: artifact-ws2
 
 
 
@@ -107,10 +107,10 @@ jobs:
         id: deployment1
         uses: actions/deploy-pages@v4
         with:
-          artifact_path: ./ws1/public
+          artifact_path: artifact-ws1
 
       - name: Deploy Site 2 to GitHub Pages
         id: deployment2
         uses: actions/deploy-pages@v4
         with:
-          artifact_path: ./ws2/public
+          artifact_path: artifact-ws2

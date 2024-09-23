@@ -25,7 +25,12 @@ home = [ "HTML", "RSS", "JSON"]
   disableBreadcrumb = false
   disableNextPrev = false
   hideEditLink = true
-  social_image = "/aws-fcj/ws1/static/images/sssss.png"
+  
+  # OpenGraph and SEO settings
+  enableOpenGraph = true
+  ogImage = "https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/ws1/static/images/sssss.png"
+  ogWidth = "1200"
+  ogHeight = "630"
   
 
   

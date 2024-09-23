@@ -1,9 +1,10 @@
-# Base URL for the site
+# ##########################Base URL for the site ##################################
+# for deployment
+baseURL = "https://v2d27.github.io/aws-fcj-ws"  
 
-baseURL = "https://v2d27.github.io/aws-fcj-ws/ws2/"  # Replace with your actual GitHub Pages URL or domain
-
-
-
+# for testing in local
+# baseURL = "https://v2d27.github.io/aws-fcj-ws/ws2"  
+####################################################################################
 
 
 

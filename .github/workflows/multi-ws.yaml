@@ -48,6 +48,19 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       
       # Each workshop has the seperated step for easily catching debug
+      # Build homepage
+      - name: Build homepage
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd homepage
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj-ws/"
+
       # Build workshop 1
       - name: Build ws1
         env:
@@ -77,8 +90,11 @@ jobs:
       # Merge many artifact to deploy in one times.
       - name: Merge two artifacts
         run: |
+          mkdir ./public
           mkdir -p ./public/ws1
           mkdir -p ./public/ws2
+          
+          cp -rf ./homepage/public/* ./public
           cp -rf ./ws1/public/* ./public/ws1
           cp -rf ./ws2/public/* ./public/ws2
 

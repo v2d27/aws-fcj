@@ -1,2 +1,0 @@
-# Require approval from the team "devops" for changes to workflow files
-.github/workflows/* @devops

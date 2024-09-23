@@ -53,13 +53,13 @@ jobs:
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: |
+          cd ws1
+
           hugo \
             --gc \
             --minify \
-            --source ws1 \
-            --destination ./ws1/public \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws1/"
-      - name: Upload ws1
+      - name: Upload ws1 hugosite
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./ws1/public
@@ -70,13 +70,15 @@ jobs:
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: |
+          cd ws2
+
           hugo \
             --gc \
             --minify \
             --source ws2 \
             --destination ./ws2/public \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws2/"
-      - name: Upload ws2
+      - name: Upload ws2 hugosite
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./ws2/public

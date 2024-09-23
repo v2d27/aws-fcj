@@ -25,12 +25,12 @@ home = [ "HTML", "RSS", "JSON"]
   disableBreadcrumb = false
   disableNextPrev = false
   hideEditLink = true
-  
+
   # OpenGraph and SEO settings
   enableOpenGraph = true
-  ogImage = "https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/ws1/static/images/sssss.png"
-  ogWidth = "1200"
-  ogHeight = "630"
+  ogImage = "https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/ws1/static/images/1.introduce/intro-03.png"
+  ogWidth = "1218"
+  ogHeight = "467"
   
 
   

@@ -96,10 +96,10 @@ jobs:
   #       uses: actions/deploy-pages@v4
 
   # Deployment job
-  deploy:
+  deploy_ws1:
     environment:
-      name: github-pages
-      url: "https://v2d27.github.io/aws-fcj-ws/"
+      name: artifact-ws1
+      url: "https://v2d27.github.io/aws-fcj-ws/ws1"
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -107,10 +107,17 @@ jobs:
         id: deployment1
         uses: actions/deploy-pages@v4
         with:
-          artifact_path: artifact-ws1
+          artifact_path: ./ws1/public
 
+  deploy_ws2:
+    environment:
+      name: artifact-ws2
+      url: "https://v2d27.github.io/aws-fcj-ws/ws1"
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy Site 2 to GitHub Pages
         id: deployment2
         uses: actions/deploy-pages@v4
         with:
-          artifact_path: artifact-ws2
+          artifact_path: ./ws1/public

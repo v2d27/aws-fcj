@@ -1,8 +1,16 @@
+# Base URL for the site
+
+
+baseURL = "https://v2d27.github.io/aws-fcj-ws/"  # Replace with your actual GitHub Pages URL or domain
+
+
+
+
+
+
+
 # Change the default theme to be used when building the site with Hugo
 theme = "hugo-theme-learn"
-
-# Base URL for the site
-baseURL = "https://v2d27.github.io/aws-fcj-ws/ws1/"  # Replace with your actual GitHub Pages URL or domain
 
 # For search functionality
 [outputs]

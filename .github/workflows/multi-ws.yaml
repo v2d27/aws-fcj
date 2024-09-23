@@ -46,7 +46,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-
+      
+      # Each workshop has the seperated step for easily catching debug
+      # Build workshop 1
       - name: Build ws1
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -58,12 +60,8 @@ jobs:
             --gc \
             --minify \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws1/"
-      # - name: Upload ws1 hugosite
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: ./ws1/public
-      #     name: artifact-ws1
 
+      # Build workshop 2
       - name: Build ws2
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -76,6 +74,7 @@ jobs:
             --minify \
             --baseURL "https://v2d27.github.io/aws-fcj-ws/ws2/"
 
+      # Merge many artifact to deploy in one times.
       - name: Merge two artifacts
         run: |
           mkdir -p ./public/ws1

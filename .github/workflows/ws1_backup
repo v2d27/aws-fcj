@@ -1,3 +1,7 @@
+
+# Complete build ONE site per time
+
+
 name: Deploy Hugo site to Pages
 
 on:
@@ -46,71 +50,29 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-
-      - name: Build ws1
+      - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: |
-          cd ws1
           hugo \
             --gc \
             --minify \
-            --source ws1 \
-            --baseURL "https://v2d27.github.io/aws-fcj-ws/ws1/"
-      - name: Upload ws1
+            --baseURL "https://v2d27.github.io/aws-fcj/"
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./ws1/public
-
-      - name: Build ws2
-      env:
-        HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-        HUGO_ENVIRONMENT: production
-        TZ: America/Los_Angeles
-      run: |
-        cd ws2
-        hugo \
-          --gc \
-          --minify \
-          --source ws1 \
-          --baseURL "https://v2d27.github.io/aws-fcj-ws/ws2/"
-    - name: Upload ws2
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./ws2/public
-
-
-
-  # # Deployment job
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #     url: "https://v2d27.github.io/aws-fcj-ws/ws1/"
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v4
+          path: ./public
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: "https://v2d27.github.io/aws-fcj-ws/"
+      url: "https://v2d27.github.io/aws-fcj/"
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy Site 1 to GitHub Pages
-        id: deployment1
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_path: ./ws1/public
-
-      - name: Deploy Site 2 to GitHub Pages
-        id: deployment2
-        uses: actions/deploy-pages@v4
-        with:
-          artifact_path: ./ws2/public

@@ -1,6 +1,6 @@
 <h1 align="center" style="color: blue;">
     <div align="center">
-        <img src="https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/static/images/sssss.png" title="Logo" style="max-width:100%;" width="200" />
+        <img src="https://raw.githubusercontent.com/v2d27/aws-fcj-ws/refs/heads/main/ws1/static/images/sssss.png" title="Logo" style="max-width:100%;" width="200" />
     </div>
     AWS - First Cloud Journey<br />
 </h1>
@@ -14,4 +14,4 @@ In this lab, we will make private connection from **Database server** to **Cloud
 
 ![intro](/static/images/1.introduce/intro-03.png)
 
-#### Hosted at [v2d27.github.io/aws-fcj](https://v2d27.github.io/aws-fcj-ws/ws1) 
+#### Hosted at [https://v2d27.github.io/aws-fcj-ws/ws1](https://v2d27.github.io/aws-fcj-ws/ws1) 

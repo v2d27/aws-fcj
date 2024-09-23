@@ -26,9 +26,9 @@ We will take the following steps to delete all the resources we created in this 
 
 
 
-#### 2. Delete NAT gateway
+#### 2. Delete NAT gateways
 
-   + Go to [NAT gateway](https://console.aws.amazon.com/vpcconsole/home#NatGateways:).
+   + Go to [NAT gateways](https://console.aws.amazon.com/vpcconsole/home#NatGateways:).
    + Click **NAT gateways**.
    + Select **Cloud-NATGW**.
    + Click **Actions**, then click **Delete NAT gateway**.
@@ -57,7 +57,7 @@ We will take the following steps to delete all the resources we created in this 
 
 
 
-#### 4. Delete VPN gateway
+#### 4. Delete VPN gateways
 
    + Go to [VPG](https://console.aws.amazon.com/vpcconsole/home#VpnGateways:).
    + Select **Cloud-VPN-GW**.

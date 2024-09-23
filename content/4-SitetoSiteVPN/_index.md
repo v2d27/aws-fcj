@@ -7,7 +7,7 @@ pre : " <b> 4. </b> "
 ---
 
 
-In this step, we will create **Customer gateways** and **Virtual private gateways** for Site-to-Site VPN connection. Please read again to know cleary in [Introduce page](/1-Introduce#site-to-site-vpn-on-aws).
+In this step, we will create **Customer gateways** and **Virtual private gateways** for Site-to-Site VPN connection. Please read again to know clearly in [Introduce page](/1-Introduce#site-to-site-vpn-on-aws).
 
 ![intro](/aws-fcj/images/1.introduce/intro-02.png)
 

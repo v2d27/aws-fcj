@@ -19,7 +19,7 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build the site
-        run: hugo hugo --source ./ws1 --destination ./public/ws1 --minify  # Output to a subfolder
+        run: hugo --source ./ws1 --destination ./public/ws1 --minify  # Output to a subfolder
 
   deploy:
     environment:

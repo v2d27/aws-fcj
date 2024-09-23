@@ -15,3 +15,11 @@ In this lab, we will make private connection from **Database server** to **Cloud
 ![intro](/ws1/static/images/1.introduce/intro-03.png)
 
 #### Hosted at [https://v2d27.github.io/aws-fcj/ws1](https://v2d27.github.io/aws-fcj/ws1) 
+
+
+### WorkShop 2 | Pending...
+
+#### Overall
+description...
+
+#### Hosted at [https://v2d27.github.io/aws-fcj/ws2](https://v2d27.github.io/aws-fcj/ws2) 

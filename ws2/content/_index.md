@@ -1,26 +1,26 @@
 ---
-title : "Session Management"
+title : "Site-to-Site VPN"
+meta: 
 date :  "`r Sys.Date()`" 
 weight : 1 
-chapter : false
+chapter : true
 ---
-## Testing many  workshop on github page purpose
-
-
-# Work with Amazon System Manager - Session Manager
+# AWS Site-to-Site VPN Connection
 
 ### Overall
- In this lab, you'll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections. 
+In this lab, we will make private connection from **Database server** to **Cloud server** through the internet enviroment, using Site-to-Site VPN on AWS service. And the server inside **Cloud server** can connect to Internet via NAT Gateway.
 
-![ConnectPrivate](/images/arc-log.png) 
-
+![intro](/aws-fcj/ws1/images/1.introduce/intro-03.png)
 
 
-### Content
- 1. [Introduction ](1-introduce/)
- 2. [Preparation](2-prerequiste/)
- 3. [Connect to EC2 instance](3-accessibilitytoinstances/)
- 4. [Manage session logs](4-s3log/)
- 5. [Port Forwarding](5-Portfwd/)
- 6. [Clean up resources](6-cleanup/)
+*We will use LibreSwan to establish IPsec VPN connections for the Data Server as a Customer Gateway on AWS EC2 in this lab. You can use various methods to connect to the AWS VPN, such as simulating on VMware, EVE-NG,... or using physical routing devices that support VPNs.*
+
+
+
+#### Table of Contents
+1. [Introduce](/1-Introduce)
+2. [CloudServer Configuration](/2-CloudServer)
+3. [DataServer Configuration](/3-DataServer)
+4. [Site-to-Site VPN](/4-SitetoSiteVPN)
+5. [Clean up resources](/5-cleanup)
+

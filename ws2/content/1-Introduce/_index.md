@@ -5,61 +5,59 @@ weight : 1
 chapter : false
 pre : " <b> 1. </b> "
 ---
-A **VPN (Virtual Private Network)** creates a private network connection between devices through the internet. VPNs are used to safely and anonymously transmit data over public networks. They work by masking user IP addresses and encrypting data so it's unreadable by anyone not authorized to receive it.
 
-#### What is a VPN used for?
-VPN services are mainly used to safely send data over the internet. The three main functions of VPNs are:
+#### VPC Limitation
+Each AWS account can create a maximum of 5 Virtual Private Clouds (VPCs) in a single region by default. This limit is designed to help manage resources and ensure that users do not overwhelm the infrastructure. If your organization expands its activities, requires more environments with high availability and scalable flexibility, you will need to create cross-connections in many regions and accounts. This workshop will demonstrate various ways to facilitate communication between them in AWS.
 
-**1. Privacy**  
-Without a virtual private network, your personal data like passwords, credit card information, and browsing history can be recorded and sold by third parties. VPNs use encryption to keep this confidential information private, especially when connecting over public wi-fi networks.  
+![intro](/aws-fcj/ws2/images/ws2.png?width=1000)
 
-**2. Anonymity**  
-Your IP address contains information about your location and browsing activity. All websites on the Internet track this data using cookies and similar technology. They can identify you whenever you visit them. A VPN connection hides your IP address so that you remain anonymous on the Internet.  
+#### What are differents between Transit Gateway and VPC Peering?
+You can see that we have two ways to make vpc connection. But they have some differences:
 
-**3. Security**  
-A VPN service uses cryptography to protect your internet connection from unauthorized access. It can also act as a shut-down mechanism, terminating pre-selected programs in case of suspicious internet activity. This decreases the likelihood of data being compromised. These features allow companies to give remote access to authorized users over their business networks.
+##### **1. For VPC Peering**
+**- Connect VPCs within the Same AWS Region**: VPC Peering allows you to establish a one-to-one connection between two VPCs within the same AWS region, enabling communication between instances in each VPC using private IP addresses.
 
-#### How many types of VPN?
-![intro](/aws-fcj/ws1/images/1.introduce/intro-01.png)
-The four types of VPN are:
+**- Inter-Region VPC Peering**: With VPC Peering, you can also connect VPCs across different AWS regions, allowing instances in each VPC to communicate with each other as if they were part of the same network.
 
-**1. Personal VPN**: enable individuals to establish secure and private connections to the open Internet.
+##### **2. For Transit Gateway**
 
-**2. Remote access VPN**: provide remote access for the individual computers to a private network.
+**- Connect Multiple VPCs and On-Premises Networks**: AWS Transit Gateway allows you to connect multiple VPCs and on-premises networks through a central hub, simplifying your network architecture and reducing the number of connections you need to manage.
 
-**3. Mobile VPN**: allow you to connect to a local network from mobile devices, ensure the encrypted protection of data, and are useful in conditions of the absence consistent or stable internet connection.
+**- Centralized Routing and Security Policies**: With AWS Transit Gateway, you can enforce and manage centralized routing and security policies across your entire network, making it easier to maintain consistent network-wide rules.
 
-**4. Site-to-site VPN**: connect to networks and enable organizations to combine several networks from different locations into a single network (intranet). 
+**- Support for Hybrid Cloud Environments**: AWS Transit Gateway natively supports connections to on-premises networks through VPN connections or AWS Direct Connect, making it a suitable solution for hybrid cloud environments.
 
-These are own networks, for example, two offices of the same company, geographically remoted, or also networks of partner companies (extranet). The main goal is to provide access to resources for multiple users in various fixed locations. 
+**- Inter-Region Connectivity**: AWS Transit Gateway supports inter-region peering, allowing you to connect VPCs across different AWS regions and improve network performance and resiliency.
 
-They are incredibly useful in large-scale business environments to ensure secure communication and sharing of information and resources between departments all over the world. These VPNs provide confidentiality by creating an encrypted tunnel and encrypting data to protect them from unauthorized access.
+#### Terraform
+Terraform is an open-source tool developed by HashiCorp for Infrastructure as Code (IaC), which enables users to define and manage cloud infrastructure through code rather than manual setup or point-and-click interfaces. Terraform shortens construction time and supports complex multi-region architecture, so it helps me optimizing my costs when using AWS services.
 
-#### Site-to-site VPN on AWS
+#### AWS services
+**- VPN Site-to-Site**: Securely connects on-premises networks to AWS VPCs over an encrypted tunnel, extending your network into the cloud.
 
-In this lab, we will explore Site-to-Site VPN, a service provided by AWS. To estabish Site-to-Site VPN connection, it works base on two dependencies: **Customer gateways** and **Virtual private gateways**.
-![intro](/aws-fcj/ws1/images/1.introduce/intro-02.png)
-+ **Customer gateways (CGW)**: The CGW serves as the customer’s endpoint for the VPN connection, representing the on-premises side that connects to AWS. 
-Typically, the CGW is a physical device (such as a router or firewall) or a software application situated within the on-premises network infrastructure.
-+ **Virtual private gateway (VGW)**: The VGW is part of a VPC that provides edge routing for AWS managed VPN connections and AWS Direct Connect connections. You associate an AWS Direct Connect gateway with the virtual private gateway for the VPC.
+**- Transit Gateway**: Central hub that connects multiple VPCs and on-premises networks, simplifying network management across regions and accounts.
 
-#### Site-to-Site VPN Connection Pricing on AWS
+**- VPC Peering**: Direct, private connection between two VPCs, allowing seamless communication without the public internet.
 
-AWS caculates Site-to-Site VPN connection following by: `the number` and `the duration` time of connection. This is applied for all customers, include *free-tier*:
+**- Session Manager**: Provides secure, browser-based shell access to EC2 instances, eliminating the need for SSH and public IPs. 
 
-***$0.05 per Site-to-Site VPN connection per hour***
+**- IAM Roles**: Grant temporary access to AWS S3 resource securely for users and services, managed through policies.
 
-Data transfer-in through the connection is free, but data transfer-out is only free up to 100GB each month for you. Our purpose is only hands-on lab work, so you don't need to worry much about additional costs.
+**- Amazon S3**: Scale storage for Session Manager logs.
 
-For more infomation and to understand how AWS caculates, please visit [AWS Site-to-Site Pricing](https://aws.amazon.com/vpn/pricing/) page.
-
-#### Hands-on lab
-
-We will establish AWS services follow by each region of the overall diagram below:
-![intro](/aws-fcj/ws1/images/1.introduce/intro-03.png)
+#### Estimate Costs
 
 
-#### Table of Contents
+
+For more infomation and to understand how AWS caculates, please visit the following pages:
++ [AWS VPN Site-to-Site Pricing](https://aws.amazon.com/vpn/pricing/)
++ [Transit Gateway Pricing](https://aws.amazon.com/transit-gateway/pricing/)
++ [VPC Peering Pricing](https://aws.amazon.com/about-aws/whats-new/2021/05/amazon-vpc-announces-pricing-change-for-vpc-peering/)
+
+To complete this workshop you will spend about **0.5$ each hour** for free-tier accounts.
+
+
+#### Content
 1. [Introduce](/1-Introduce)
 2. [CloudServer Configuration](/2-CloudServer)
 3. [DataServer Configuration](/3-DataServer)

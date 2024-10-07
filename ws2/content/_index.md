@@ -5,7 +5,7 @@ date :  "`r Sys.Date()`"
 weight : 1 
 chapter : true
 ---
-## Automating AWS Network Connectivity with Terraform: VPN, Transit Gateway, VPC Peering & Session Manager
+## Automating AWS Network Connectivity with Terraform
 
 ### Overview
 This workshop focuses on creating a automated AWS network architecture using Terraform to enable secure and efficient connectivity across multiple AWS accounts and regions. 

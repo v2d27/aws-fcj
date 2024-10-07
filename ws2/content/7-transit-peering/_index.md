@@ -6,3 +6,4 @@ chapter : false
 pre : " <b> 7. </b> "
 ---
 
+![intro](/aws-fcj/ws2/images/2.content/transit-vpn.png)

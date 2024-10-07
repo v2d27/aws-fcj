@@ -7,9 +7,18 @@ pre : " <b> 1. </b> "
 ---
 
 #### VPC Limitation
-Each AWS account can create a maximum of 5 Virtual Private Clouds (VPCs) in a single region by default. This limit is designed to help manage resources and ensure that users do not overwhelm the infrastructure. If your organization expands its activities, requires more environments with high availability and scalable flexibility, you will need to create cross-connections in many regions and accounts. This workshop will demonstrate various ways to facilitate communication between them in AWS.
+Each AWS account can create a maximum of 5 Virtual Private Clouds (VPCs) in a single region by default. This limit is designed to help manage resources and ensure that users do not overwhelm the infrastructure. If your organization expands its activities, requires more environments with high availability and scalable flexibility, you will need to create cross-connections in many regions and accounts. This workshop will demonstrate two ways to facilitate communication between them in AWS.
 
 ![intro](/aws-fcj/ws2/images/ws2.png?width=1000)
+
+
+#### VPC Peering
+VPC peering is a feature that creates a direct network connection between two VPCs within AWS. 
+
+#### Transit Gateway
+
+![intro](/aws-fcj/ws2/images/2.content/tgw.png)
+
 
 #### What are differents between Transit Gateway and VPC Peering?
 You can see that we have two ways to make vpc connection. But they have some differences:
@@ -30,6 +39,7 @@ You can see that we have two ways to make vpc connection. But they have some dif
 **- Inter-Region Connectivity**: AWS Transit Gateway supports inter-region peering, allowing you to connect VPCs across different AWS regions and improve network performance and resiliency.
 
 #### Terraform
+![intro](/aws-fcj/ws2/images/2.content/terraform.png)
 Terraform is an open-source tool developed by HashiCorp for Infrastructure as Code (IaC), which enables users to define and manage cloud infrastructure through code rather than manual setup or point-and-click interfaces. Terraform shortens construction time and supports complex multi-region architecture, so it helps me optimizing my costs when using AWS services.
 
 #### AWS services

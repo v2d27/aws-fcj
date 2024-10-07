@@ -14,12 +14,6 @@ Creating secure connection with AWS Systems Manager (Session Manager) and saving
 
 ![intro](/aws-fcj/ws2/images/ws2.png?width=1000)
 
-
-Terraform is an **open-source** tool developed by HashiCorp for *Infrastructure as Code (IaC)*, which enables users to define and manage cloud infrastructure through 
-code rather than manual setup or *point-and-click* interfaces. 
-Terraform shortens construction time and supports complex multi-region architecture, so it helps me optimizing my costs when using AWS services.
-
-
 #### Content
 1. [Introduce](/1-Introduce)
 

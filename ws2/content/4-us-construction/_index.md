@@ -6,14 +6,11 @@ chapter : false
 pre : " <b> 4. </b> "
 ---
 
-We create Data Server as a **Customer Gateway** on AWS EC2 in this lab. You can use various methods to connect to the AWS VPN, such as simulating on VMware, EVE-NG,... or using physical routing devices that support VPNs.
 
-![intro](/aws-fcj/ws1/images/3.dataserver/dataserver.png)
+**N.Virginia region**: The second account will use one Region in **us-east-1**. We will create two VPCs inside with private subnet. All of them can not connect to internet. VPC5 will help us validating **VPN connection** and **Transit Gateway** peering connection. VPC4 will help us validating the **Inter-region VPC Peering** connection.
 
-#### Table of Contents
-1. [Create VPC](/3-DataServer/3.1-createvpc)
-2. [Create Subnet](/3-DataServer/3.2-createsubnet)
-3. [Create Security Group](/3-DataServer/3.3-securitygroup)
-4. [Create Internet Gateway](/3-DataServer/3.4-createigw)
-5. [Create Routing Table](/3-DataServer/3.5-routingtable)
-6. [Create EC2 Customer Gateway](/3-DataServer/3.6-createec2)
+**On-premise region**: This is simulation of on-premise server, which is using **LibreSwan** instead of my real devices for establishing VPN Site-to-Site connection to AWS Cloud. It contains a Internet Gateway, a VPC and a EC2 with public subnet inside. We will automate the installation processing LibreSwan by Bashshell through Terraform. You can understand more about [LibreSwan here](https://v2d27.github.io/aws-fcj/ws1/4-sitetositevpn/4.4-libreswan/).
+
+![intro](/aws-fcj/ws2/images/2.content/us.png)
+
+Now, let start contruct!

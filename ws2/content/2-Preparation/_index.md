@@ -30,6 +30,12 @@ AWS IAM (Identity and Access Management) user’s access key and secret access k
 You can complete this workshop in one account by entering the same **access_key** and **secret_key** in "terraform.tfvars" file.
 {{%/notice%}}
 
+#### Regions
+First region, **Singapore** region with region code: `ap-southeast-1` for Account 1.
+
+Second region, **N. Virginia** (USA) region with region code: `us-east-1` for Account 2.
+
+
 #### Workshop Structure
 This structure represents where files are located and all these files work together in the root module to define and manage the infrastructure as code using Terraform.
 ```bash

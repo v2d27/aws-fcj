@@ -13,10 +13,12 @@ Each AWS account can create a maximum of 5 Virtual Private Clouds (VPCs) in a si
 
 
 #### VPC Peering
-VPC peering is a feature that creates a direct network connection between two VPCs within AWS. 
+
+A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IPv4 addresses or IPv6 addresses. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, or with a VPC in another AWS account. The VPCs can be in different Regions (also known as an inter-Region VPC peering connection).
+![intro](/aws-fcj/ws2/images/2.content/inter-region-vpc-peering.png)
 
 #### Transit Gateway
-
+A Transit Gateway functions as a virtual router, connecting multiple AWS VPCs and VPN connections within a single AWS account or across multiple accounts. It enables you to establish secure connections between your VPCs and on-premises networks, reducing the need for complex configurations and multiple connections. It provides third-party communication with other cloud providers.
 ![intro](/aws-fcj/ws2/images/2.content/tgw.png)
 
 
@@ -38,9 +40,19 @@ You can see that we have two ways to make vpc connection. But they have some dif
 
 **- Inter-Region Connectivity**: AWS Transit Gateway supports inter-region peering, allowing you to connect VPCs across different AWS regions and improve network performance and resiliency.
 
+
+
 #### Terraform
+
 ![intro](/aws-fcj/ws2/images/2.content/terraform.png)
+
 Terraform is an open-source tool developed by HashiCorp for Infrastructure as Code (IaC), which enables users to define and manage cloud infrastructure through code rather than manual setup or point-and-click interfaces. Terraform shortens construction time and supports complex multi-region architecture, so it helps me optimizing my costs when using AWS services.
+
+
+
+
+
+
 
 #### AWS services
 **- VPN Site-to-Site**: Securely connects on-premises networks to AWS VPCs over an encrypted tunnel, extending your network into the cloud.
@@ -55,9 +67,11 @@ Terraform is an open-source tool developed by HashiCorp for Infrastructure as Co
 
 **- Amazon S3**: Scale storage for Session Manager logs.
 
+
+
+
+
 #### Estimate Costs
-
-
 
 For more infomation and to understand how AWS caculates, please visit the following pages:
 + [AWS VPN Site-to-Site Pricing](https://aws.amazon.com/vpn/pricing/)
@@ -65,11 +79,3 @@ For more infomation and to understand how AWS caculates, please visit the follow
 + [VPC Peering Pricing](https://aws.amazon.com/about-aws/whats-new/2021/05/amazon-vpc-announces-pricing-change-for-vpc-peering/)
 
 To complete this workshop you will spend about **0.5$ each hour** for free-tier accounts.
-
-
-#### Content
-1. [Introduce](/1-Introduce)
-2. [CloudServer Configuration](/2-CloudServer)
-3. [DataServer Configuration](/3-DataServer)
-4. [Site-to-Site VPN](/4-SitetoSiteVPN)
-5. [Clean up resources](/5-cleanup)

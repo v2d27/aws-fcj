@@ -8,6 +8,10 @@ pre : " <b> 9. </b> "
 
 We will clean up all applied resources configurations by **`terraform destroy`** command. Continue to enter **`yes`** to confirm:
 
+```
+terraform destroy
+```
+
 ![intro](/aws-fcj/ws2/images/3.validating/tf-destroy.png)
 
 Please wait a few minutes to destroying everything!!

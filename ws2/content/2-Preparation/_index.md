@@ -64,3 +64,8 @@ My Workshop
 {{%notice warning%}}
 **terraform.tfvars** file contains security credentials. Please prevent it from uploading your secret infomation by adding ***.tfvars** line in `.gitignore` if you are using git.
 {{%/notice%}}
+
+#### Contents
+- [2.1 Initialization Variables](/2-Preparation/2.1-init-variable)
+- [2.2 Initialization Providers](/2-Preparation/2.2-init-provider)
+- [2.3 Initialization Outputs](/2-Preparation/2.3-init-output)

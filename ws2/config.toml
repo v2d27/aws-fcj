@@ -28,9 +28,9 @@ home = [ "HTML", "RSS", "JSON"]
 
   # OpenGraph and SEO settings
   enableOpenGraph = true
-  ogImage = "https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/ws1/static/images/1.introduce/intro-03.png"
-  ogWidth = "1218"
-  ogHeight = "467"
+  ogImage = "https://v2d27.github.io/aws-fcj/ws2/images/ws2.png"
+  ogWidth = "1062"
+  ogHeight = "607"
   
 
   

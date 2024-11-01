@@ -27,3 +27,6 @@ This workshop focuses on creating a automated AWS network architecture using Ter
 #### Hosted at [https://v2d27.github.io/aws-fcj/ws2](https://v2d27.github.io/aws-fcj/ws2) 
 #### Github Project [https://github.com/v2d27/aws-with-terraform](https://github.com/v2d27/aws-with-terraform) 
 
+### WorkShop 3 | AWS Code Pipeline for ECS, Fargate, Blue/Green deployment, AutoScale with Terraform
+
+#### Pending

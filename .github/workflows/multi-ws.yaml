@@ -192,7 +192,7 @@ jobs:
             --baseURL "https://v2d27.github.io/aws-fcj/ws10/"
 
       # Merge many artifact to deploy in one times.
-      - name: Merge two artifacts
+      - name: Merge 11 artifacts (01 homepage and 10 workshops)
         run: |
           mkdir ./public
           mkdir -p ./public/ws1

@@ -1,0 +1,55 @@
+# ##########################Base URL for the site ##################################
+# for deployment
+baseURL = "https://v2d27.github.io/aws-fcj/"  
+
+# for testing in local
+# baseURL = "https://v2d27.github.io/aws-fcj/ws2"  
+####################################################################################
+
+
+# Change the default theme to be used when building the site with Hugo
+theme = "hugo-theme-learn"
+
+# For search functionality
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "workshop"
+  # Git hub repo link
+  editURL = "https://v2d27.github.io/aws-fcj/ws2/"
+  description = "Workshop 2"
+  author = "ducduc08@gmail.com"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  hideEditLink = true
+
+  # OpenGraph and SEO settings
+  enableOpenGraph = true
+  ogImage = "https://v2d27.github.io/aws-fcj/ws2/images/ws2.png"
+  ogWidth = "1062"
+  ogHeight = "607"
+  
+
+  
+[Languages]
+[Languages.en]
+title = "Automating AWS Network Connectivity with Terraform"
+weight = 1
+languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-facebook'></i> AWS Study Group"
+identifier = "AWS Study Group FB"
+url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+weight = 20
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github Workshop"
+identifier = "Github Workshop"
+url = "https://github.com/v2d27/aws-fcj/"
+weight = 21
+
+

@@ -87,16 +87,136 @@ jobs:
             --minify \
             --baseURL "https://v2d27.github.io/aws-fcj/ws2/"
 
+      # Build workshop 3
+      - name: Build ws3
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws3
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws3/"
+            
+      # Build workshop 4
+      - name: Build ws4
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws4
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws4/"            
+
+      # Build workshop 5
+      - name: Build ws5
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws5
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws5/"
+
+      # Build workshop 6
+      - name: Build ws6
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws6
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws6/"
+
+      # Build workshop 7
+      - name: Build ws7
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws7
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws7/"
+
+      # Build workshop 8
+      - name: Build ws8
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws8
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws8/"
+
+      # Build workshop 9
+      - name: Build ws9
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws9
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws9/"
+
+      # Build workshop 10
+      - name: Build ws10
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: |
+          cd ws10
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://v2d27.github.io/aws-fcj/ws10/"
+
       # Merge many artifact to deploy in one times.
       - name: Merge two artifacts
         run: |
           mkdir ./public
           mkdir -p ./public/ws1
           mkdir -p ./public/ws2
+          mkdir -p ./public/ws3
+          mkdir -p ./public/ws4
+          mkdir -p ./public/ws5
+          mkdir -p ./public/ws6
+          mkdir -p ./public/ws7
+          mkdir -p ./public/ws8
+          mkdir -p ./public/ws9
+          mkdir -p ./public/ws10
           
           cp -rf ./homepage/public/* ./public
           cp -rf ./ws1/public/* ./public/ws1
           cp -rf ./ws2/public/* ./public/ws2
+          cp -rf ./ws3/public/* ./public/ws3
+          cp -rf ./ws4/public/* ./public/ws4
+          cp -rf ./ws5/public/* ./public/ws5
+          cp -rf ./ws6/public/* ./public/ws6
+          cp -rf ./ws7/public/* ./public/ws7
+          cp -rf ./ws8/public/* ./public/ws8
+          cp -rf ./ws9/public/* ./public/ws9
+          cp -rf ./ws10/public/* ./public/ws10
 
       - name: Upload artifact Hugo site
         uses: actions/upload-pages-artifact@v3

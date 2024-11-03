@@ -15,7 +15,7 @@ def dir_list(path):
 
 def file_read(file):
     # Open the file and read its contents
-    with open(file, 'r') as f:
+    with open(file, 'r', encoding='utf-8') as f:
         return f.read()
 
 
@@ -47,9 +47,9 @@ def create_contents_for_dir(path):
 
     main_index_file = path + "/_index.md"
     if os.path.exists(main_index_file):
-        with open(main_index_file, 'r') as file: data = file.readlines()
+        with open(main_index_file, 'r', encoding='utf-8') as file: data = file.readlines()
         data += "\n\n" + contents
-        with open(main_index_file, 'w') as file: file.writelines(data)
+        with open(main_index_file, 'w', encoding='utf-8') as file: file.writelines(data)
 
     return contents
 

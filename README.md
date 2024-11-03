@@ -17,6 +17,9 @@ In this lab, we will make private connection from **Database server** to **Cloud
 #### Hosted at [https://v2d27.github.io/aws-fcj/ws1](https://v2d27.github.io/aws-fcj/ws1) 
 
 
+
+
+
 ### WorkShop 2 | Automating AWS Network Connectivity with Terraform
 
 #### Overall
@@ -27,6 +30,17 @@ This workshop focuses on creating a automated AWS network architecture using Ter
 #### Hosted at [https://v2d27.github.io/aws-fcj/ws2](https://v2d27.github.io/aws-fcj/ws2) 
 #### Github Project [https://github.com/v2d27/aws-with-terraform](https://github.com/v2d27/aws-with-terraform) 
 
-### WorkShop 3 | AWS Code Pipeline for ECS, Fargate, Blue/Green deployment, AutoScale with Terraform
 
-#### Pending
+
+
+
+### WorkShop 3 | Automated ECS Deployment on Fargate with Blue/Green Deployment and AutoScaling using Terraform
+
+#### Overall
+
+
+
+![intro](ws3/static/images/ws3.png)
+
+#### Hosted at [https://v2d27.github.io/aws-fcj/ws3](https://v2d27.github.io/aws-fcj/ws3) 
+#### Github Project 

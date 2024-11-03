@@ -1,27 +1,21 @@
 ---
-title : "AWS Network Connectivity with Terraform"
+title : "Home"
 meta: 
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : true
 ---
 
-# Workshop 3
+### **Automating ECS Deployment on Fargate with Blue/Green Deployment and AutoScaling using Terraform**
 
-###  <a name='Overview'></a>Overview
-This workshop focuses on creating a automated AWS network architecture using Terraform to enable secure and efficient connectivity across multiple AWS accounts and regions. 
-This design uses AWS networking solutions, including VPN Site-to-Site connections, AWS Transit Gateway, VPC Peering, providing inter-region and multi-account connection. 
-Creating secure connection with AWS Systems Manager (Session Manager) and saving the history of sessions to AWS S3.
+In modern application development, automating deployment pipelines and scalable infrastructure are crucial for efficiency and reliability. This setup uses Terraform to automate the deployment of containerized applications on AWS ECS with Fargate, leveraging blue/green deployment strategy and AutoScaling for high availability and resilience.
 
-![intro](/aws-fcj/ws2/images/ws2.png?width=1000)
+![intro](/aws-fcj/ws3/images/ws3.png)
 
 #### Contents
 - [1. Introduction](/1-Introduce)
 - [2. Preparation](/2-Preparation)
-- [3. Singapore Construction](/3-sin-construction)
-- [4. N.Virginia Construction](/4-us-construction)
-- [5. Inter-region VPC Peering](/5-vpc-peering)
-- [6. Inter-region Transit Peering](/6-transit-peering)
-- [7. Transit Gateway with VPN](/7-transit-vpn)
-- [8. Validate Connection](/8-validate-connection)
-- [9. Clean up resources](/9-cleanup)
+- [3. AWS ECS Cluster](/3-aws-ecs)
+- [4. AWS Pipeline](/4-pipeline)
+- [5. Validating](/5-validate)
+- [6. Clean up resources](/6-cleanup)

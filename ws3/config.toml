@@ -3,7 +3,7 @@
 baseURL = "https://v2d27.github.io/aws-fcj/"  
 
 # for testing in local
-# baseURL = "https://v2d27.github.io/aws-fcj/ws2"  
+# baseURL = "https://v2d27.github.io/aws-fcj/ws3"  
 ####################################################################################
 
 
@@ -18,8 +18,8 @@ home = [ "HTML", "RSS", "JSON"]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
   # Git hub repo link
-  editURL = "https://v2d27.github.io/aws-fcj/ws2/"
-  description = "Workshop 2"
+  editURL = "https://v2d27.github.io/aws-fcj/ws3/"
+  description = "Workshop 3"
   author = "ducduc08@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
@@ -28,7 +28,7 @@ home = [ "HTML", "RSS", "JSON"]
 
   # OpenGraph and SEO settings
   enableOpenGraph = true
-  ogImage = "https://v2d27.github.io/aws-fcj/ws2/images/ws2.png"
+  ogImage = "https://v2d27.github.io/aws-fcj/ws3/images/ws3.png"
   ogWidth = "1062"
   ogHeight = "607"
   
@@ -36,7 +36,7 @@ home = [ "HTML", "RSS", "JSON"]
   
 [Languages]
 [Languages.en]
-title = "Automating AWS Network Connectivity with Terraform"
+title = "Automated ECS Deployment on Fargate with Blue/Green Deployment and AutoScaling using Terraform"
 weight = 1
 languageName = "English"
 

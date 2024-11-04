@@ -6,10 +6,9 @@ chapter : false
 pre : " <b> 4.3 </b> "
 ---
 
+#### IAM Role for Code Pipeline
+
 ```terraform
-################################################################
-# IAM Role for Code Pipeline
-################################################################
 resource "aws_iam_role" "codepipeline_role" {
     name = "codepipeline_role"
     assume_role_policy = file("./templates/policies/codepipeline_role.json")
@@ -25,25 +24,29 @@ resource "aws_iam_role_policy_attachment" "codepipeline_attachment" {
     role = aws_iam_role.codepipeline_role.name
     policy_arn = aws_iam_policy.codebuild_policy.arn
 }
+```
 
-################################################################
-# Code Pipeline
-################################################################
-# Data source to retrieve the GitHub OAuth token from Secrets Manager
-data "aws_secretsmanager_secret" "github_personal_access_token" {
-  name = "GitHub-v2d27"
-}
+#### AWS CodeStar to connect to GitHub
 
-data "aws_secretsmanager_secret_version" "github_personal_access_token" {
-  secret_id = data.aws_secretsmanager_secret.github_personal_access_token.id
-}
+You have to manually authorize access to GitHub. Here is how you can do [Create a connection to GitHub](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-create-github.html).
 
+```terraform
 resource "aws_codestarconnections_connection" "v2d27_github_connection" {
     name = "v2d27-github-connection"
     provider_type = "GitHub"
     # Validate codestar connections manually since July 2024
 }
+```
 
+#### Code Pipeline
+
+Automates the CI/CD process for a web application through three key stages.
+
+- **Source Stage**: The "Source" stage retrieves the application code from a GitHub repository using AWS CodeStar. It outputs the source code as source-output, configured to pull from the main branch.
+- **Build Stage**: In the "Build" stage, the pipeline uses AWS CodeBuild to compile the source code. The action named "BuildAction" takes the source-output artifact and produces a build-output, which contains the built application.
+- **Deploy Stage**: The final "Deploy" stage employs AWS CodeDeploy to deploy the built application. The "DeployAction" uses the build-output artifact and specifies the application and deployment group, ensuring the latest version is released to the target environment.
+
+```terraform
 resource "aws_codepipeline" "web_app_pipeline" {
     name = "${local.project_name}_pipeline"
     role_arn = aws_iam_role.codepipeline_role.arn
@@ -102,13 +105,5 @@ resource "aws_codepipeline" "web_app_pipeline" {
             }
         }
     }
-}
-
-output "codepipeline_name" {
-    value = aws_codepipeline.web_app_pipeline.name
-}
-
-output "ecr_repository_url" {
-    value = aws_ecr_repository.web_app_ecr.repository_url
 }
 ```

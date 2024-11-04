@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 3.4 </b> "
 ---
 
-#### Application Load Balancer (ALB)
+#### 1. Application Load Balancer (ALB)
 Create internet application load balancer
 
 ```terraform
@@ -19,7 +19,7 @@ resource "aws_alb" "web_app_alb" {
     idle_timeout = 60
 }
 ```
-#### Application Load Balancer Listener
+#### 2. Application Load Balancer Listener
 
 Application Load Balancer will listen in two ports:
 
@@ -29,14 +29,7 @@ Application Load Balancer will listen in two ports:
 The listener will forward all traffic to Target group without any conditions.
 
 ```terraform
-# Blue/Green deployment for ECS ------------------------------------------------
-#   container_port = 80 # image
-#   host_port = 80 # ECS
-#   product_port = 80 # Application Load Balancer for product environment
-#   preproduct_port = 8088 # Application Load Balancer for pre-product environment
-# ------------------------------------------------------------------------------
-
-# Listener 80 port
+# Listener both 80 port
 resource "aws_alb_listener" "frontend_product" {
     load_balancer_arn = aws_alb.web_app_alb.arn
     port = local.product_port
@@ -49,7 +42,7 @@ resource "aws_alb_listener" "frontend_product" {
     }
 }
 
-# Listener 8088 port
+# Listener both 8088 port
 resource "aws_alb_listener" "frontend_preproduct" {
     load_balancer_arn = aws_alb.web_app_alb.arn
     port = local.preproduct_port
@@ -62,9 +55,9 @@ resource "aws_alb_listener" "frontend_preproduct" {
     }
 }
 ```
-#### Target Groups
+#### 3. Target Groups
 
-Create Target groups for ALB and define health check time. We will create the same configurations for two target groups to deploy with blue/green strategy. 
+Create Target groups for ALB and define health check time. We will create the same configurations for two target groups to deploy with blue/green deployment strategy. 
 More on Terraform registry [aws_alb_target_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group).
 
 ```terraform
@@ -104,11 +97,10 @@ resource "aws_alb_target_group" "frontend_preproduct" {
         unhealthy_threshold = "2"
     }
 }
-
 ```
 
 
-#### Security Groups
+#### 4. Security Groups
 
 Security Groups for ALB to allow listen on port 80 (product) and port 8088 (preproduct) from anywhere:
 

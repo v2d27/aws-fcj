@@ -39,7 +39,7 @@ terraform apply
 Please wait a few minutes to Terraform applying before validating connection.
 
 
-#### Contents
+#### Table of Contents
 - [5.1 GitHub and AWS Connection](/5-validate/5.1-codestar)
 - [5.2 Pipeline Result](/5-validate/5.2-pipeline)
 - [5.3 Blue/Green Deployment](/5-validate/5.3-bluegreen)

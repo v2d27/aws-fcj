@@ -127,8 +127,7 @@ If you lose your AWS access key and secret key, you will be unable to access AWS
 {{%/notice%}}
 
 
-
-#### Contents
+#### Table of Contents
 - [2.1 Init Environment](/2-Preparation/2.1-init-env)
 - [2.2 Init IAM Roles and Policies](/2-Preparation/2.2-init-role)
 - [2.3 Init ECS Task Template](/2-Preparation/2.3-init-template)

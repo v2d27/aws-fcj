@@ -23,7 +23,7 @@ def file_read(file):
 def create_contents_for_dir(path):
     directories = dir_list(path)
     if len(directories) == 0: return
-    contents = "#### Contents"
+    contents = "#### Table of Contents"
     for d in directories:
         index_file = path + "/" + d + "/_index.md"
         if not os.path.exists(index_file): continue

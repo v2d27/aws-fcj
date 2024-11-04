@@ -6,11 +6,17 @@ chapter : false
 pre : " <b> 4.1 </b> "
 ---
 
+There are some following contents in this step:
+- [1. Terraform infrastructure](#1-terraform-infrastructure)
+- [2. CodeBuild pipeline file](#2-codebuild-pipeline-file)
+- [3. Making CodeDeploy file ](#3-making-codedeploy-file)
+- [4. Making image by Dockerfile](#4-making-image-by-dockerfile)
+
+### 1. Terraform infrastructure
+
+#### IAM Role for CodeBuild
 
 ```terraform
-################################################################
-# IAM Role for CodeBuild
-################################################################
 resource "aws_iam_role" "codebuild_role" {
     name = "CodeBuildServiceRole"
     assume_role_policy = file("./templates/policies/codebuild_role.json")
@@ -26,18 +32,32 @@ resource "aws_iam_role_policy_attachment" "codebuild_attachment" {
     role = aws_iam_role.codebuild_role.name
     policy_arn = aws_iam_policy.codebuild_policy.arn
 }
+```
 
-################################################################
-# Code Build
-################################################################
+#### Variables
+
+```terraform
 locals {
+    # URL of the ECR repository where Docker images are stored
     ecr_repository_url = aws_ecr_repository.web_app_ecr.repository_url
+    
+    # Name of the GitHub repository used in the pipeline
     github_repository = "aws-codepipeline"
-    dockerhub_url = "hercules9/it_company_business:latest"
+    
+    # AWS account ID of the current caller
     account_id = data.aws_caller_identity.current.account_id
-    shifttraffic_timeout = 120  # seconds (second must be equal to [minutes] * 60)
+    
+    # Timeout duration for traffic shifting during deployment, specified in seconds
+    shifttraffic_timeout = 120  # seconds (seconds must be equal to [minutes] * 60)
 }
 
+```
+
+#### Code Build
+
+Define an AWS CodeBuild project integrated with AWS CodePipeline for automated builds. It contains essential properties such as the IAM role, build timeout, and environment settings, including the Docker image and compute type. Key environment variables are defined to manage deployment configurations and logging to CloudWatch is set up for tracking build activities. The project sources its code from CodePipeline, using a specified `buildspec.yaml` file to guide the build process. More at Terraform registry: [aws_codebuild_project](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project).
+
+```terraform
 resource "aws_codebuild_project" "aws_codepipeline" {
     name = "aws_codepipeline"
     description = "aws_codepipeline"
@@ -53,24 +73,6 @@ resource "aws_codebuild_project" "aws_codepipeline" {
         image = "aws/codebuild/standard:7.0" # for image standard:7.0 = > must run on BUILD_GENERAL1_MEDIUM
         type = "LINUX_CONTAINER"
         image_pull_credentials_type = "CODEBUILD"
-
-        # DockerHub variable
-        # environment_variable {
-        #     name = "DOCKER_USERNAME"
-        #     value = var.dockerhub_account
-        # }
-        # environment_variable {
-        #     name = "DOCKER_PASSWORD"
-        #     value = var.dockerhub_password
-        # }
-        # environment_variable { 
-        #     name = "IMAGE_NAME"
-        #     value = local.dockerhub_url
-        # }
-        # environment_variable {
-        #     name = "DOCKER_PATH"
-        #     value = local.dockerhub_url
-        # }
 
         # ECR variable
         environment_variable {
@@ -115,11 +117,6 @@ resource "aws_codebuild_project" "aws_codepipeline" {
             group_name = aws_cloudwatch_log_group.webapp_logs.name
             stream_name = aws_cloudwatch_log_stream.codebuild_log.name
         }
-
-        # s3_logs {
-        #     status = "ENABLED"
-        #     location = "${aws_s3_bucket.aws_codepipeline.bucket}/buildlogs"
-        # }
     }
 
     # build directly from github ----------------------------------------------------------
@@ -140,6 +137,9 @@ resource "aws_codebuild_project" "aws_codepipeline" {
     # -------------------------------------------------------------------------------------
 }
 ```
+
+
+### 2. CodeBuild pipeline file
 
 Declare the `buildspec.yaml` file:
 
@@ -201,7 +201,12 @@ artifacts:
 
 ```
 
-The `appspec.yaml` file is always called by CodeDeploy whenever it runs. Using `build-appspec.sh` file to pass arguments from Terraform to CodeDeploy through CodeBuild process. 
+
+### 3. Making CodeDeploy file 
+
+The *appspec.yaml* file is always called by CodeDeploy whenever it runs. Using *build-appspec.sh* file to pass arguments from Terraform to CodeDeploy through CodeBuild process. 
+
+Declare the `build-appspec.sh` file:
 
 ```bash
 #!/bin/bash
@@ -234,17 +239,27 @@ echo "-----------------------------------------------------------------"
 ```
 
 
-`Dockerfile`
+### 4. Making image by Dockerfile
 
 - create docker image with all static website files inside nginx html 
 - set container port to **port 80**
+- install stress test package to increase CPU usage, used for validating AutoScaling
+
+Declare the `Dockerfile` file:
 
 ```Dockerfile
 FROM nginx:alpine
+
+# RUN apk update && apk add --no-cache stress-ng
+RUN apk add --no-cache stress-ng
+
+# Example: increase cpu usage to 100% in 120s
+# => docker exec -it [container_name] stress-ng --cpu 0 --timeout 120s
 
 COPY company-business /usr/share/nginx/html
 
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+
 ```

@@ -6,11 +6,9 @@ chapter : false
 pre : " <b> 4.2 </b> "
 ---
 
+#### IAM Role for Code Deploy
 
 ```terraform
-################################################################
-# IAM Role for Code Deploy
-################################################################
 resource "aws_iam_role" "codedeploy_role" {
     name = "codedeploy_role"
     assume_role_policy = file("./templates/policies/codedeploy_role.json")
@@ -26,10 +24,13 @@ resource "aws_iam_role_policy_attachment" "codedeploy_attachment" {
     policy_arn = aws_iam_policy.codedeploy_policy.arn
     role = aws_iam_role.codedeploy_role.name
 }
+```
+#### Code Deploy
 
-################################################################
-# Code Deploy
-################################################################
+This Terraform configuration sets up an AWS CodeDeploy application and deployment group for deploying a web application using ECS. The application is defined to use the ECS compute platform, and the deployment group is configured for blue/green deployments with traffic control, allowing for a seamless switch between the current and new versions of the application. It includes options for handling deployment timeouts, automatic rollback in case of deployment failures, and specific settings for ECS services and load balancer configurations. The load balancer routes traffic between production and pre-production target groups, facilitating controlled deployment and testing of new versions. 
+
+This workshop uses `CodeDeployDefault.ECSAllAtOnce` to deploy an application revision to as many instances as possible at once. You can control the routing traffic to instances process through other configurations. Understand more about it in [Working with deployment configurations in CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html)
+```terraform
 resource "aws_codedeploy_app" "webapp_codedeploy" {
     name = "webapp-codedeploy"
     compute_platform = "ECS"
@@ -103,3 +104,5 @@ resource "aws_codedeploy_deployment_group" "webapp_deploygroup" {
     }
 }
 ```
+
+Each time the CodeDeploy runs, it will read the defined parameters in "appspec.yaml" file.

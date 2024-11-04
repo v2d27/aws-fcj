@@ -37,6 +37,8 @@ We config services roles and policies through json files, making roles and polic
 - **Json Policies path**: `templates\policies\ecstask_policy.json`
 - Allow Pulling docker image from AWS ECR.
 - Allow exporting container logs to CloudWatch Logs.
+- Allow SSM and SSMMESSAGES policy to interact with AWS-CLI.
+- Allow to access all ECS cluster.
 - **Note**: *We have **task_role_arn** and **execution_role_arn** use this IAM Roles. We should split into two seperated roles. In this workshop, both of ECS Task and Container will run the same role for testing. Please check this resource in Terraform: **aws_ecs_task_definition.web_app_task***
 
 ```json
@@ -49,7 +51,10 @@ We config services roles and policies through json files, making roles and polic
             "ecr:*",
             "logs:CreateLogGroup",
             "logs:CreateLogStream",
-            "logs:PutLogEvents"
+            "logs:PutLogEvents",
+            "ssmmessages:*",
+            "ssm:*",
+            "ecs:*"
         ],
         "Resource": "*"
         }
@@ -78,6 +83,14 @@ We config services roles and policies through json files, making roles and polic
 ```
 
 - **Json Policies path**: `templates\policies\codebuild_policy.json`
+
+- Grant AWS CodeBuild the necessary permissions to access S3, CloudWatch Logs, CodeBuild, Secrets Manager, ECR, and ECS for essential build and deployment tasks: 
+  - CodeBuild can retrieve, store, and list objects in S3, allowing it to manage source code and build artifacts. 
+  - It can also create and write logs in CloudWatch Logs, enabling detailed logging of build activities. 
+  - Within CodeBuild itself, it can start, update, and stop builds as well as retrieve information on past builds. 
+  - Access to Secrets Manager allows CodeBuild to securely retrieve sensitive information, while permissions for ECR provide full control over container images used in builds. 
+  - ECS permissions allow CodeBuild to describe and update ECS services and clusters, enabling automated deployments and updates to containerized applications.
+
 
 ```json
 {
@@ -128,6 +141,15 @@ We config services roles and policies through json files, making roles and polic
 ```
 
 - **Json Policies path**: `templates\policies\codedeploy_policy.json`
+
+- AWS CodeDeploy with the necessary permissions to manage ECS deployments, access logging and monitoring services, and interact with S3 and Elastic Load Balancing: 
+  - CodeDeploy can describe and update ECS clusters, services, and task definitions, as well as create and manage task sets, allowing it to control the deployment process and handle blue/green deployment workflows in ECS. 
+  - The iam:PassRole permission enables CodeDeploy to use specified IAM roles during deployment. 
+  - Logging permissions in CloudWatch Logs allow for creating log groups and streams and writing log data, which aids in tracking deployment activities. 
+  - Additionally, the policy allows CodeDeploy to send custom metrics to CloudWatch and interact with S3 for storing and retrieving deployment files. 
+  - Full Elastic Load Balancing permissions enable CodeDeploy to manage load balancer settings, ensuring smooth traffic routing during deployments. 
+  - This comprehensive set of permissions supports automated and controlled deployment operations.
+
 
 ```json
 {
@@ -181,6 +203,13 @@ We config services roles and policies through json files, making roles and polic
 ```
 
 - **Json Policies path**: `templates\policies\codepipeline_policy.json`
+
+- AWS CodePipeline the permissions are needed for orchestrating and managing end-to-end CI/CD pipelines: 
+  - With S3 permissions (GetObject, PutObject, ListBucket), CodePipeline can access source code, build artifacts, and deployment assets stored in S3. 
+  - CloudWatch Logs permissions allow it to create log groups and streams and publish log events, enabling detailed logging and monitoring of pipeline actions. 
+  - The ecs:UpdateService permission enables CodePipeline to update ECS services, essential for deploying new container images.
+  - Permissions for CodeStar and CodeStar Connections allow CodePipeline to integrate with external GitHub repositories, while full permissions for CodeBuild and CodeDeploy (codebuild:*, codedeploy:*) enable it to initiate builds, manage deployment configurations, and control deployment workflows. 
+  These permissions collectively allow CodePipeline to automate the stages of software delivery, including building, testing, deploying, and managing applications.
 
 ```json
 {

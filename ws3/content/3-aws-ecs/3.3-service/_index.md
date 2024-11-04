@@ -6,6 +6,15 @@ chapter : false
 pre : " <b> 3.3 </b> "
 ---
 
+Creating ECS service with following options:
+- Link the task definition to run with service.
+- Set number of Fargate of the task definition to place and keep running.
+- Set private subnet where Fargate runs.
+- Use Load Balancer.
+- Enable container execute command to test cpu usage.
+- Enable to force a new task deployment of the service, used to update tasks to use a newer Docker image with same image/tag.
+- Allow CodeDeploy controls ECS Service.
+
 ```terraform
 resource "aws_ecs_service" "web_app_service" {
     name = "${local.project_name}_service"
@@ -18,7 +27,7 @@ resource "aws_ecs_service" "web_app_service" {
     # Enable container execute command to test cpu usage
     enable_execute_command = true
 
-    # Testing
+    # Enable to force a new task deployment of the service
     force_new_deployment = true
 
     network_configuration {
@@ -40,3 +49,5 @@ resource "aws_ecs_service" "web_app_service" {
     }
 }
 ```
+
+More details on Terraform registry: [aws_ecs_service](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_service)

@@ -1,16 +1,14 @@
 ---
-title : "Other Resources"
+title : "Other Services"
 date : "`r Sys.Date()`"
 weight : 4
 chapter : false
 pre : " <b> 4.4 </b> "
 ---
 
+#### ECR to store docker image
 
 ```terraform
-################################################################################
-# ECR
-################################################################################
 resource "aws_ecr_repository" "web_app_ecr" {
     name = "${local.project_name}-frontend"
 
@@ -25,30 +23,15 @@ resource "aws_ecr_repository" "web_app_ecr" {
     # Delete the repository even if it contains images
     force_delete = true
 }
-```
 
-```terraform
-################################################################################
-# Cloudwatch log for ECS Container
-################################################################################
-
-resource "aws_cloudwatch_log_stream" "web_app_logs_stream" {
-    name = "webapp_container_logs"
-    log_group_name = aws_cloudwatch_log_group.webapp_logs.name
-}
-
-################################################################################
-# Output
-################################################################################
-output "alb_hostname" {
-    value = "${aws_alb.web_app_alb.dns_name}:${local.host_port}"
+output "ecr_repository_url" {
+    value = aws_ecr_repository.web_app_ecr.repository_url
 }
 ```
 
+#### Create S3 bucket to store Artifact
+
 ```terraform
-################################################################
-# Create S3 bucket to store Artifact
-################################################################
 resource "aws_s3_bucket" "webapp_s3bucket" {
     bucket = "${local.github_repository}-bucket-1001"
     force_destroy = true
@@ -63,10 +46,9 @@ resource "aws_s3_object" "artifacts" {
 }
 ```
 
+#### CloudWatch Log
+
 ```terraform
-################################################################
-# CloudWatch
-################################################################
 resource "aws_cloudwatch_log_group" "webapp_logs" {
     name = "webapp_logs"
     # Retention 1 days
@@ -77,5 +59,23 @@ resource "aws_cloudwatch_log_group" "webapp_logs" {
 resource "aws_cloudwatch_log_stream" "codebuild_log" {
     name = "codebuild_log"
     log_group_name = aws_cloudwatch_log_group.webapp_logs.name
+}
+
+# Cloudwatch log for ECS Container
+resource "aws_cloudwatch_log_stream" "web_app_logs_stream" {
+    name = "webapp_container_logs"
+    log_group_name = aws_cloudwatch_log_group.webapp_logs.name
+}
+```
+
+#### Export website version
+
+```terraform
+output "product_website" {
+    value = "${aws_alb.web_app_alb.dns_name}:${local.product_port}"
+}
+
+output "pre_product_website" {
+    value = "${aws_alb.web_app_alb.dns_name}:${local.preproduct_port}"
 }
 ```

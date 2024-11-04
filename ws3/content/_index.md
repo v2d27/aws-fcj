@@ -12,7 +12,7 @@ In modern application development, automating deployment pipelines and scalable 
 
 ![intro](/aws-fcj/ws3/images/ws3.png)
 
-#### Contents
+#### Table of Contents
 - [1. Introduction](/1-Introduce)
 - [2. Preparation](/2-Preparation)
 - [3. AWS ECS Cluster](/3-aws-ecs)

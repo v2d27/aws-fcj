@@ -37,7 +37,11 @@ Verify installation at [GitHub Application](https://github.com/settings/apps/aut
 
 #### 2. Authorize on AWS Connection/AWS CodeStar
 
+Go to [AWS Connection](https://ap-southeast-1.console.aws.amazon.com/codesuite/settings/connections?region=ap-southeast-1&connections-meta=eyJmIjp7InRleHQiOiIifSwicyI6e30sIm4iOjIwLCJpIjowfQ) inside **AWS CodePipeline** setting:
 
+- Choose **connection name** and click on **Update pending connection**:
+- After connecting successfully, status change from *Pending* to *Available*.
 
+![intro](/aws-fcj/ws3/images/5.validating/connection.png)
 
 

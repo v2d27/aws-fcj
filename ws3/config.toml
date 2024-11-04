@@ -1,9 +1,9 @@
 # ##########################Base URL for the site ##################################
 # for deployment
-baseURL = "https://v2d27.github.io/aws-fcj/"  
+# baseURL = "https://v2d27.github.io/aws-fcj/"  
 
 # for testing in local
-# baseURL = "https://v2d27.github.io/aws-fcj/ws3"  
+baseURL = "https://v2d27.github.io/aws-fcj/ws3"  
 ####################################################################################
 
 
@@ -29,8 +29,8 @@ home = [ "HTML", "RSS", "JSON"]
   # OpenGraph and SEO settings
   enableOpenGraph = true
   ogImage = "https://v2d27.github.io/aws-fcj/ws3/images/ws3.png"
-  ogWidth = "1062"
-  ogHeight = "607"
+  ogWidth = "1364"
+  ogHeight = "822"
   
 
   
@@ -53,3 +53,6 @@ url = "https://github.com/v2d27/aws-fcj/"
 weight = 21
 
 
+
+# Edit date, authors
+# ./ws3/layouts/partials/menu-footer.html

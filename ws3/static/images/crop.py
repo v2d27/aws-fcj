@@ -1,7 +1,7 @@
 import os
 import cv2
 
-path = './3.validating/'
+path = './5.capture/'
 dest_path = './output/'
 
 # Create the folder if it does not exist

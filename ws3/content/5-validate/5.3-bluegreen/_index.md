@@ -6,146 +6,53 @@ chapter : false
 pre : " <b> 5.3 </b> "
 ---
 
-Creating `us-network.tf` file with the configurations below:
-
-```terraform
-###########################################################################################################
-# VPC4: 
-###########################################################################################################
-resource "aws_vpc" "VPC4" {
-    provider = aws.region_virginia
-    cidr_block = var.cidr_block_vpc4
-    enable_dns_hostnames = true
-    enable_dns_support = true
-    tags = {
-        Name = "VPC4"
-    }
-}
-
-# Create a private subnet
-resource "aws_subnet" "VPC4-Subnet-Private" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC4.id
-    cidr_block = var.subnet_private_vpc4
-    map_public_ip_on_launch = false
-    availability_zone = "${var.region_virginia}a"
-    tags = {
-        Name = "VPC4-Subnet-Private"
-    }
-}
-
-# Route Table
-resource "aws_route_table" "VPC4-RT-Private" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC4.id
-
-    tags = {
-        Name = "VPC4-RT-Private"
-    }
-}
-
-# Associate Route Table
-resource "aws_route_table_association" "VPC4-Private-Associate" {
-    provider = aws.region_virginia
-    subnet_id = aws_subnet.VPC4-Subnet-Private.id
-    route_table_id = aws_route_table.VPC4-RT-Private.id
-}
-
-
-
-
-###########################################################################################################
-# VPC5: 
-###########################################################################################################
-resource "aws_vpc" "VPC5" {
-    provider = aws.region_virginia
-    cidr_block = var.cidr_block_vpc5
-    tags = {
-        Name = "VPC5"
-    }
-}
-
-# Create a private subnet
-resource "aws_subnet" "VPC5-Subnet-Private" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC5.id
-    cidr_block = var.subnet_private_vpc5
-    map_public_ip_on_launch = false
-    availability_zone = "${var.region_virginia}a"
-    tags = {
-        Name = "VPC5-Subnet-Private"
-    }
-}
-
-# Route Table
-resource "aws_route_table" "VPC5-RT-Private" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC5.id
-
-    tags = {
-        Name = "VPC5-RT-Private"
-    }
-}
-
-# Associate Route Table
-resource "aws_route_table_association" "VPC5-Private-Associate" {
-    provider = aws.region_virginia
-    subnet_id = aws_subnet.VPC5-Subnet-Private.id
-    route_table_id = aws_route_table.VPC5-RT-Private.id
-}
-
-
-###########################################################################################################
-# VPC6: 
-###########################################################################################################
-resource "aws_vpc" "VPC6" {
-    provider = aws.region_virginia
-    cidr_block = var.cidr_block_onpremise
-    tags = {
-        Name = "VPC6"
-    }
-}
-
-# Create a public subnet
-resource "aws_subnet" "VPC6-Subnet-Public" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC6.id
-    cidr_block = var.subnet_public_vpc6
-    map_public_ip_on_launch = true
-    availability_zone = "${var.region_virginia}a"
-    tags = {
-        Name = "VPC6-Subnet-Public"
-    }
-}
-
-# Internet Gateway
-resource "aws_internet_gateway" "VPC6-IGW" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC6.id
-}
-
-# Route Table
-resource "aws_route_table" "VPC6-RT-Public" {
-    provider = aws.region_virginia
-    vpc_id = aws_vpc.VPC6.id
-
-    route {
-        cidr_block = var.cidr_block_anywhere
-        gateway_id = aws_internet_gateway.VPC6-IGW.id
-    }
-
-    tags = {
-        Name = "VPC6-RT-Public"
-    }
-}
-
-# Associate subnet to route table
-resource "aws_route_table_association" "VPC6-Public-Associate" {
-    provider = aws.region_virginia
-    subnet_id = aws_subnet.VPC6-Subnet-Public.id
-    route_table_id = aws_route_table.VPC6-RT-Public.id
-}
-
-
-
-```
+![Slide 1]( /aws-fcj/ws3/images/5.capture/Slide_1.png)
+![Slide 2]( /aws-fcj/ws3/images/5.capture/Slide_2.png)
+![Slide 3]( /aws-fcj/ws3/images/5.capture/Slide_3.png)
+![Slide 4]( /aws-fcj/ws3/images/5.capture/Slide_4.png)
+![Slide 5]( /aws-fcj/ws3/images/5.capture/Slide_5.png)
+![Slide 6]( /aws-fcj/ws3/images/5.capture/Slide_6.png)
+![Slide 7]( /aws-fcj/ws3/images/5.capture/Slide_7.png)
+![Slide 8]( /aws-fcj/ws3/images/5.capture/Slide_8.png)
+![Slide 9]( /aws-fcj/ws3/images/5.capture/Slide_9.png)
+![Slide 10]( /aws-fcj/ws3/images/5.capture/Slide_10.png)
+![Slide 11]( /aws-fcj/ws3/images/5.capture/Slide_11.png)
+![Slide 12]( /aws-fcj/ws3/images/5.capture/Slide_12.png)
+![Slide 13]( /aws-fcj/ws3/images/5.capture/Slide_13.png)
+![Slide 14]( /aws-fcj/ws3/images/5.capture/Slide_14.png)
+![Slide 15]( /aws-fcj/ws3/images/5.capture/Slide_15.png)
+![Slide 16]( /aws-fcj/ws3/images/5.capture/Slide_16.png)
+![Slide 17]( /aws-fcj/ws3/images/5.capture/Slide_17.png)
+![Slide 18]( /aws-fcj/ws3/images/5.capture/Slide_18.png)
+![Slide 19]( /aws-fcj/ws3/images/5.capture/Slide_19.png)
+![Slide 20]( /aws-fcj/ws3/images/5.capture/Slide_20.png)
+![Slide 21]( /aws-fcj/ws3/images/5.capture/Slide_21.png)
+![Slide 22]( /aws-fcj/ws3/images/5.capture/Slide_22.png)
+![Slide 23]( /aws-fcj/ws3/images/5.capture/Slide_23.png)
+![Slide 24]( /aws-fcj/ws3/images/5.capture/Slide_24.png)
+![Slide 25]( /aws-fcj/ws3/images/5.capture/Slide_25.png)
+![Slide 26]( /aws-fcj/ws3/images/5.capture/Slide_26.png)
+![Slide 27]( /aws-fcj/ws3/images/5.capture/Slide_27.png)
+![Slide 28]( /aws-fcj/ws3/images/5.capture/Slide_28.png)
+![Slide 29]( /aws-fcj/ws3/images/5.capture/Slide_29.png)
+![Slide 30]( /aws-fcj/ws3/images/5.capture/Slide_30.png)
+![Slide 31]( /aws-fcj/ws3/images/5.capture/Slide_31.png)
+![Slide 32]( /aws-fcj/ws3/images/5.capture/Slide_32.png)
+![Slide 33]( /aws-fcj/ws3/images/5.capture/Slide_33.png)
+![Slide 34]( /aws-fcj/ws3/images/5.capture/Slide_34.png)
+![Slide 35]( /aws-fcj/ws3/images/5.capture/Slide_35.png)
+![Slide 36]( /aws-fcj/ws3/images/5.capture/Slide_36.png)
+![Slide 37]( /aws-fcj/ws3/images/5.capture/Slide_37.png)
+![Slide 39]( /aws-fcj/ws3/images/5.capture/Slide_39.png)
+![Slide 40]( /aws-fcj/ws3/images/5.capture/Slide_40.png)
+![Slide 41]( /aws-fcj/ws3/images/5.capture/Slide_41.png)
+![Slide 42]( /aws-fcj/ws3/images/5.capture/Slide_42.png)
+![Slide 43]( /aws-fcj/ws3/images/5.capture/Slide_43.png)
+![Slide 44]( /aws-fcj/ws3/images/5.capture/Slide_44.png)
+![Slide 45]( /aws-fcj/ws3/images/5.capture/Slide_45.png)
+![Slide 46]( /aws-fcj/ws3/images/5.capture/Slide_46.png)
+![Slide 47]( /aws-fcj/ws3/images/5.capture/Slide_47.png)
+![Slide 48]( /aws-fcj/ws3/images/5.capture/Slide_48.png)
+![Slide 49]( /aws-fcj/ws3/images/5.capture/Slide_49.png)
+![Slide 50]( /aws-fcj/ws3/images/5.capture/Slide_50.png)
+![Slide 51]( /aws-fcj/ws3/images/5.capture/Slide_51.png)

@@ -12,7 +12,7 @@ We will clean up all applied resources configurations by **`terraform destroy`**
 terraform destroy
 ```
 
-![intro](/aws-fcj/ws2/images/3.validating/tf-destroy.png)
+![tf_destroy]( /aws-fcj/ws3/images/5.pipeline/tf_destroy.png)
 
 Please wait a few minutes to destroying everything!!
 

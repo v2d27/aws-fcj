@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.1 </b> "
 ---
 
-#### 1. Install "AWS Connector for GitHub"
+#### 1. Setup AWS Connector for GitHub
 
 First, go to [GitHub Marketplace](https://github.com/marketplace):
 - Find verified "AWS Connector for GitHub" application

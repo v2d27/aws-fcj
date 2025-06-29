@@ -6,53 +6,56 @@ chapter : false
 pre : " <b> 5.3 </b> "
 ---
 
-![Slide 1]( /aws-fcj/ws3/images/5.capture/Slide_1.png)
-![Slide 2]( /aws-fcj/ws3/images/5.capture/Slide_2.png)
-![Slide 3]( /aws-fcj/ws3/images/5.capture/Slide_3.png)
-![Slide 4]( /aws-fcj/ws3/images/5.capture/Slide_4.png)
-![Slide 5]( /aws-fcj/ws3/images/5.capture/Slide_5.png)
-![Slide 6]( /aws-fcj/ws3/images/5.capture/Slide_6.png)
-![Slide 7]( /aws-fcj/ws3/images/5.capture/Slide_7.png)
-![Slide 8]( /aws-fcj/ws3/images/5.capture/Slide_8.png)
-![Slide 9]( /aws-fcj/ws3/images/5.capture/Slide_9.png)
-![Slide 10]( /aws-fcj/ws3/images/5.capture/Slide_10.png)
-![Slide 11]( /aws-fcj/ws3/images/5.capture/Slide_11.png)
-![Slide 12]( /aws-fcj/ws3/images/5.capture/Slide_12.png)
-![Slide 13]( /aws-fcj/ws3/images/5.capture/Slide_13.png)
-![Slide 14]( /aws-fcj/ws3/images/5.capture/Slide_14.png)
-![Slide 15]( /aws-fcj/ws3/images/5.capture/Slide_15.png)
-![Slide 16]( /aws-fcj/ws3/images/5.capture/Slide_16.png)
-![Slide 17]( /aws-fcj/ws3/images/5.capture/Slide_17.png)
-![Slide 18]( /aws-fcj/ws3/images/5.capture/Slide_18.png)
-![Slide 19]( /aws-fcj/ws3/images/5.capture/Slide_19.png)
-![Slide 20]( /aws-fcj/ws3/images/5.capture/Slide_20.png)
-![Slide 21]( /aws-fcj/ws3/images/5.capture/Slide_21.png)
-![Slide 22]( /aws-fcj/ws3/images/5.capture/Slide_22.png)
-![Slide 23]( /aws-fcj/ws3/images/5.capture/Slide_23.png)
-![Slide 24]( /aws-fcj/ws3/images/5.capture/Slide_24.png)
-![Slide 25]( /aws-fcj/ws3/images/5.capture/Slide_25.png)
-![Slide 26]( /aws-fcj/ws3/images/5.capture/Slide_26.png)
-![Slide 27]( /aws-fcj/ws3/images/5.capture/Slide_27.png)
-![Slide 28]( /aws-fcj/ws3/images/5.capture/Slide_28.png)
-![Slide 29]( /aws-fcj/ws3/images/5.capture/Slide_29.png)
-![Slide 30]( /aws-fcj/ws3/images/5.capture/Slide_30.png)
-![Slide 31]( /aws-fcj/ws3/images/5.capture/Slide_31.png)
-![Slide 32]( /aws-fcj/ws3/images/5.capture/Slide_32.png)
-![Slide 33]( /aws-fcj/ws3/images/5.capture/Slide_33.png)
-![Slide 34]( /aws-fcj/ws3/images/5.capture/Slide_34.png)
-![Slide 35]( /aws-fcj/ws3/images/5.capture/Slide_35.png)
-![Slide 36]( /aws-fcj/ws3/images/5.capture/Slide_36.png)
-![Slide 37]( /aws-fcj/ws3/images/5.capture/Slide_37.png)
-![Slide 39]( /aws-fcj/ws3/images/5.capture/Slide_39.png)
-![Slide 40]( /aws-fcj/ws3/images/5.capture/Slide_40.png)
-![Slide 41]( /aws-fcj/ws3/images/5.capture/Slide_41.png)
-![Slide 42]( /aws-fcj/ws3/images/5.capture/Slide_42.png)
-![Slide 43]( /aws-fcj/ws3/images/5.capture/Slide_43.png)
-![Slide 44]( /aws-fcj/ws3/images/5.capture/Slide_44.png)
-![Slide 45]( /aws-fcj/ws3/images/5.capture/Slide_45.png)
-![Slide 46]( /aws-fcj/ws3/images/5.capture/Slide_46.png)
-![Slide 47]( /aws-fcj/ws3/images/5.capture/Slide_47.png)
-![Slide 48]( /aws-fcj/ws3/images/5.capture/Slide_48.png)
-![Slide 49]( /aws-fcj/ws3/images/5.capture/Slide_49.png)
-![Slide 50]( /aws-fcj/ws3/images/5.capture/Slide_50.png)
-![Slide 51]( /aws-fcj/ws3/images/5.capture/Slide_51.png)
+## Blue/Green Deployment Progress
+
+The Blue/Green deployment strategy enables seamless updates with minimal downtime by shifting traffic between two environments — "Blue" (current) and "Green" (new).
+
+#### Deployment Preparation
+
+The following slides show the steps involved in preparing the Green environment for deployment:
+
+![Slide 43]( /aws-fcj/ws3/images/5.capture/Slide_43.png)  
+*Creating the new task definition and preparing ECS services for deployment.*
+
+![Slide 45]( /aws-fcj/ws3/images/5.capture/Slide_45.png)  
+*Verifying the health of the Green target group and ensuring it is registered with the new tasks.*
+
+![Slide 17]( /aws-fcj/ws3/images/5.capture/Slide_17.png)  
+*Traffic shifting begins, validating the new version through load balancer testing.*
+
+![Slide 18]( /aws-fcj/ws3/images/5.capture/Slide_18.png)  
+*Monitoring the success of the traffic switch from Blue to Green and ensuring service continuity.*
+
+---
+
+#### Dropping Old Container
+
+Once the Green environment is stable and fully receiving traffic, the old (Blue) version is safely terminated:
+
+![Slide 31]( /aws-fcj/ws3/images/5.capture/Slide_31.png)  
+*ECS tasks from the previous version are drained and removed to free up resources.*
+
+---
+
+#### Completion of Blue/Green Deployment
+
+The deployment completes successfully after the new version proves stable and healthy:
+
+![Slide 44]( /aws-fcj/ws3/images/5.capture/Slide_44.png)  
+*Final confirmation screen showing successful cutover to Green environment.*
+
+---
+
+#### Container Logs
+
+Logs from the new container version are reviewed to ensure correct startup and application behavior:
+
+![Slide 21]( /aws-fcj/ws3/images/5.capture/Slide_21.png)  
+*Application logs showing successful service initialization.*
+
+![Slide 22]( /aws-fcj/ws3/images/5.capture/Slide_22.png)  
+*Confirmation of endpoint readiness and healthy responses.*
+
+---
+
+By using this deployment strategy, we reduce risk, enable fast rollback, and maintain high availability during application updates.

@@ -14,7 +14,7 @@ We will deploying all these configurations to AWS Cloud by Terraform:
 terraform init
 ```
 
-![intro](/aws-fcj/ws2/images/4.terraform/init.png)
+![intro](/aws-fcj/ws3/images/6.terraform/init.png)
 
 {{%notice note%}}
 Run **`terraform init`** first in any new Terraform configuration directory. It must be executed after you add or modify providers or modules.
@@ -26,7 +26,7 @@ Run **`terraform init`** first in any new Terraform configuration directory. It 
 terraform plan
 ```
 
-![intro](/aws-fcj/ws2/images/4.terraform/plan.png)
+![intro](/aws-fcj/ws3/images/6.terraform/plan.png)
 
 **3.** Apply the changes before applying configurations by **`terraform apply`** command. Continue to enter **`yes`** to confirm:
 
@@ -34,7 +34,7 @@ terraform plan
 terraform apply
 ```
 
-![intro](/aws-fcj/ws2/images/4.terraform/apply.png)
+![intro](/aws-fcj/ws3/images/6.terraform/apply.png)
 
 Please wait a few minutes to Terraform applying before validating connection.
 
@@ -43,4 +43,4 @@ Please wait a few minutes to Terraform applying before validating connection.
 - [5.1 GitHub and AWS Connection](/5-validate/5.1-codestar)
 - [5.2 Pipeline Result](/5-validate/5.2-pipeline)
 - [5.3 Blue/Green Deployment](/5-validate/5.3-bluegreen)
-- [5.4 Application Load Balancer](/5-validate/5.4-alb)
+- [5.4 AutoScaling Group](/5-validate/5.4-asg)

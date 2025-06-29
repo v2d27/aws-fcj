@@ -2,7 +2,6 @@
     <div align="center">
         <img src="https://raw.githubusercontent.com/v2d27/aws-fcj/refs/heads/main/ws1/static/images/sssss.png" title="Logo" style="max-width:100%;" width="200" />
     </div>
-    AWS - First Cloud Journey<br />
 </h1>
 
 
@@ -17,7 +16,7 @@ In this lab, we will make private connection from **Database server** to **Cloud
 #### Hosted at [https://v2d27.github.io/aws-fcj/ws1](https://v2d27.github.io/aws-fcj/ws1) 
 
 
-
+---
 
 
 ### WorkShop 2 | Automating AWS Network Connectivity with Terraform
@@ -31,16 +30,27 @@ This workshop focuses on creating a automated AWS network architecture using Ter
 #### Github Project [https://github.com/v2d27/aws-with-terraform](https://github.com/v2d27/aws-with-terraform) 
 
 
-
+---
 
 
 ### WorkShop 3 | Automated ECS Deployment on Fargate with Blue/Green Deployment and AutoScaling using Terraform
 
 #### Overall
 
+This workshop guides you through deploying containerized applications on AWS using Amazon Elastic Container Service (ECS) with Fargate, focusing on automated Blue/Green deployments and Auto Scaling, all managed via Terraform:
+
+- Use AWS ECS to efficiently deploy, manage, and scale containerized applications.
+- Implement Blue/Green deployment strategies to minimize downtime and risk during application updates, leveraging AWS CodeDeploy and Application Load Balancer (ALB) for seamless traffic shifting and easy rollback.
+- Set up a complete CI/CD pipeline using AWS CodeStar, CodePipeline, CodeBuild, and CodeDeploy to automate the build and deployment process from GitHub to ECS.
+- Manage infrastructure as code with Terraform, enabling repeatable, scalable, and cost-effective AWS resource provisioning.
+- Integrate supporting AWS services such as IAM, VPC, Auto Scaling, CloudWatch Logs, S3, and ECR for a robust, production-ready environment.
 
 
 ![intro](ws3/static/images/ws3.png)
 
 #### Hosted at [https://v2d27.github.io/aws-fcj/ws3](https://v2d27.github.io/aws-fcj/ws3) 
-#### Github Project 
+
+
+---
+
+### WorkShop 4 | Pending

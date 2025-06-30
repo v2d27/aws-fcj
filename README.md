@@ -33,7 +33,7 @@ This workshop focuses on creating a automated AWS network architecture using Ter
 ---
 
 
-### WorkShop 3 | Serverless Blue/Green ECS Deployment on AWS Fargate with Auto Scaling using Terraform
+### WorkShop 3 | Blue/Green ECS Deployment on AWS Fargate for a Serverless Application, Scalable via CloudWatch
 
 #### Overall
 

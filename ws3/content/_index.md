@@ -6,7 +6,7 @@ weight : 1
 chapter : true
 ---
 
-### **Serverless Blue/Green ECS Deployment on AWS Fargate with Auto Scaling using Terraform**
+### **Blue/Green ECS Deployment on AWS Fargate for a Serverless Application, Scalable via CloudWatch**
 
 In modern application development, automating deployment pipelines and scalable infrastructure are crucial for efficiency and reliability. This setup uses Terraform to automate the deployment of containerized applications on AWS ECS with Fargate, leveraging blue/green deployment strategy and AutoScaling for high availability and resilience.
 

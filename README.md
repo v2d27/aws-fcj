@@ -33,11 +33,11 @@ This workshop focuses on creating a automated AWS network architecture using Ter
 ---
 
 
-### WorkShop 3 | Automated ECS Deployment on Fargate with Blue/Green Deployment and AutoScaling using Terraform
+### WorkShop 3 | Serverless Blue/Green ECS Deployment on AWS Fargate with Auto Scaling using Terraform
 
 #### Overall
 
-This workshop guides you through deploying containerized applications on AWS using Amazon Elastic Container Service (ECS) with Fargate, focusing on automated Blue/Green deployments and Auto Scaling, all managed via Terraform:
+This workshop guides you through deploying containerized applications on AWS using Amazon Elastic Container Service (ECS) with Fargate, focusing on automated Blue/Green deployments and Auto Scaling for serverless application, all managed via Terraform:
 
 - Use AWS ECS to efficiently deploy, manage, and scale containerized applications.
 - Implement Blue/Green deployment strategies to minimize downtime and risk during application updates, leveraging AWS CodeDeploy and Application Load Balancer (ALB) for seamless traffic shifting and easy rollback.
